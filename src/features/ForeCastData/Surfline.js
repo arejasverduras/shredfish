@@ -23,6 +23,7 @@ const Surfline = {
                 //lat
                 //long
                 return jsonResponse.associated;
+                ;
             });
         return result;
 

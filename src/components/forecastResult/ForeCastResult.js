@@ -7,8 +7,9 @@ export const ForeCastResult = () => {
     const params = `spotId=${spotId}`;
 
     const spotData = Surfline.getSpotData(type, params);
-    console.log(spotData);
-    const spotKeys = Object.keys(spotData);
+    // console.log(spotData);
+    const spotKeys = Object.values;
+    console.log(spotKeys);
 
     return (
         <div className='ForeCastResult'>
