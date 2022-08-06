@@ -55,8 +55,11 @@ export const ForeCastResult = () => {
         <tr key={index}>
             <td>{index}</td>
             <td><strong>{hourdata.surf.min} - {hourdata.surf.max}m</strong></td>
-            <td>{hourdata.swells[0].height.toFixed(1)}m   <b>{hourdata.swells[0].period}s</b></td>
-            <td>{hourdata.swells[0].direction.toFixed(1)}</td>
+            {/* Primary swell */}
+            <td className="primarySwell">{hourdata.swells[0].height.toFixed(1)}m   <b>{hourdata.swells[0].period}s</b> {hourdata.swells[0].direction.toFixed(1)}</td>
+            {/* secondary swell */}
+            <td className="secondarySwell">{hourdata.swells[1].height.toFixed(1)<= 0.09? '':hourdata.swells[1].height.toFixed(1)+'m '+hourdata.swells[0].period+'s '+ hourdata.swells[1].direction.toFixed(1)}</td>
+
         </tr> )
 
         tableJSX = (
@@ -67,10 +70,7 @@ export const ForeCastResult = () => {
                             <td>Hour</td>
                             <td>surf</td>
                             <td>Primary swell</td>
-                            <td>swell direction</td>
                             <td>Secondary swell</td>
-                            <td>wind</td>
-                            <td>tide</td>
                         </tr>
                     </thead>
                     <tbody>
