@@ -3,17 +3,15 @@ const Surfline = {
     // https://services.surfline.com/kbyg/spots/forecasts/{type}?{params}
     //https://services.surfline.com/kbyg/spots/forecasts/wave?{params}
 
-    async getData(type, parameters){
+    async getData(arg){
         const baseURL = 'https://services.surfline.com/kbyg/spots/forecasts/';
-        const params = `${type}?${parameters}`
+        const params = arg
         const reqURL = baseURL+params;
         
         try {
             const response = await fetch(reqURL); 
             if (response.ok) {
                 const jsonResponse = await response.json();
-                //code tot execute with response
-                // console.log(jsonResponse);
                 return jsonResponse;
             }
         } catch (error) {

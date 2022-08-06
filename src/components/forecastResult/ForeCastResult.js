@@ -1,29 +1,30 @@
 import {React, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Surfline from '../../features/ForeCastData/Surfline';
-import { selectForeCast, selectStatus } from '../../features/ForeCastData/ForeCastDataSlice';
+import { selectForeCast, selectStatus, getSpotData } from '../../features/ForeCastData/ForeCastDataSlice';
+
+
 
 export const ForeCastResult = () => {
     const dispatch = useDispatch();
     
-    const type = 'wave';
+    const type = 'wave?';
     const spotId = '584204204e65fad6a77095f0';
     const params = `spotId=${spotId}`;
+    const urlAppend = type+params;
 
-    let spotData2 = useSelector(selectForeCast);
+    let spotData = useSelector(selectForeCast);
     const status = useSelector(selectStatus);
+
+    const spotDataKeys = Object.keys(spotData);
+
+
+
+    useEffect(()=>{
+        dispatch(getSpotData(urlAppend))
+    },[])
     
 
-
-    // const spotData = async () => {
-    //     const dataStream = await Surfline.getData(type, params);
-    //     // const dataArray = Object.keys(dataStream);
-    //     // console.log(dataArray[0]);
-    //     console.log(dataStream[0]);
-    //     return <p>{dataStream[0]}</p>; 
-            
-        
-    // };
 
     return (
         <div className='ForeCastResult'>
@@ -32,7 +33,7 @@ export const ForeCastResult = () => {
             <h2>Status</h2>
             <p>{status}</p>
             <h2>SpotData</h2>
-            <p>{spotData2}</p>
+            <p>{status!== 'succeeded'? spotData: spotDataKeys}</p>
             
             
         </div>
