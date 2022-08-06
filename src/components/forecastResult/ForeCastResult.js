@@ -21,14 +21,13 @@ export const ForeCastResult = () => {
         const hour = current.getHours();
         const timeNow = current.toLocaleTimeString();
 
-        const timestamp = status!== 'succeeded'? spotData: spotData.wave[hour].timestamp;
-
     useEffect(()=>{
         dispatch(getSpotData(urlAppend))
     },[])
 
     let dataJSX;
     let noDataJSX;
+    let tableJSX;
 
     if (status !== 'succeeded'){
         noDataJSX = (
@@ -51,6 +50,11 @@ export const ForeCastResult = () => {
             <p>{spotData.wave[hour].swells[0].direction}</p>
             </>
         )
+
+        tableJSX = (
+            <>
+            </>
+        );
     }
 
     
@@ -60,16 +64,8 @@ export const ForeCastResult = () => {
                 <p>Scheveningen Noord</p>
             <h2>Status</h2>
                 <p>{status}</p>
-            <h2>SpotData</h2>
+            <h2>ForeCast</h2>
             {status !== 'succeeded'? noDataJSX: dataJSX}
-
-            {/* <h3>Time</h3>
-                <p>{status!== 'succeeded'? spotData: timestamp}</p>
-            <h3>Surf Height</h3>
-                <p>{status!== 'succeeded'? spotData: spotData.wave[0].surf.min} - {status!== 'succeeded'? spotData: spotData.wave[0].surf.max}</p>
-                <p>{status!== 'succeeded'? spotData: spotData.wave[0].surf.humanRelation}</p>
-            <h3>Period</h3>
-                <p>{spotData.wave[0].swells[0].period}</p> */}
-        </div>
+            </div>
     )
 }
