@@ -63,7 +63,7 @@ export const ForeCastResult = () => {
         </tr> )
 
         tableJSX = (
-            <>
+            <div className='tableHolder'>
                 <table>
                     <thead>
                         <tr>
@@ -77,7 +77,7 @@ export const ForeCastResult = () => {
                         {tableList}
                    </tbody>
                 </table>
-            </>
+            </div>
         );
     }
 
@@ -88,8 +88,9 @@ export const ForeCastResult = () => {
                 <p>Scheveningen Noord</p>
             <h2>Status</h2>
                 <p>{status}</p>
-            <h2>ForeCast</h2>
+            <h2>Current</h2>
             {status !== 'succeeded'? noDataJSX: dataJSX}
+            <h2>ForeCast</h2>
             {status !== 'succeeded'? 'no table yet': tableJSX}
             </div>
     )

@@ -42,4 +42,11 @@
   /* main wrapper for component */
   border: 1px solid mediumaquamarine;
   padding: 20px;
+  
+}
+
+.tableHolder {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
