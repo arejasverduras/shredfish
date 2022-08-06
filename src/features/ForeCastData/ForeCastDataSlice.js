@@ -31,7 +31,8 @@ const foreCastSlice = createSlice({
             state.spotdata = (action.payload)
         },
         [getSpotData.rejected]: (state, action) => {
-            
+            state.status = 'rejected';
+            state.spotdata = 'bad';
         }
     }
 })
