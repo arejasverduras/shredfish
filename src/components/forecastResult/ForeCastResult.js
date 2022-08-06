@@ -19,7 +19,6 @@ export const ForeCastResult = () => {
         // set current time to hour to integer
         const current = new Date();
         const hour = current.getHours();
-        console.log(hour);
         const timeNow = current.toLocaleTimeString();
 
         const timestamp = status!== 'succeeded'? spotData: spotData.wave[hour].timestamp;
@@ -36,11 +35,7 @@ export const ForeCastResult = () => {
             <>
             <h3>Time</h3>
                 <p>{timeNow}</p>
-            <h3>Surf Height</h3>
-                <p>{status}</p>
-            <h3>Period</h3>
-                <p>{status}</p>
-                </>
+            </>
         )
     } else {
         dataJSX = (
@@ -52,6 +47,8 @@ export const ForeCastResult = () => {
             <p>{spotData.wave[hour].surf.humanRelation}</p>
         <h3>Period</h3>
             <p>{spotData.wave[hour].swells[0].period}</p>
+        <h3>Swell Direction</h3>
+            <p>{spotData.wave[hour].swells[0].direction}</p>
             </>
         )
     }
