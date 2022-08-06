@@ -18,45 +18,6 @@ const Surfline = {
             console.log(error);
         }
     },
-
-
-
-    async getSpotData(type, parameters) {
-        const baseURL = 'https://services.surfline.com/kbyg/spots/forecasts/';
-        const params = `${type}?${parameters}`
-        const reqURL = baseURL+params;
-
-        console.log(reqURL);
-
-
-        const result = await fetch(reqURL,
-            {headers: {}}
-            ).then(response => {
-                if (response.ok) {
-                    console.log(response);
-                    return response.json();
-                } else {
-                    console.log('bad request');
-                    return [];
-                }
-            }).then(jsonResponse => {
-                if (!jsonResponse.data){
-                    console.log('this happens');
-                    return ['bla','nothing'];
-                }
-                //forecastLocation
-                //lat
-                //long
-                return jsonResponse.map(info => (
-                    {
-                        associated: info
-                    }
-                ))
-                ;
-            });
-        return result;
-
-    }
 };
 
 export default Surfline;

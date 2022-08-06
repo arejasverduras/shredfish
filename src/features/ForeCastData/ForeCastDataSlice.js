@@ -30,7 +30,8 @@ const foreCastSlice = createSlice({
         [getSpotData.fulfilled]: (state,action) => {
             state.status = 'succeeded';
             state.spotdata = (action.payload)
-            console.log(state.spotdata)
+            // for analyzing of the response object
+            console.log(state.spotdata.wave)
         },
         [getSpotData.rejected]: (state, action) => {
             state.status = 'rejected';
