@@ -51,8 +51,32 @@ export const ForeCastResult = () => {
             </>
         )
 
+        const tableList = spotData.wave.map((hourdata, index ) => 
+        <tr key={index}>
+            <td>{index}</td>
+            <td><strong>{hourdata.surf.min} - {hourdata.surf.max}m</strong></td>
+            <td>{hourdata.swells[0].height.toFixed(1)}m   <b>{hourdata.swells[0].period}s</b></td>
+            <td>{hourdata.swells[0].direction.toFixed(1)}</td>
+        </tr> )
+
         tableJSX = (
             <>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Hour</td>
+                            <td>surf</td>
+                            <td>Primary swell</td>
+                            <td>swell direction</td>
+                            <td>Secondary swell</td>
+                            <td>wind</td>
+                            <td>tide</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tableList}
+                   </tbody>
+                </table>
             </>
         );
     }
@@ -66,6 +90,7 @@ export const ForeCastResult = () => {
                 <p>{status}</p>
             <h2>ForeCast</h2>
             {status !== 'succeeded'? noDataJSX: dataJSX}
+            {status !== 'succeeded'? 'no table yet': tableJSX}
             </div>
     )
 }
