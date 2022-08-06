@@ -53,10 +53,12 @@ export const ForeCastResult = () => {
 
         const tableList = spotData.wave.map((hourdata, index ) => 
         <tr key={index}>
-            <td>{index}</td>
+            <td className='tableHour'>{index}</td>
             <td><strong>{hourdata.surf.min} - {hourdata.surf.max}m</strong></td>
             {/* Primary swell */}
-            <td className="primarySwell">{hourdata.swells[0].height.toFixed(1)}m   <b>{hourdata.swells[0].period}s</b> {hourdata.swells[0].direction.toFixed(1)}</td>
+            <td className="primary pSwell">{hourdata.swells[0].height.toFixed(1)}m </td>
+            <td className="primary pPeriod"><b>{hourdata.swells[0].period}s</b></td>
+            <td className="primary pDirection">{hourdata.swells[0].direction.toFixed(1)}</td>
             {/* secondary swell */}
             <td className="secondarySwell">{hourdata.swells[1].height.toFixed(1)<= 0.09? '':hourdata.swells[1].height.toFixed(1)+'m '+hourdata.swells[0].period+'s '+ hourdata.swells[1].direction.toFixed(1)}</td>
 
@@ -67,9 +69,9 @@ export const ForeCastResult = () => {
                 <table>
                     <thead>
                         <tr>
-                            <td>Hour</td>
+                            <td className='tableHour'>Hour</td>
                             <td>surf</td>
-                            <td>Primary swell</td>
+                            <td colspan="3">Primary swell</td>
                             <td>Secondary swell</td>
                         </tr>
                     </thead>

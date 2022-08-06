@@ -45,8 +45,21 @@
   
 }
 
-.tableHolder {
-  max-width: 800px;
+table {
   margin: 0 auto;
   text-align: center;
+}
+
+td {
+  padding: 6px;
+  column-width: 200px;
+}
+
+.tableHour {
+  column-width: 20px;
+  text-align: right;
+}
+
+.primary {
+  column-width: 30px;
 }
