@@ -5,7 +5,7 @@ import Surfline from "./Surfline";
 
 export const getSpotData = createAsyncThunk('/',
     async (arg, thunkAPI) => {
-        const response = await Surfline.getData(arg);
+        const response = await Surfline.getWaveData(arg);
         return response.data
     })
 
@@ -17,6 +17,8 @@ const foreCastSlice = createSlice({
     name: "forecast",
     initialState: {
         spotdata: ['xxx'],
+        winddata: [],
+        tidedata: [],
         status: 'idle'
     },
     reducers: {

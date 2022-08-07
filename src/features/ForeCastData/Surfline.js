@@ -3,7 +3,7 @@ const Surfline = {
     // https://services.surfline.com/kbyg/spots/forecasts/{type}?{params}
     //https://services.surfline.com/kbyg/spots/forecasts/wave?{params}
 
-    async getData(arg){
+    async getWaveData(arg){
         const baseURL = 'https://services.surfline.com/kbyg/spots/forecasts/';
         const params = arg
         const reqURL = baseURL+params;
