@@ -55,7 +55,7 @@ export const ForeCastResult = () => {
         )
 
         const tableList = spotData.wave.map((hourdata, index ) => 
-        <tr key={index}>
+        <tr key={index} className={index === hour? 'currentHourRow':''}>
             <td className='tableHour'>{index}</td>
             <td><strong>{hourdata.surf.min} - {hourdata.surf.max}m</strong></td>
             {/* Primary swell */}

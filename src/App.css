@@ -53,6 +53,7 @@ table {
 td {
   padding: 6px;
   column-width: 200px;
+  border: 1px solid black;
 }
 
 .tableHour {
@@ -62,4 +63,8 @@ td {
 
 .primary {
   column-width: 30px;
+}
+
+.currentHourRow td {
+  border: 3px solid black;
 }
