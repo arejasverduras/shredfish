@@ -11,7 +11,7 @@ export const ForeCastResult = () => {
     // ter heijde: 584204204e65fad6a77095f3
     //scheveningen: 584204204e65fad6a77095f0
     //hvh: 584204204e65fad6a77095f2
-    const spotId = '584204204e65fad6a77095f3';
+    const spotId = '584204204e65fad6a77095f0';
     const params = `spotId=${spotId}`;
     const days = '&days=1'
 

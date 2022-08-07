@@ -5,10 +5,8 @@ import { selectTidesData, selectTidesStatus, getTidesData } from './TidesResultS
 export const TideResult = () => {
     const dispatch = useDispatch();
     
-
     const tides = 'tides?';
-
-    const spotId = '584204204e65fad6a77095f3';
+    const spotId = '584204204e65fad6a77095f0';
         // ter heijde: 584204204e65fad6a77095f3
     //scheveningen: 584204204e65fad6a77095f0
     //hvh: 584204204e65fad6a77095f2
@@ -18,16 +16,26 @@ export const TideResult = () => {
 
     const urlAppendTide = tides+params+days+intervalHours;
 
-
     const tidesData = useSelector(selectTidesData)
     const tidesStatus = useSelector(selectTidesStatus);
 
+    const current = new Date();
+    const hour = current.getHours();
+    const timeNow = current.toLocaleTimeString();
 
-    // console.log(state.spotdata.wave[0])
-        // set current time to hour to integer
-        const current = new Date();
-        const hour = current.getHours();
-        const timeNow = current.toLocaleTimeString();
+    // convert timestamp to changes
+    const timestampToTime = (stamp) => {
+        const converted = new Date(stamp);
+        const fulldate = converted.toString();
+        let minutes;
+        if (converted.getMinutes() < 10){
+            minutes = '0'+converted.getMinutes();
+        } else {
+            minutes = converted.getMinutes();
+        }
+        const time = converted.getHours()+":"+minutes;
+        return time;
+    }
 
     useEffect(()=>{
         dispatch(getTidesData(urlAppendTide));
@@ -43,39 +51,25 @@ export const TideResult = () => {
             </div>
         )
     } else {
-        // const tableList = spotData.wave.map((hourdata, index ) => 
-        // <tr key={index} className={index === hour? 'currentHourRow':''}>
-        //     <td className='tableHour'>{index}</td>
-        //     <td><strong>{hourdata.surf.min} - {hourdata.surf.max}m</strong></td>
-        //     {/* Primary swell */}
-        //     <td className="primary pSwell">{hourdata.swells[0].height.toFixed(1)}m </td>
-        //     <td className="primary pPeriod"><b>{hourdata.swells[0].period}s</b></td>
-        //     <td className="primary pDirection">{hourdata.swells[0].direction.toFixed(1)}</td>
-        //     {/* secondary swell */}
-        //     <td className="secondarySwell">{hourdata.swells[1].height.toFixed(1)<= 0.09? '':hourdata.swells[1].height.toFixed(1)+'m '+hourdata.swells[0].period+'s '+ hourdata.swells[1].direction.toFixed(1)}</td>
-
-        // </tr> )
-
         //filter the tides array
         const tidesOnly = tidesData.tides.filter((hourdata) => hourdata.type === 'NORMAL');
 
-        const tidesHeader = tidesOnly.map((hourdata, index) =>
-            <td className='tidesHeaderCell' key={index}>{index}</td>)
+        // const tidesHeader = tidesOnly.map((hourdata, index) =>
+        //     <td className='tidesHeaderCell' key={index}>{index}</td>)
 
-        const tidesResultHeight = tidesOnly.map((hourdata, index) => 
-            <td className="tidesHeights" key={index}>{hourdata.height}m</td>
-            )
-
+        // const tidesResultHeight = tidesOnly.map((hourdata, index) => 
+        //     <td className="tidesHeights" key={index}>{hourdata.height}m</td>
+        //     )
 
         const tidesResultGraphIndex = tidesOnly.map((hourdata, index) => 
         <div key={index} style={{
             width: '4%', 
             borderLeft: "1px solid black",
             fontSize: '8px'
-            }}
-            >
+            }}>
                 {index}
-                </div>)    
+        </div>)    
+        
         const tidesResultGraph = tidesOnly.map((hourdata, index) => 
         <div key={index} style={{
             width: '4%', 
@@ -83,21 +77,38 @@ export const TideResult = () => {
             backgroundColor: 'aquamarine',
             height: hourdata.height*100,
             fontSize: '8px'
-            }}
-            >
-                
-                </div>
+            }}>
+        </div>
             )
 
         const tidesResultType = tidesOnly.map((hourdata, index) => 
             <td key={index}>{hourdata.type}</td>
             )
         
+        const tideResultInfo = tidesData.tides.filter((hourdata) => hourdata.type !== 'NORMAL');
+        console.log(tideResultInfo);
 
-        
-        
-        
-        
+        const tideLows = tideResultInfo.filter((peak) => peak.type === 'LOW');
+        const tideHighs = tideResultInfo.filter((peak) => peak.type === 'HIGH');
+        console.log(tideHighs);
+
+        const tideLowCells= tideLows.map((low, index) =>
+        <>
+        <td key={index}>{low.type}</td>
+        <td key={index+10}>{timestampToTime(low.timestamp*1000)}</td>
+        </>
+        )
+
+        const tideHighCells= tideHighs.map((high, index) =>
+        <>
+        <td key={index}>{high.type}</td>
+        <td key={index+10}>{timestampToTime(high.timestamp*1000)}</td>
+        </>
+        )
+ 
+
+
+            
         return (
             <div className="TideResult">
                 <h3>Tides available</h3>
@@ -114,13 +125,23 @@ export const TideResult = () => {
                         </tr>                  
                     </tbody>
                 </table>
-                <div style={{display: 'flex'}}>
+                <div className="tidesGraph" style={{display: 'flex'}}>
                     {tidesResultGraphIndex} 
                 </div>
                 <div style={{display: 'flex'}}>
                     {tidesResultGraph}
                 </div>
-    
+                <div className="tidesInfo">
+                    <table>
+                        <tr>
+                            {tideLowCells}
+                        </tr>
+                        <tr>
+                            {tideHighCells}
+                        </tr>
+                    </table>
+                </div>
+
             </div>
         )
     }
