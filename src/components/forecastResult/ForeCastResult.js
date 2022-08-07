@@ -1,6 +1,6 @@
 import {React, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectForeCast, selectStatus, getSpotData } from '../../features/ForeCastData/ForeCastDataSlice';
+import { selectForeCast, selectStatus, getWaveData } from '../../features/ForeCastData/ForeCastDataSlice';
 
 export const ForeCastResult = () => {
     const dispatch = useDispatch();
@@ -25,7 +25,7 @@ export const ForeCastResult = () => {
         const timeNow = current.toLocaleTimeString();
 
     useEffect(()=>{
-        dispatch(getSpotData(urlAppend))
+        dispatch(getWaveData(urlAppend))
     },[])
 
     let dataJSX;
@@ -74,7 +74,7 @@ export const ForeCastResult = () => {
                         <tr>
                             <td className='tableHour'>Hour</td>
                             <td>surf</td>
-                            <td colspan="3">Primary swell</td>
+                            <td colSpan="3">Primary swell</td>
                             <td>Secondary swell</td>
                         </tr>
                     </thead>

@@ -3,15 +3,11 @@ import Surfline from "./Surfline";
 
 
 
-export const getSpotData = createAsyncThunk('/',
+export const getWaveData = createAsyncThunk('/',
     async (arg, thunkAPI) => {
         const response = await Surfline.getWaveData(arg);
         return response.data
     })
-
-// const type = 'wave';
-// const spotId = '584204204e65fad6a77095f0';
-// const params = `spotId=${spotId}`;
 
 const foreCastSlice = createSlice({
     name: "forecast",
@@ -25,17 +21,17 @@ const foreCastSlice = createSlice({
 
     },
     extraReducers: {
-        [getSpotData.pending]: (state,action) => {
+        [getWaveData.pending]: (state,action) => {
             state.status = 'loading';
             
         },
-        [getSpotData.fulfilled]: (state,action) => {
+        [getWaveData.fulfilled]: (state,action) => {
             state.status = 'succeeded';
             state.spotdata = (action.payload)
             // for analyzing of the response object
             console.log(state.spotdata.wave)
         },
-        [getSpotData.rejected]: (state, action) => {
+        [getWaveData.rejected]: (state, action) => {
             state.status = 'rejected';
             state.spotdata = 'flat as a pancake';
         }
