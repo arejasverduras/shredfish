@@ -42,6 +42,8 @@
   /* main wrapper for component */
   border: 1px solid mediumaquamarine;
   padding: 20px;
+  max-width: 1024px;
+  margin: 0 auto;
   
 }
 
@@ -69,14 +71,23 @@ td {
   border: 3px solid black;
 }
 
-.tidesTable {
-  max-width: 100%;
-}
+/* Tides */
 
-.tidesTable td {
-  column-width: 4.16%;
+.TideResult {
+  max-width: 1024px;
 }
 
 .tidesTable {
-  max-width: 100%;
+  max-width: 1024px;
+  column-width: 4%;
+}
+
+.tidesHeaderCell td {
+  column-width: 4%;
+  width: 4%;
+}
+
+.tidesHeights {
+  max-width: 4%;
+  
 }
