@@ -105,6 +105,23 @@ export const TideResult = () => {
         <td key={index+10}>{timestampToTime(high.timestamp*1000)}</td>
         </>
         )
+
+        const tideTable = (
+            <>
+            <tr>
+                <td>{tideLows[0].type}</td><td key="1">{timestampToTime(tideLows[0].timestamp*1000)}</td>
+            </tr>
+            <tr>
+                <td>{tideHighs[0].type}</td><td key="1">{timestampToTime(tideHighs[0].timestamp*1000)}</td>
+            </tr>
+            <tr>
+                <td>{tideLows[1].type}</td><td key="1">{timestampToTime(tideLows[1].timestamp*1000)}</td>
+            </tr>
+            <tr>
+                <td>{tideHighs[1].type}</td><td key="1">{timestampToTime(tideHighs[1].timestamp*1000)}</td>
+            </tr>
+            </>
+        )
  
 
 
@@ -133,13 +150,18 @@ export const TideResult = () => {
                 </div>
                 <div className="tidesInfo">
                     <table>
-                        <tr>
+                        {/* <tr>
                             {tideLowCells}
                         </tr>
                         <tr>
                             {tideHighCells}
-                        </tr>
+                        </tr> */}
                     </table>
+                <div className="tideTable">
+                    <table>
+                            {tideTable}
+                    </table>
+                </div>
                 </div>
 
             </div>
