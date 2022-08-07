@@ -9,13 +9,20 @@ export const getWaveData = createAsyncThunk('/',
         return response.data
     })
 
+    export const getTidesData = createAsyncThunk('/tides',
+    async (arg, thunkAPI) => {
+        const response = await Surfline.getTideData(arg);
+        return response.data
+    })
+
 const foreCastSlice = createSlice({
     name: "forecast",
     initialState: {
         spotdata: ['xxx'],
+        status: 'idle',
         winddata: [],
-        tidedata: [],
-        status: 'idle'
+        tidesdata: [],
+        tidesstatus: 'yyy'
     },
     reducers: {
 
@@ -34,6 +41,20 @@ const foreCastSlice = createSlice({
         [getWaveData.rejected]: (state, action) => {
             state.status = 'rejected';
             state.spotdata = 'flat as a pancake';
+        },
+        [getTidesData.pending]: (state,action) => {
+            state.tidesstatus = 'loading';
+            
+        },
+        [getTidesData.fulfilled]: (state,action) => {
+            state.tidesstatus = 'succeeded';
+            state.tidesdata = (action.payload)
+            // for analyzing of the response object
+            console.log(state.tidesdata)
+        },
+        [getTidesData.rejected]: (state, action) => {
+            state.tidesstatus = 'rejected';
+            state.tidesdata = 'the moon has left us';
         }
     }
 })

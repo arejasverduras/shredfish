@@ -1,18 +1,23 @@
 import {React, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectForeCast, selectStatus, getWaveData } from '../../features/ForeCastData/ForeCastDataSlice';
+import { selectForeCast, selectStatus, getWaveData, getTidesData } from '../../features/ForeCastData/ForeCastDataSlice';
 
 export const ForeCastResult = () => {
     const dispatch = useDispatch();
     
-    const type = 'wave?';
+    const wave = 'wave?';
+    const tides = 'tides?';
+    const wind = 'wind?';
     // ter heijde: 584204204e65fad6a77095f3
     //scheveningen: 584204204e65fad6a77095f0
     //hvh: 584204204e65fad6a77095f2
-    const spotId = '584204204e65fad6a77095f3';
+    const spotId = '584204204e65fad6a77095f0';
     const params = `spotId=${spotId}`;
     const days = '&days=1'
-    const urlAppend = type+params+days;
+
+    const urlAppendWave = wave+params+days;
+    const urlAppendTide = tides+params+days;
+    const urlAppendWind = wind+params+days;
 
     let spotData = useSelector(selectForeCast);
     const status = useSelector(selectStatus);
@@ -25,8 +30,14 @@ export const ForeCastResult = () => {
         const timeNow = current.toLocaleTimeString();
 
     useEffect(()=>{
-        dispatch(getWaveData(urlAppend))
+        dispatch(getWaveData(urlAppendWave));  
     },[])
+
+    useEffect(()=>{
+        dispatch(getTidesData(urlAppendTide));
+    },[])
+
+
 
     let dataJSX;
     let noDataJSX;
