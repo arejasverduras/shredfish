@@ -68,3 +68,15 @@ td {
 .currentHourRow td {
   border: 3px solid black;
 }
+
+.tidesTable {
+  max-width: 100%;
+}
+
+.tidesTable td {
+  column-width: 4.16%;
+}
+
+.tidesTable {
+  max-width: 100%;
+}

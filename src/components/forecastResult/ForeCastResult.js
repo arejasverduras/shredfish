@@ -1,22 +1,21 @@
 import {React, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectForeCast, selectStatus, getWaveData, getTidesData } from '../../features/ForeCastData/ForeCastDataSlice';
+import { TideResult } from '../TidesResult/TideResult';
 
 export const ForeCastResult = () => {
     const dispatch = useDispatch();
     
     const wave = 'wave?';
-    const tides = 'tides?';
     const wind = 'wind?';
     // ter heijde: 584204204e65fad6a77095f3
     //scheveningen: 584204204e65fad6a77095f0
     //hvh: 584204204e65fad6a77095f2
-    const spotId = '584204204e65fad6a77095f0';
+    const spotId = '584204204e65fad6a77095f3';
     const params = `spotId=${spotId}`;
     const days = '&days=1'
 
     const urlAppendWave = wave+params+days;
-    const urlAppendTide = tides+params+days;
     const urlAppendWind = wind+params+days;
 
     let spotData = useSelector(selectForeCast);
@@ -32,12 +31,6 @@ export const ForeCastResult = () => {
     useEffect(()=>{
         dispatch(getWaveData(urlAppendWave));  
     },[])
-
-    useEffect(()=>{
-        dispatch(getTidesData(urlAppendTide));
-    },[])
-
-
 
     let dataJSX;
     let noDataJSX;
@@ -108,6 +101,8 @@ export const ForeCastResult = () => {
             {status !== 'succeeded'? noDataJSX: dataJSX}
             <h2>ForeCast</h2>
             {status !== 'succeeded'? 'no table yet': tableJSX}
+            <TideResult />
             </div>
+            
     )
 }

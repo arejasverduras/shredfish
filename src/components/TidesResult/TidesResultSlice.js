@@ -11,7 +11,7 @@ import Surfline from "../../features/ForeCastData/Surfline";
 const tidesSlice = createSlice({
     name: "tides",
     initialState: {
-        tidesdata: [],
+        tidesdata: '',
         tidesstatus: 'yyy'
     },
     reducers: {

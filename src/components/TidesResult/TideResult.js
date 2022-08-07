@@ -8,17 +8,18 @@ export const TideResult = () => {
 
     const tides = 'tides?';
 
-    const spotId = '584204204e65fad6a77095f0';
+    const spotId = '584204204e65fad6a77095f3';
         // ter heijde: 584204204e65fad6a77095f3
     //scheveningen: 584204204e65fad6a77095f0
     //hvh: 584204204e65fad6a77095f2
     const params = `spotId=${spotId}`;
     const days = '&days=1'
+    const intervalHours = '&intervalHours=1'
 
-    const urlAppendTide = tides+params+days;
+    const urlAppendTide = tides+params+days+intervalHours;
 
 
-    let tidesData = useSelector(selectTidesData)
+    const tidesData = useSelector(selectTidesData)
     const tidesStatus = useSelector(selectTidesStatus);
 
 
@@ -32,11 +33,87 @@ export const TideResult = () => {
         dispatch(getTidesData(urlAppendTide));
     },[])
     
+    if (tidesStatus !== 'succeeded') {
+        return (
+            <div className="NoTideResult">
+                <h3>No tides available</h3>
+                <p>Loading status: {tidesStatus}</p>
+                <p>{tidesData}</p>
     
-    return (
-        <div className="TideResult">
-            <h3>Tide</h3>
+            </div>
+        )
+    } else {
+        // const tableList = spotData.wave.map((hourdata, index ) => 
+        // <tr key={index} className={index === hour? 'currentHourRow':''}>
+        //     <td className='tableHour'>{index}</td>
+        //     <td><strong>{hourdata.surf.min} - {hourdata.surf.max}m</strong></td>
+        //     {/* Primary swell */}
+        //     <td className="primary pSwell">{hourdata.swells[0].height.toFixed(1)}m </td>
+        //     <td className="primary pPeriod"><b>{hourdata.swells[0].period}s</b></td>
+        //     <td className="primary pDirection">{hourdata.swells[0].direction.toFixed(1)}</td>
+        //     {/* secondary swell */}
+        //     <td className="secondarySwell">{hourdata.swells[1].height.toFixed(1)<= 0.09? '':hourdata.swells[1].height.toFixed(1)+'m '+hourdata.swells[0].period+'s '+ hourdata.swells[1].direction.toFixed(1)}</td>
 
-        </div>
-    )
+        // </tr> )
+
+        //filter the tides array
+        const tidesOnly = tidesData.tides.filter((hourdata) => hourdata.type === 'NORMAL');
+
+        const tidesHeader = tidesOnly.map((hourdata, index) =>
+            <td key={index}>{index}</td>)
+
+        const tidesResultHeight = tidesOnly.map((hourdata, index) => 
+            <td key={index}>{hourdata.height}m</td>
+            )
+
+        const tidesResultGraph = tidesOnly.map((hourdata, index) => 
+        <div style={{
+            width: '4.16%', 
+            border: "1px solid black",
+            backgroundColor: 'aquamarine',
+            height: hourdata.height*100
+            }}
+            >
+                </div>
+            )
+
+        const tidesResultType = tidesOnly.map((hourdata, index) => 
+            <td key={index}>{hourdata.type}</td>
+            )
+        
+
+        
+        
+        
+        
+        return (
+            <div className="TideResult">
+                <h3>Tides available</h3>
+                <p>Loading status: {tidesStatus}</p>
+                <table className="tidesTable">
+                    <thead>
+                        <tr>
+                            {tidesHeader}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {tidesResultHeight}
+                        </tr>
+                
+                        <tr>
+                            {/* {tidesResultType} */}
+                        </tr>
+                  
+                    </tbody>
+                </table>
+                <div style={{display: 'flex'}}>
+                    {tidesResultGraph}
+                </div>
+    
+            </div>
+        )
+    }
+    
+
 }
