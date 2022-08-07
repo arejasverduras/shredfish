@@ -38,8 +38,8 @@ const tidesSlice = createSlice({
 // export slice actions
 
 //create and export sliceSelector 
-export const selectTidesData = state => state.forecast.tidesdata;
-export const selectTidesStatus = state => state.forecast.tidesstatus;
+export const selectTidesData = state => state.tides.tidesdata;
+export const selectTidesStatus = state => state.tides.tidesstatus;
 
 // export the reducer as default
 export default tidesSlice.reducer;
