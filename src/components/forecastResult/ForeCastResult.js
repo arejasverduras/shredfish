@@ -67,8 +67,8 @@ export const ForeCastResult = () => {
             <td className="primary pPeriod"><b>{hourdata.swells[0].period}s</b></td>
             <td className="primary pDirection">
                 <div style={{
-                   width: 25,
-                   height: 40,
+                   width: 20,
+                   height: 35,
                    backgroundColor: 'gold',
                    borderBottomLeftRadius: '50%',
                    borderBottomRightRadius: '50%',
