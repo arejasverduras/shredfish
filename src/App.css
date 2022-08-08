@@ -40,10 +40,29 @@
 
 /* Summary */
 
+.spotBasic {
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.169) 25%, transparent 25%, transparent 50%, #000 50%, rgba(0, 0, 0, 0.275) 75%, transparent 75%, #fff);
+  background-size: 50px 15px;
+  max-width: 200px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 10px solid black;
+  border-bottom: none;
+}
+
+.spotBasic h1 {
+  background-color: mediumaquamarine;
+  padding: 8px;
+  border: 5px solid white;
+}
+
 .currentSummary {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  background-image: linear-gradient(45deg, #000 25%, transparent 25%, transparent 50%, rgb(0, 0, 0) 50%, #000 75%, transparent 75%, #fff);
+  background-size: 50px 15px;
+  border: 10px solid black;
 }
 
 .current {
