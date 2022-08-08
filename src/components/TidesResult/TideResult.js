@@ -150,16 +150,16 @@ export const TideResult = () => {
                 </div>
                 <div className="tidesInfo">
                     <table>
-                        {/* <tr>
+                        <tr>
                             {tideLowCells}
                         </tr>
                         <tr>
                             {tideHighCells}
-                        </tr> */}
+                        </tr>
                     </table>
                 <div className="tideTable">
                     <table>
-                            {tideTable}
+                            {/* {tideTable} */}
                     </table>
                 </div>
                 </div>
