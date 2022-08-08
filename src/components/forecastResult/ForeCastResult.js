@@ -82,16 +82,22 @@ export const ForeCastResult = () => {
             <td className={hourdata.swells[1].height.toFixed(1)<= 0.09?'':'secondarySwell'}>
                 {hourdata.swells[1].height.toFixed(1)<= 0.09? '':hourdata.swells[1].height.toFixed(1)+'m '+hourdata.swells[0].period+'s '}
                 {hourdata.swells[1].height.toFixed(1)<= 0.09? '':
-                (<div style={{
-                    width: 15,
-                    height: 30,
-                    backgroundColor: 'lightgreen',
-                    borderBottomLeftRadius: '50%',
-                    borderBottomRightRadius: '50%',
-                    marginLeft: 8,
-                    rotate: `${hourdata.swells[1].direction}deg` 
-                    }} className="seconday swellDirectionArrow">
-                </div>)}
+                (
+                    <img src={arrow} className="swell-arrow" alt="swell-arrow" 
+                    style={{
+                    transform: `rotate(${hourdata.swells[1].direction}deg)`
+                    }} />
+                // <div style={{
+                //     width: 15,
+                //     height: 30,
+                //     backgroundColor: 'lightgreen',
+                //     borderBottomLeftRadius: '50%',
+                //     borderBottomRightRadius: '50%',
+                //     marginLeft: 8,
+                //     rotate: `${hourdata.swells[1].direction}deg` 
+                //     }} className="seconday swellDirectionArrow">
+                // </div>
+                )}
             </td>
 
         </tr> )
