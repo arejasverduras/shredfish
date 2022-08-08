@@ -12,7 +12,7 @@ const WindSlice = createSlice({
     name: "wind",
     initialState: {
         winddata: '',
-        windstatus: 'yyy'
+        windstatus: 'www'
     },
     reducers: {
 
