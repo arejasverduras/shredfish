@@ -1,5 +1,6 @@
 import {React, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { selectSpot, selectSpotName, selectSpotKey } from '../SpotSelector/SpotSlice';
 import { selectForeCast, selectStatus, getWaveData, getTidesData } from '../../features/ForeCastData/ForeCastDataSlice';
 import { TideResult } from '../TidesResult/TideResult';
 
@@ -7,7 +8,6 @@ export const ForeCastResult = () => {
     const dispatch = useDispatch();
     
     const wave = 'wave?';
-    const wind = 'wind?';
     // ter heijde: 584204204e65fad6a77095f3
     //scheveningen: 584204204e65fad6a77095f0
     //hvh: 584204204e65fad6a77095f2
@@ -16,7 +16,6 @@ export const ForeCastResult = () => {
     const days = '&days=1'
 
     const urlAppendWave = wave+params+days;
-    const urlAppendWind = wind+params+days;
 
     let spotData = useSelector(selectForeCast);
     const status = useSelector(selectStatus);

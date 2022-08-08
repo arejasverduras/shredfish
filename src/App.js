@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import { ForeCast } from './components/ForeCast/ForeCast';
 import { ForeCastResult } from './components/forecastResult/ForeCastResult';
 import './App.css';
 
@@ -11,7 +12,7 @@ function App() {
         
       </header>
       <main>
-        <ForeCastResult />
+        <ForeCast />
       </main>
     </div>
   );
