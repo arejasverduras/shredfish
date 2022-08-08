@@ -8,6 +8,8 @@ export const CurrentWind = () => {
     const windStatus = useSelector(selectWindStatus);
     const windData = useSelector(selectWindData);
     
+    const {hour, timeNow} = getHour();
+
     if (windStatus !== 'succeeded') {
         return (
             <div className="NoCurrentWind">
@@ -16,23 +18,23 @@ export const CurrentWind = () => {
         )
     } else {
     
-    const {hour, timeNow} = getHour();
-    
+    const {timestamp, speed, direction, directionType, gust} = windData.wind[hour];
 
+    
     return (
-        <div className="CurrentWind">
+        <div className="current">
+            <h3>Wind</h3>
             <img 
                 src={windArrow}
+                className="windArrow"
                 alt="windArrow"
                 style={{
-                    transform: `rotate(${windData.wind[hour].direction}deg)`
+                    transform: `rotate(${direction}deg)`
                     }}
                 />
-            {/* based on timestamp / hour */}
-            {/* arrow */}
-            {/* speed */}
-            {/* direction */}
-            {/* direction Type */}
+            <p className="directionType">{directionType}</p>
+            <p className="currentWindSpeed">{speed.toFixed(0)}kph</p>
+            
         </div>
     )
     }

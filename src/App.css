@@ -130,12 +130,17 @@ button:hover {
   color: white;
   width: 200px;
   box-shadow: #000 10px 10px;
+  margin-top: 20px;
 }
 
 .highlight {
   font-size: 2em;
   font-weight: bold;
   color: black;
+}
+
+.windArrow {
+  height: 100px;
 }
 
 
