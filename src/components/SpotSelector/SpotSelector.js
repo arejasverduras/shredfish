@@ -6,13 +6,8 @@ export const SpotSelector = () => {
     const dispatch = useDispatch();
     const spotName = useSelector(selectSpotName);
 
-    const skeffa = {
-        name: 'Skeffa',
-        key: '584204204e65fad6a77095f0'
-    }
-
     const mySpots = [{
-        name: 'Skeffa',
+        name: 'Skiffa',
         key: '584204204e65fad6a77095f0'
     },{
         name: 'Ter heije',

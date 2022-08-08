@@ -73,16 +73,10 @@ export const ForeCastResult = () => {
             <td className="primary pSwell">{hourdata.swells[0].height.toFixed(1)}m </td>
             <td className="primary pPeriod"><b>{hourdata.swells[0].period}s</b></td>
             <td className="primary pDirection">
-                <div style={{
-                   width: 20,
-                   height: 35,
-                   backgroundColor: 'gold',
-                   borderBottomLeftRadius: '50%',
-                   borderBottomRightRadius: '50%',
-                   rotate: `${hourdata.swells[0].direction}deg` 
-                }} className="primary swellDirectionArrow">
-
-                </div>
+                <img src={arrow} className="swell-arrow" alt="swell-arrow" 
+                    style={{
+                    transform: `rotate(${hourdata.swells[0].direction}deg)`
+                    }} />
             </td>
             {/* secondary swell */}
             <td className={hourdata.swells[1].height.toFixed(1)<= 0.09?'':'secondarySwell'}>

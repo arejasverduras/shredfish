@@ -97,4 +97,14 @@ td {
   height: 100%;
 }
 
+.primary .swell-arrow {
+  height: 30px;
+  filter: invert(40%) sepia(92%) saturate(1523%) hue-rotate(164deg) brightness(98%) contrast(101%);
+}
+
+.secondarySwell .swell-arrow {
+  height: 20px;
+  filter: invert(40%) sepia(92%) saturate(1523%) hue-rotate(164deg) brightness(98%) contrast(101%);
+}
+
 /* Tides */
