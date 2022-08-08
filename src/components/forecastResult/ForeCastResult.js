@@ -32,7 +32,7 @@ export const ForeCastResult = () => {
 
     useEffect(()=>{
         dispatch(getWaveData(urlAppendWave));  
-    },[])
+    },[spotKey])
 
     let dataJSX;
     let noDataJSX;

@@ -10,12 +10,15 @@ import Surfline from "../../features/ForeCastData/Surfline";
 const spotSlice = createSlice({
     name: "spot",
     initialState: {
-        spotName: ['Scheveningen Nord'],
+        spotName: 'Scheveningen Nord',
         spotKey: '584204204e65fad6a77095f0',
         spotStatus: 'idle'
     },
     reducers: {
-
+        setSpotInfo: (state, action) => {
+            state.spotKey = action.payload.key;
+            state.spotName = action.payload.name;
+        }
     },
     extraReducers: {
         [getSpotInfo.pending]: (state,action) => {
@@ -36,6 +39,7 @@ const spotSlice = createSlice({
 })
 
 // export slice actions
+export const {setSpotInfo} = spotSlice.actions;
 
 //create and export sliceSelector 
 export const selectSpotName = state => state.spot.spotName;
