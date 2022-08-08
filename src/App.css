@@ -106,7 +106,7 @@ button:hover {
 
 .currentSummary {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   background-image: linear-gradient(45deg, #000 25%, transparent 25%, transparent 50%, rgb(0, 0, 0) 50%, #000 75%, transparent 75%, #fff);
   background-size: 50px 15px;
@@ -128,9 +128,34 @@ button:hover {
 .current {
   background-color: mediumaquamarine;
   color: white;
-  width: 200px;
+  width: 100%;
   box-shadow: #000 10px 10px;
-  margin-top: 20px;
+  margin: 10px;
+  padding: 20px
+}
+
+@media screen and (min-width: 425px) {
+  .current {
+    max-width: 34%;
+    margin: 10px;
+    padding: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .current {
+    width: 40%;
+    margin: 10px;
+    padding: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .current {
+    max-width: 400px;
+    margin: 10px;
+    padding: none;
+  }
 }
 
 .highlight {
