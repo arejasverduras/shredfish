@@ -59,7 +59,7 @@ const spotSlice = createSlice({
 })
 
 // export slice actions
-export const {setSpotInfo} = spotSlice.actions;
+export const {setSpotInfo, addFavoriteSpot, removeFavoriteSpot} = spotSlice.actions;
 
 //create and export sliceSelector 
 export const selectSpotName = state => state.spot.spotName;
