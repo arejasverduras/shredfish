@@ -12,7 +12,21 @@ const spotSlice = createSlice({
     initialState: {
         spotName: 'Scheveningen Nord',
         spotKey: '584204204e65fad6a77095f0',
-        spotStatus: 'idle'
+        spotStatus: 'idle',
+        favoriteSpots: [{
+            name: 'Skiffa',
+            key: '584204204e65fad6a77095f0'
+        },{
+            name: 'Ter heije',
+            key: '584204204e65fad6a77095f1'
+        },{
+            name: 'Hoekie',
+            key: '584204204e65fad6a77095f2'
+        },
+        {
+            name: 'Sopelana',
+            key: '5842041f4e65fad6a7708e75'
+        }]
     },
     reducers: {
         setSpotInfo: (state, action) => {
@@ -45,6 +59,7 @@ export const {setSpotInfo} = spotSlice.actions;
 export const selectSpotName = state => state.spot.spotName;
 export const selectSpotKey = state => state.spot.spotKey;
 export const selectSpotStatus = state => state.spot.spotStatus;
+export const selectFavoriteSpots = state => state.spot.favoriteSpots;
 
 // export the reducer as default
 export default spotSlice.reducer;
