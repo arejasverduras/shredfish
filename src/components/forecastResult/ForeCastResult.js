@@ -44,17 +44,23 @@ export const ForeCastResult = () => {
         )
     } else {
         dataJSX = (
-            <>
-            <h3>Hour</h3>
-            <p>{`${hour}:00`}</p>
-        <h3>Surf Height</h3>
-            <p>{spotData.wave[hour].surf.min} - {spotData.wave[hour].surf.max}</p>
-            <p>{spotData.wave[hour].surf.humanRelation}</p>
-        <h3>Period</h3>
-            <p>{spotData.wave[hour].swells[0].period}</p>
-        <h3>Swell Direction</h3>
-            <p>{spotData.wave[hour].swells[0].direction}</p>
-            </>
+        <div className="currentSummary">
+                <h3>Hour</h3>
+                <p>{`${hour}:00`}</p>
+            <div className="currentSurfHeight">
+                <h3>Surf Height</h3>
+                    <p>{spotData.wave[hour].surf.min} - {spotData.wave[hour].surf.max}</p>
+                    <p>{spotData.wave[hour].surf.humanRelation}</p>
+            </div>
+            <div className="currentPeriod">
+                <h3>Period</h3>
+                    <p>{spotData.wave[hour].swells[0].period}</p>
+            </div>
+            <div className="currentDirection">
+                <h3>Swell Direction</h3>
+                    <p>{spotData.wave[hour].swells[0].direction}</p>
+            </div>
+        </div>
         )
 
         const tableList = spotData.wave.map((hourdata, index ) => 
@@ -116,7 +122,10 @@ export const ForeCastResult = () => {
     
     return (
         <div className='ForeCastResult'>
-            <h1>{spotName}</h1>
+            <div className="spotBasic">
+                <h1>{spotName}</h1>
+            </div>
+            
             <h2>Status</h2>
                 <p>{status}</p>
             <h2>Current</h2>
