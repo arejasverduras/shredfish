@@ -1,20 +1,20 @@
 import {React, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectTidesData, selectTidesStatus, getTidesData } from './TidesResultSlice';
+import { selectSpotKey, selectSpotName } from '../SpotSelector/SpotSlice';
 
 export const TideResult = () => {
     const dispatch = useDispatch();
     
+    const spotName = useSelector(selectSpotName);
+    const spotKey = useSelector(selectSpotKey);
+
     const tides = 'tides?';
-    const spotId = '584204204e65fad6a77095f0';
-        // ter heijde: 584204204e65fad6a77095f3
-    //scheveningen: 584204204e65fad6a77095f0
-    //hvh: 584204204e65fad6a77095f2
+    const spotId = spotKey;
     const params = `spotId=${spotId}`;
     const days = '&days=1'
-    const intervalHours = '&intervalHours=1'
 
-    const urlAppendTide = tides+params+days+intervalHours;
+    const urlAppendTide = tides+params+days;
 
     const tidesData = useSelector(selectTidesData)
     const tidesStatus = useSelector(selectTidesStatus);
@@ -39,14 +39,14 @@ export const TideResult = () => {
 
     useEffect(()=>{
         dispatch(getTidesData(urlAppendTide));
-    },[])
+    },[urlAppendTide])
     
     if (tidesStatus !== 'succeeded') {
         return (
             <div className="NoTideResult">
                 <h3>No tides available</h3>
-                <p>Loading status: {tidesStatus}</p>
-                <p>{tidesData}</p>
+                <p>Loading status : {tidesStatus}</p>
+                <p>No data yet</p>
     
             </div>
         )
@@ -105,26 +105,6 @@ export const TideResult = () => {
         <td key={index+10}>{timestampToTime(high.timestamp*1000)}</td>
         </>
         )
-
-        const tideTable = (
-            <>
-            <tr>
-                <td>{tideLows[0].type}</td><td key="1">{timestampToTime(tideLows[0].timestamp*1000)}</td>
-            </tr>
-            <tr>
-                <td>{tideHighs[0].type}</td><td key="1">{timestampToTime(tideHighs[0].timestamp*1000)}</td>
-            </tr>
-            <tr>
-                <td>{tideLows[1].type}</td><td key="1">{timestampToTime(tideLows[1].timestamp*1000)}</td>
-            </tr>
-            <tr>
-                <td>{tideHighs[1].type}</td><td key="1">{timestampToTime(tideHighs[1].timestamp*1000)}</td>
-            </tr>
-            </>
-        )
- 
-
-
             
         return (
             <div className="TideResult">
