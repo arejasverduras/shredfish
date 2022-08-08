@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectSpotName, selectSpotKey } from '../SpotSelector/SpotSlice';
 import { selectForeCast, selectStatus, getWaveData } from '../../features/ForeCastData/ForeCastDataSlice';
 import arrow from '../../up-arrow-swell.svg'
+import { WindResult } from '../WindResult/WindResult';
 
 export const ForeCastResult = () => {
     const dispatch = useDispatch();
@@ -123,6 +124,7 @@ export const ForeCastResult = () => {
 
     
     return (
+        <>
         <div className='ForeCastResult'>
             <p>Get data: {status}</p>
             <h1>{spotName}</h1>
@@ -136,6 +138,8 @@ export const ForeCastResult = () => {
             <h2>ForeCast</h2>
             {status !== 'succeeded'? 'no table yet': tableJSX}
             </div>
+            </>
+            
             
     )
 }

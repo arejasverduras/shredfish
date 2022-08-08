@@ -39,7 +39,7 @@ export const WindResult = () => {
 
     useEffect(()=>{
         dispatch(getWindData(urlAppendWind));
-    },[urlAppendWind])
+    },[spotKey])
 
     return (
         <>
