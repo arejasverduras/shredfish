@@ -38,17 +38,18 @@
 
 /* ForeCastResult */
 
+.ForeCast {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
 .ForeCastResult {
   /* main wrapper for component */
   border: 1px solid mediumaquamarine;
-  padding: 20px;
-  max-width: 1024px;
-  margin: 0 auto;
-  
+  padding: 20px;  
 }
 
 table {
-  margin: 0 auto;
   text-align: center;
 }
 
@@ -77,22 +78,3 @@ td {
 }
 
 /* Tides */
-
-.TideResult {
-  max-width: 1024px;
-}
-
-.tidesTable {
-  max-width: 1024px;
-  column-width: 4%;
-}
-
-.tidesHeaderCell td {
-  column-width: 4%;
-  width: 4%;
-}
-
-.tidesHeights {
-  max-width: 4%;
-  
-}
