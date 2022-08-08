@@ -18,7 +18,7 @@ const spotSlice = createSlice({
             key: '584204204e65fad6a77095f0'
         },{
             name: 'Ter heije',
-            key: '584204204e65fad6a77095f1'
+            key: '584204204e65fad6a77095f3'
         },{
             name: 'Hoekie',
             key: '584204204e65fad6a77095f2'

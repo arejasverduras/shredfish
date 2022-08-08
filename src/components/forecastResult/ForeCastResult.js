@@ -4,6 +4,8 @@ import { selectSpotName, selectSpotKey } from '../SpotSelector/SpotSlice';
 import { selectForeCast, selectStatus, getWaveData } from '../../features/ForeCastData/ForeCastDataSlice';
 import arrow from '../../up-arrow-swell.svg'
 import { WindResult } from '../WindResult/WindResult';
+import { CurrentWind } from '../CurrentWind/CurrentWind';
+import { getHour } from '../../features/features';
 
 export const ForeCastResult = () => {
     const dispatch = useDispatch();
@@ -22,11 +24,7 @@ export const ForeCastResult = () => {
     const status = useSelector(selectStatus);
 
 
-    // console.log(state.spotdata.wave[0])
-        // set current time to hour to integer
-        const current = new Date();
-        const hour = current.getHours();
-        const timeNow = current.toLocaleTimeString();
+    const {hour, timeNow} = getHour();
 
     useEffect(()=>{
         dispatch(getWaveData(urlAppendWave));  
@@ -63,6 +61,7 @@ export const ForeCastResult = () => {
                     }} />
                     <p>{spotData.wave[hour].swells[0].direction}</p>
             </div>
+            <CurrentWind />
         </div>
         )
 
@@ -88,16 +87,6 @@ export const ForeCastResult = () => {
                     style={{
                     transform: `rotate(${hourdata.swells[1].direction}deg)`
                     }} />
-                // <div style={{
-                //     width: 15,
-                //     height: 30,
-                //     backgroundColor: 'lightgreen',
-                //     borderBottomLeftRadius: '50%',
-                //     borderBottomRightRadius: '50%',
-                //     marginLeft: 8,
-                //     rotate: `${hourdata.swells[1].direction}deg` 
-                //     }} className="seconday swellDirectionArrow">
-                // </div>
                 )}
             </td>
 
