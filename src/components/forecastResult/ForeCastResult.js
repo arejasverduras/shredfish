@@ -42,24 +42,19 @@ export const ForeCastResult = () => {
             </>
         )
     } else {
+        const {min, max, humanRelation} = spotData.wave[hour].surf;
+        
         dataJSX = (
         <div className="currentSummary">
 
             <div className="current SurfHeight">
-                <h3>Surf Height</h3>
-                    <p className="highlight">{spotData.wave[hour].surf.min} - {spotData.wave[hour].surf.max}</p>
-                    <p>{spotData.wave[hour].surf.humanRelation}</p>
-            </div>
-            <div className="current Period">
-                <h3>Period</h3>
-                    <p className='highlight'>{spotData.wave[hour].swells[0].period}</p>
-            </div>
-            <div className="current Direction">
-                <h3>Swell Direction</h3>
+                <h3>Swell</h3>
                 <img src={arrow} className="swell-arrow" alt="swell-arrow" style={{
                     transform: `rotate(${spotData.wave[hour].swells[0].direction}deg)`
                     }} />
-                    <p>{spotData.wave[hour].swells[0].direction}</p>
+                    <p className="highlight">{min} - {max}m</p>
+                    <p>{spotData.wave[hour].surf.humanRelation}</p>
+                    <p className='highlight'>{spotData.wave[hour].swells[0].period}s</p>
             </div>
             <CurrentWind />
         </div>

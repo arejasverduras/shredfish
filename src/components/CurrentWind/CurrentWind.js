@@ -47,8 +47,9 @@ export const CurrentWind = () => {
                     transform: `rotate(${direction}deg)`
                     }}
                 />
+            
+            <p className="highlight currentWindSpeed">{speed.toFixed(0)}kph</p>
             <p className="directionType">{directionType}</p>
-            <p className="currentWindSpeed">{speed.toFixed(0)}kph</p>
             
         </div>
     )
