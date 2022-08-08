@@ -2,7 +2,7 @@ import {React, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectSpotName, selectSpotKey } from '../SpotSelector/SpotSlice';
 import { selectForeCast, selectStatus, getWaveData } from '../../features/ForeCastData/ForeCastDataSlice';
-
+import arrow from '../../up-arrow-swell.svg'
 
 export const ForeCastResult = () => {
     const dispatch = useDispatch();
@@ -45,19 +45,21 @@ export const ForeCastResult = () => {
     } else {
         dataJSX = (
         <div className="currentSummary">
-                <h3>Hour</h3>
-                <p>{`${hour}:00`}</p>
-            <div className="currentSurfHeight">
+
+            <div className="current SurfHeight">
                 <h3>Surf Height</h3>
-                    <p>{spotData.wave[hour].surf.min} - {spotData.wave[hour].surf.max}</p>
+                    <p className="highlight">{spotData.wave[hour].surf.min} - {spotData.wave[hour].surf.max}</p>
                     <p>{spotData.wave[hour].surf.humanRelation}</p>
             </div>
-            <div className="currentPeriod">
+            <div className="current Period">
                 <h3>Period</h3>
-                    <p>{spotData.wave[hour].swells[0].period}</p>
+                    <p className='highlight'>{spotData.wave[hour].swells[0].period}</p>
             </div>
-            <div className="currentDirection">
+            <div className="current Direction">
                 <h3>Swell Direction</h3>
+                <img src={arrow} className="swell-arrow" alt="swell-arrow" style={{
+                    transform: `rotate(${spotData.wave[hour].swells[0].direction}deg)`
+                    }} />
                     <p>{spotData.wave[hour].swells[0].direction}</p>
             </div>
         </div>
@@ -122,13 +124,12 @@ export const ForeCastResult = () => {
     
     return (
         <div className='ForeCastResult'>
+            
             <div className="spotBasic">
                 <h1>{spotName}</h1>
+                <p>Get data: {status}</p>
             </div>
-            
-            <h2>Status</h2>
-                <p>{status}</p>
-            <h2>Current</h2>
+            <h2 style={{display: 'none'}}>Current</h2>
             {status !== 'succeeded'? noDataJSX: dataJSX}
             <h2>ForeCast</h2>
             {status !== 'succeeded'? 'no table yet': tableJSX}

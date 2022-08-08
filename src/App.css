@@ -38,6 +38,25 @@
 
 /* ForeCastResult */
 
+/* Summary */
+
+.currentSummary {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.current {
+  background-color: mediumaquamarine;
+  color: white;
+  width: 200px;
+}
+
+.highlight {
+  font-size: 2em;
+  font-weight: bold;
+}
+
 .ForeCast {
   margin: 0 auto;
   max-width: 1024px;
@@ -51,6 +70,7 @@
 
 table {
   text-align: center;
+  margin: 0 auto;
 }
 
 td {
