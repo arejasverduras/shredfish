@@ -10,7 +10,7 @@ import Surfline from "../../features/ForeCastData/Surfline";
 const spotSlice = createSlice({
     name: "spot",
     initialState: {
-        spotName: ['Scheveningen Noord'],
+        spotName: ['Scheveningen Nord'],
         spotKey: '584204204e65fad6a77095f0',
         spotStatus: 'idle'
     },

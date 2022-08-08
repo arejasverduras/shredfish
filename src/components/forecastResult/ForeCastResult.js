@@ -1,17 +1,20 @@
 import {React, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectSpot, selectSpotName, selectSpotKey } from '../SpotSelector/SpotSlice';
-import { selectForeCast, selectStatus, getWaveData, getTidesData } from '../../features/ForeCastData/ForeCastDataSlice';
+import { selectSpotName, selectSpotKey, selectSpotStatus } from '../SpotSelector/SpotSlice';
+import { selectForeCast, selectStatus, getWaveData } from '../../features/ForeCastData/ForeCastDataSlice';
 import { TideResult } from '../TidesResult/TideResult';
 
 export const ForeCastResult = () => {
     const dispatch = useDispatch();
+
+    const spotName = useSelector(selectSpotName);
+    const spotKey = useSelector(selectSpotKey)
     
     const wave = 'wave?';
     // ter heijde: 584204204e65fad6a77095f3
     //scheveningen: 584204204e65fad6a77095f0
     //hvh: 584204204e65fad6a77095f2
-    const spotId = '584204204e65fad6a77095f0';
+    const spotId = spotKey;
     const params = `spotId=${spotId}`;
     const days = '&days=1'
 
@@ -116,8 +119,8 @@ export const ForeCastResult = () => {
     
     return (
         <div className='ForeCastResult'>
-            <h1>Select Spot</h1>
-                <p>Scheveningen Noord</p>
+            <h1>Selected Spot</h1>
+                <p>{spotName}</p>
             <h2>Status</h2>
                 <p>{status}</p>
             <h2>Current</h2>
