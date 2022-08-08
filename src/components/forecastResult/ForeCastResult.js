@@ -125,13 +125,14 @@ export const ForeCastResult = () => {
     return (
         <div className='ForeCastResult'>
             <p>Get data: {status}</p>
-            <div className="spotBasic">
-                <h1>{spotName}</h1>
-                
+            <h1>{spotName}</h1>
+            <div className="ForeCastHeader">
+                <div className="spotBasic">
+                </div>
+                <h2 style={{display: 'none'}}>Current</h2>
+                {status !== 'succeeded'? noDataJSX: dataJSX}
+                <div className="spotBasic"></div>
             </div>
-            <h2 style={{display: 'none'}}>Current</h2>
-            {status !== 'succeeded'? noDataJSX: dataJSX}
-            
             <h2>ForeCast</h2>
             {status !== 'succeeded'? 'no table yet': tableJSX}
             </div>

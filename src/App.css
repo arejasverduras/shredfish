@@ -36,33 +36,73 @@
 
 /* App start */
 
+.ForeCast {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
 /* ForeCastResult */
+
+
+
+/* .ForeCastHeader {
+  background-color: mediumaquamarine;
+} */
 
 /* Summary */
 
 .spotBasic {
   background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.169) 25%, transparent 25%, transparent 50%, #000 50%, rgba(0, 0, 0, 0.275) 75%, transparent 75%, #fff);
   background-size: 50px 15px;
-  max-width: 200px;
+  width: 100%;
+  height: 25px;
   margin: 0 auto;
-  padding: 20px;
-  border: 10px solid black;
-  border-bottom: none;
+  padding-bottom: 20px;
+
+  --c:rgb(0, 0, 0);   /* Color */
+  --t:2px;   /* Thickness */
+  --h:15px;  /* Height (vertical distance between two curve) */
+  --w:120px; /* Width  */
+  --p:6px;  /* adjust this to correct the position when changing the other values*/
+  background:
+    radial-gradient(farthest-side at 50% calc(100% + var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t))),
+    radial-gradient(farthest-side at 50% calc(0%   - var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t)));
+    
+  background-size:var(--w) var(--h);
+  background-position:calc(var(--w)/2) calc(var(--h)/2),0px calc(var(--h)/2);
+  
+  
+  margin:5px 0;
+  display:inline-block;
+
 }
 
 .spotBasic h1 {
   background-color: mediumaquamarine;
   padding: 8px;
   border: 5px solid white;
+  max-width: 100%;
 }
 
 .currentSummary {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   background-image: linear-gradient(45deg, #000 25%, transparent 25%, transparent 50%, rgb(0, 0, 0) 50%, #000 75%, transparent 75%, #fff);
   background-size: 50px 15px;
-  border: 10px solid black;
+  /* border: 10px solid black; */
+
+  --c:rgb(0, 0, 0);   /* Color */
+  --t:2px;   /* Thickness */
+  --h:25px;  /* Height (vertical distance between two curve) */
+  --w:120px; /* Width  */
+  --p:8px;  /* adjust this to correct the position when changing the other values*/
+  background:
+    radial-gradient(farthest-side at 50% calc(100% + var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t))),
+    radial-gradient(farthest-side at 50% calc(0%   - var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t)));
+    
+  background-size:var(--w) var(--h);
+  background-position:calc(var(--w)/2) calc(var(--h)/2),0px calc(var(--h)/2);
 }
 
 .current {
@@ -74,16 +114,13 @@
 .highlight {
   font-size: 2em;
   font-weight: bold;
+  color: black;
 }
 
-.ForeCast {
-  margin: 0 auto;
-  max-width: 1024px;
-}
+
 
 .ForeCastResult {
   /* main wrapper for component */
-  border: 1px solid mediumaquamarine;
   padding: 20px;  
 }
 
