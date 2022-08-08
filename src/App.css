@@ -143,6 +143,26 @@ button:hover {
   height: 100px;
 }
 
+.lowWind {
+  background-color: mediumaquamarine;
+}
+
+.moderateWind {
+  background-color: orange;
+}
+
+.strongWind {
+  background-color: orangered;
+}
+
+.outOfBounds {
+  background-color: purple;
+}
+
+.stormWind {
+  background-color: darkred;
+}
+
 
 
 .ForeCastResult {
