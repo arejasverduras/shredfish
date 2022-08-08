@@ -1,5 +1,8 @@
+
+
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -38,7 +41,26 @@
 
 .ForeCast {
   margin: 0 auto;
-  max-width: 1024px;
+  max-width: 100%;
+  background-color: rgb(224, 225, 187);
+}
+
+/* spot selector */
+button {
+  background-color: white;
+  border: 1px solid black;
+  padding: 12px;
+  margin-right: 8px;
+  font-size: 1.2em;
+  box-shadow: #000 3px 3px;
+  color: black;
+
+}
+
+button:hover {
+  background-color: mediumaquamarine;
+  color: white;
+  border: 1px solid mediumaquamarine;
 }
 
 /* ForeCastResult */
@@ -70,8 +92,6 @@
     
   background-size:var(--w) var(--h);
   background-position:calc(var(--w)/2) calc(var(--h)/2),0px calc(var(--h)/2);
-  
-  
   margin:5px 0;
   display:inline-block;
 
@@ -109,6 +129,7 @@
   background-color: mediumaquamarine;
   color: white;
   width: 200px;
+  box-shadow: #000 10px 10px;
 }
 
 .highlight {
