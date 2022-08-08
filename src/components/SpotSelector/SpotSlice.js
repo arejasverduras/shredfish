@@ -32,6 +32,12 @@ const spotSlice = createSlice({
         setSpotInfo: (state, action) => {
             state.spotKey = action.payload.key;
             state.spotName = action.payload.name;
+        }, 
+        addFavoriteSpot: (state, action) => {
+            // to be written
+        },
+        removeFavoriteSpot: (state, action) => {
+            //to be written
         }
     },
     extraReducers: {
