@@ -24,7 +24,7 @@ export const ForeCastTable = () => {
   const tableList = waveData.wave.map((hourdata, index ) => 
   <tr key={index} className={index === hour? 'currentHourRow':''}>
       <td className='tableHour'>{index}</td>
-      <td><strong>{hourdata.surf.min} - {hourdata.surf.max}m</strong></td>
+      <td className="tableSurf"><strong>{hourdata.surf.min}-{hourdata.surf.max}m</strong></td>
       
       {/* Primary swell */}
       <td className="primary pSwell">{hourdata.swells[0].height.toFixed(1)}m </td>
@@ -63,7 +63,7 @@ export const ForeCastTable = () => {
                     }}
                 />
         </td>
-        <td className="tableWindRelation">{windData.wind[index].directionType}</td>
+        {/* <td className="tableWindRelation">{windData.wind[index].directionType}</td> */}
         </>
      :
      <td>No wind data</td>}

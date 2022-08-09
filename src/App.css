@@ -208,8 +208,14 @@ td {
   text-align: right;
 }
 
-.primary {
+.tableSurf {
+  background-color: rgba(102, 205, 171, 0.721);
+  font-size: 1.2em;
+  color: white;
+}
 
+.primary {
+  background-color: rgba(102, 205, 171, 0.234);
 }
 
 .currentHourRow td {
