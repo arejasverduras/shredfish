@@ -51,7 +51,10 @@ export const ForeCastTable = () => {
       {/* Wind data */}
      {windStatus === 'succeeded'?
      <td>Hallo</td>
-     
+     //snelheid
+     //richting met arrow
+     //gust
+     //classification for bg colors
      :
      <td>No wind data</td>}
   </tr> )
