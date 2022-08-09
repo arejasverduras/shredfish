@@ -1,8 +1,8 @@
 import {React} from "react";
 import { useSelector } from "react-redux";
-import { selectWindData, selectWindStatus } from "../WindResult/WindSlice";
-import windArrow from '../../up-arrow-wind.svg';
-import { getHour } from "../../features/features";
+import { selectWindData, selectWindStatus } from "../../WindResult/WindSlice";
+import windArrow from '../../../up-arrow-wind.svg';
+import { getHour } from "../../../features/features";
 
 export const CurrentWind = () => {
     const windStatus = useSelector(selectWindStatus);
@@ -13,7 +13,7 @@ export const CurrentWind = () => {
     if (windStatus !== 'succeeded') {
         return (
             <div className="NoCurrentWind">
-                <p>No wind data available. Loading wind: {windStatus}</p>
+                <p>No wind data available. Loading wind status: {windStatus}</p>
             </div>
         )
     } else {

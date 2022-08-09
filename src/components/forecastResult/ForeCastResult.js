@@ -4,7 +4,8 @@ import { selectSpotName, selectSpotKey } from '../SpotSelector/SpotSlice';
 import { selectForeCast, selectStatus, getWaveData } from '../../features/ForeCastData/ForeCastDataSlice';
 import arrow from '../../up-arrow-swell.svg'
 import { WindResult } from '../WindResult/WindResult';
-import { CurrentWind } from '../CurrentWind/CurrentWind';
+import { CurrentSwell } from '../Current/CurrentSwell/CurrentSwell';
+import { CurrentWind } from '../Current/CurrentWind/CurrentWind';
 import { getHour } from '../../features/features';
 
 export const ForeCastResult = () => {
@@ -42,20 +43,9 @@ export const ForeCastResult = () => {
             </>
         )
     } else {
-        const {min, max, humanRelation} = spotData.wave[hour].surf;
-        
         dataJSX = (
         <div className="currentSummary">
-
-            <div className="current SurfHeight">
-                <h3>Swell</h3>
-                <img src={arrow} className="swell-arrow" alt="swell-arrow" style={{
-                    transform: `rotate(${spotData.wave[hour].swells[0].direction}deg)`
-                    }} />
-                    <p className="highlight">{min} - {max}m</p>
-                    <p>{spotData.wave[hour].surf.humanRelation}</p>
-                    <p className='highlight'>{spotData.wave[hour].swells[0].period}s</p>
-            </div>
+            <CurrentSwell />
             <CurrentWind />
         </div>
         )
