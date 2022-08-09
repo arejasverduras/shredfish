@@ -3,6 +3,7 @@ import { SpotSelector } from "../SpotSelector/SpotSelector";
 import { ForeCastResult } from "../forecastResult/ForeCastResult";
 import { TideResult } from "../TidesResult/TideResult";
 import { WindResult } from "../WindResult/WindResult";
+import { WeatherResult } from "../WeatherResult/WeatherResult";
 
 export const ForeCast = ()=>{
     return (
@@ -11,6 +12,7 @@ export const ForeCast = ()=>{
             <ForeCastResult />
             <TideResult />
             <WindResult />
+            <WeatherResult />
         </div>
     )
 }
