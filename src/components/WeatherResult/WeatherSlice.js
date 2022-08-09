@@ -7,7 +7,7 @@ async (arg, thunkAPI) => {
     return response.data;
 })
 
-const weatherSlice = createSlice({
+const WeatherSlice = createSlice({
     name: 'weather',
     initialState: {
         weatherStatus: 'idle',
@@ -41,4 +41,4 @@ export const selectWeatherData = state => state.weather.weatherData;
 export const selectWeatherStatus = state => state.weather.weatherStatus;
 
 // export the reducer as default
-export default weatherSlice.reducer;
+export default WeatherSlice.reducer;
