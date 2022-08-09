@@ -20,8 +20,10 @@ export const CurrentWind = () => {
     
     const {timestamp, speed, direction, directionType, gust} = windData.wind[hour];
 
+    const classNames='current '+windStrength(speed);
+
     return (
-        <div className={windStrength(speed)}>
+        <div className={classNames}>
             <h3>Wind</h3>
             <img 
                 src={windArrow}

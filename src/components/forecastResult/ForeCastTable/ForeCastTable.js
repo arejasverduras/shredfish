@@ -51,9 +51,9 @@ export const ForeCastTable = () => {
       {/* Wind data */}
      {windStatus === 'succeeded'?
      <>
-     <td className="tableWindSpeed">{windData.wind[index].speed.toFixed(0)}</td>
+     <td className="tableWindDirection">{windData.wind[index].speed.toFixed(0)}</td>
      <td className="tableWindGusts">{windData.wind[index].gust.toFixed(0)}<br/>kph</td>
-     <td className="tableWindDirection">
+     <td className={windStrength(windData.wind[index].speed.toFixed(0))}>
         <img 
                 src={windArrow}
                 className="tableWindArrow"
@@ -63,6 +63,7 @@ export const ForeCastTable = () => {
                     }}
                 />
         </td>
+        <td className="tableWindRelation">{windData.wind[index].directionType}</td>
         </>
      
      //snelheid

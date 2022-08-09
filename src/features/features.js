@@ -21,5 +21,5 @@ export const windStrength = (speed) => {
     }else {
         strength="outOfBounds"
     }
-    return 'current '+strength;
+    return strength;
 }
