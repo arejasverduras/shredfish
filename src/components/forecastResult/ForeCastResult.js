@@ -4,32 +4,29 @@ import { selectSpotName, selectSpotKey } from '../SpotSelector/SpotSlice';
 import { selectForeCast, selectStatus, getWaveData } from '../../features/ForeCastData/ForeCastDataSlice';
 import arrow from '../../up-arrow-swell.svg'
 import { WindResult } from '../WindResult/WindResult';
-import { CurrentSwell } from '../Current/CurrentSwell/CurrentSwell';
-import { CurrentWind } from '../Current/CurrentWind/CurrentWind';
+import { Current } from '../Current/Current';
 import { getHour } from '../../features/features';
 
 export const ForeCastResult = () => {
     const dispatch = useDispatch();
 
     const spotName = useSelector(selectSpotName);
-    const spotKey = useSelector(selectSpotKey);
     
-    const wave = 'wave?';
-    const spotId = spotKey;
-    const params = `spotId=${spotId}`;
-    const days = '&days=1'
+    //get variables for API call
+    const type = 'wave';
+    const spotId = useSelector(selectSpotKey);
+    const days = 1;
 
-    const urlAppendWave = wave+params+days;
+    const reqUrl = `${type}?&spotId=${spotId}&days=${days}`;
+
+    useEffect(()=>{
+        dispatch(getWaveData(reqUrl));  
+    },[spotId])
 
     let spotData = useSelector(selectForeCast);
     const status = useSelector(selectStatus);
 
-
     const {hour, timeNow} = getHour();
-
-    useEffect(()=>{
-        dispatch(getWaveData(urlAppendWave));  
-    },[spotKey])
 
     let dataJSX;
     let noDataJSX;
@@ -38,16 +35,12 @@ export const ForeCastResult = () => {
     if (status !== 'succeeded'){
         noDataJSX = (
             <>
-            <h3>Time</h3>
-                <p>{timeNow}</p>
+            
             </>
         )
     } else {
         dataJSX = (
-        <div className="currentSummary">
-            <CurrentSwell />
-            <CurrentWind />
-        </div>
+        ''
         )
 
         const tableList = spotData.wave.map((hourdata, index ) => 
@@ -106,7 +99,7 @@ export const ForeCastResult = () => {
                 <div className="spotBasic">
                 </div>
                 <h2 style={{display: 'none'}}>Current</h2>
-                {status !== 'succeeded'? noDataJSX: dataJSX}
+                <Current />
                 <div className="spotBasic"></div>
             </div>
             <h2>ForeCast</h2>

@@ -1,48 +1,5 @@
-
-
 .App {
   text-align: center;
-
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-
-.App-header {
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-/* App start */
-
-.ForeCast {
-  margin: 0 auto;
-  max-width: 100%;
-  background-color: rgb(255, 255, 255);
 }
 
 /* spot selector */
@@ -63,8 +20,13 @@ button:hover {
   border: 1px solid mediumaquamarine;
 }
 
-/* ForeCastResult */
 
+/* ForeCastResult */
+.ForeCast {
+  margin: 0 auto;
+  max-width: 100%;
+  background-color: rgb(255, 255, 255);
+}
 
 
 /* .ForeCastHeader {
@@ -72,6 +34,27 @@ button:hover {
 } */
 
 /* Summary */
+
+.Current {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-image: linear-gradient(45deg, #000 25%, transparent 25%, transparent 50%, rgb(0, 0, 0) 50%, #000 75%, transparent 75%, #fff);
+  background-size: 50px 15px;
+  /* border: 10px solid black; */
+
+  --c:rgb(0, 0, 0);   /* Color */
+  --t:2px;   /* Thickness */
+  --h:25px;  /* Height (vertical distance between two curve) */
+  --w:120px; /* Width  */
+  --p:8px;  /* adjust this to correct the position when changing the other values*/
+  background:
+    radial-gradient(farthest-side at 50% calc(100% + var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t))),
+    radial-gradient(farthest-side at 50% calc(0%   - var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t)));
+    
+  background-size:var(--w) var(--h);
+  background-position:calc(var(--w)/2) calc(var(--h)/2),0px calc(var(--h)/2);
+}
 
 .spotBasic {
   background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.169) 25%, transparent 25%, transparent 50%, #000 50%, rgba(0, 0, 0, 0.275) 75%, transparent 75%, #fff);

@@ -12,7 +12,7 @@ export const CurrentSwell = () => {
 
     if (swellStatus !== 'succeeded') {
         return (
-            <div className="NoCurrentSwell">
+            <div className="current NoCurrentSwell">
                 <p>No swell data available. Loading swell status: {swellStatus}</p>
             </div>
         )

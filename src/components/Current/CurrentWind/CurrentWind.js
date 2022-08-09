@@ -12,7 +12,7 @@ export const CurrentWind = () => {
 
     if (windStatus !== 'succeeded') {
         return (
-            <div className="NoCurrentWind">
+            <div className="current NoCurrentWind">
                 <p>No wind data available. Loading wind status: {windStatus}</p>
             </div>
         )
