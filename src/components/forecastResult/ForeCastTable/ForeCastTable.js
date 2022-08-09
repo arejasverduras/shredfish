@@ -71,10 +71,10 @@ export const ForeCastTable = () => {
 
     return (
         <div className='ForeCastTableHolder'>
-        <table>
+        <table className="ForeCastTable">
             <thead>
                 <tr>
-                    <td className='tableHour'>Hour</td>
+                    <td className='tableHour'></td>
                     <td>surf</td>
                     <td colSpan="3">Primary swell</td>
                     <td>Secondary swell</td>

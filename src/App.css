@@ -172,11 +172,12 @@ button:hover {
 }
 
 
-
 .ForeCastResult {
   /* main wrapper for component */
   padding: 20px;  
 }
+
+/* ForeCastTable */
 
 table {
   text-align: center;
@@ -185,12 +186,25 @@ table {
 
 td {
   padding: 6px;
+  /* border: 1px solid black; */
+}
 
-  border: 1px solid black;
+.ForeCastTable {
+  border-collapse: collapse;
+}
+
+.ForeCastTable thead {
+  background-color: mediumaquamarine;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.ForeCastTable td {
+  padding: 12px;
 }
 
 .tableHour {
-
   text-align: right;
 }
 
