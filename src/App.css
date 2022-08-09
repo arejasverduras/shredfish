@@ -174,7 +174,7 @@ button:hover {
 
 .ForeCastResult {
   /* main wrapper for component */
-  padding: 20px;  
+  /* padding: 20px;   */
 }
 
 /* ForeCastTable */
@@ -186,7 +186,7 @@ table {
 
 td {
   padding: 6px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
 
 .ForeCastTable {
@@ -212,6 +212,7 @@ td {
   background-color: rgba(102, 205, 171, 0.721);
   font-size: 1.2em;
   color: white;
+  font-weight: bold;
 }
 
 .primary {
@@ -239,11 +240,13 @@ td {
 
 .tableWindSpeed {
   font-size: 1.2em;
+  font-weight: bold;
+  text-align: right;
 }
 
 .tableWindGusts {
   font-size: 0.8em;
-
+  text-align: left;
 }
 .tableWindArrow {
   height: 1.5em;
