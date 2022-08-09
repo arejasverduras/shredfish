@@ -219,8 +219,8 @@ td {
   background-color: rgba(102, 205, 171, 0.234);
 }
 
-.currentHourRow td {
-  border: 3px solid black;
+.currentHourRow  {
+  background-color: rgba(0, 0, 0, 0.18);
 }
 
 .secondarySwell {
