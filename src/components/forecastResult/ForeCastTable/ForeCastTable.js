@@ -25,6 +25,7 @@ export const ForeCastTable = () => {
   <tr key={index} className={index === hour? 'currentHourRow':''}>
       <td className='tableHour'>{index}</td>
       <td><strong>{hourdata.surf.min} - {hourdata.surf.max}m</strong></td>
+      
       {/* Primary swell */}
       <td className="primary pSwell">{hourdata.swells[0].height.toFixed(1)}m </td>
       <td className="primary pPeriod"><b>{hourdata.swells[0].period}s</b></td>
@@ -34,6 +35,7 @@ export const ForeCastTable = () => {
               transform: `rotate(${hourdata.swells[0].direction}deg)`
               }} />
       </td>
+      
       {/* secondary swell */}
       <td className={hourdata.swells[1].height.toFixed(1)<= 0.09?'':'secondarySwell'}>
           {hourdata.swells[1].height.toFixed(1)<= 0.09? '':hourdata.swells[1].height.toFixed(1)+'m '+hourdata.swells[0].period+'s '}
@@ -45,6 +47,13 @@ export const ForeCastTable = () => {
               }} />
           )}
       </td>
+
+      {/* Wind data */}
+     {windStatus === 'succeeded'?
+     <td>Hallo</td>
+     
+     :
+     <td>No wind data</td>}
   </tr> )
 
     return (
