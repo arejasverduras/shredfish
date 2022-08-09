@@ -7,8 +7,9 @@ import { ForeCastTable } from './ForeCastTable/ForeCastTable';
 
 export const ForeCastResult = () => {
     const dispatch = useDispatch();
-
+    
     const spotName = useSelector(selectSpotName);
+    const status = useSelector(selectStatus);
     
     //get variables for API call
     const type = 'wave';
@@ -21,25 +22,13 @@ export const ForeCastResult = () => {
         dispatch(getWaveData(reqUrl));  
     },[reqUrl])
 
-    const status = useSelector(selectStatus);
-    
     return (
-        <>
         <div className='ForeCastResult'>
             <p>Get data: {status}</p>
             <h1>{spotName}</h1>
-            <div className="ForeCastHeader">
-                <div className="spotBasic">
-                </div>
-                <h2 style={{display: 'none'}}>Current</h2>
-                <Current />
-                <div className="spotBasic"></div>
-            </div>
+            <Current />          
             <h2>ForeCast</h2>
             <ForeCastTable />
             </div>
-            </>
-            
-            
     )
 }

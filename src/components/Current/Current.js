@@ -5,8 +5,13 @@ import { CurrentWind} from "./CurrentWind/CurrentWind";
 export const Current = () => {
     return (
         <div className="Current">
-            <CurrentSwell />
-            <CurrentWind />
+            <div className="spotBasic"></div>
+            <h2 style={{display: 'none'}}>Current</h2>
+            <div className="CurrentWrapper">
+                <CurrentSwell />
+                <CurrentWind />
+            </div>
+            <div className="spotBasic"></div>
         </div>
     )
 }

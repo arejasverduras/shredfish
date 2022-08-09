@@ -35,7 +35,7 @@ button:hover {
 
 /* Summary */
 
-.Current {
+.CurrentWrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
