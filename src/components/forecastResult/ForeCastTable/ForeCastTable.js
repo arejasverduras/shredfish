@@ -65,11 +65,6 @@ export const ForeCastTable = () => {
         </td>
         <td className="tableWindRelation">{windData.wind[index].directionType}</td>
         </>
-     
-     //snelheid
-     //richting met arrow
-     //gust
-     //classification for bg colors
      :
      <td>No wind data</td>}
   </tr> )
@@ -83,6 +78,7 @@ export const ForeCastTable = () => {
                     <td>surf</td>
                     <td colSpan="3">Primary swell</td>
                     <td>Secondary swell</td>
+                    <td colSpan="4">Wind</td>
                 </tr>
             </thead>
             <tbody>
