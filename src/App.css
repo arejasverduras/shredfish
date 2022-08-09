@@ -186,7 +186,7 @@ table {
 
 td {
   padding: 6px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .ForeCastTable {
@@ -210,7 +210,7 @@ td {
 
 .tableSurf {
   background-color: rgba(102, 205, 171, 0.721);
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: white;
   font-weight: bold;
 }
@@ -239,14 +239,17 @@ td {
 }
 
 .tableWindSpeed {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
   text-align: right;
+  transform: translateX(10px)
 }
+
 
 .tableWindGusts {
   font-size: 0.8em;
   text-align: left;
+  transform: translateX(-10px)
 }
 .tableWindArrow {
   height: 1.5em;
