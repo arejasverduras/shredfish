@@ -185,17 +185,17 @@ table {
 
 td {
   padding: 6px;
-  column-width: 200px;
+
   border: 1px solid black;
 }
 
 .tableHour {
-  column-width: 20px;
+
   text-align: right;
 }
 
 .primary {
-  column-width: 30px;
+
 }
 
 .currentHourRow td {
@@ -213,8 +213,25 @@ td {
 }
 
 .secondarySwell .swell-arrow {
-  height: 1.5em;
+  height: 1.2em;
   filter: invert(40%) sepia(92%) saturate(1523%) hue-rotate(164deg) brightness(98%) contrast(101%);
+}
+
+.tableWindSpeed {
+  font-size: 1.2em;
+}
+
+.tableWindGusts {
+  font-size: 0.8em;
+
+}
+
+.tableWindDirection {
+
+}
+
+.tableWindArrow {
+  height: 1.5em;
 }
 
 /* Tides */

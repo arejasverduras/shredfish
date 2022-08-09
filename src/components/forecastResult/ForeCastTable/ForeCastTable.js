@@ -4,7 +4,7 @@ import { selectForeCast, selectStatus } from "../../../features/ForeCastData/For
 import { selectWindData, selectWindStatus } from "../../WindResult/WindSlice";
 import swellArrow from '../../../up-arrow-swell.svg';
 import windArrow from '../../../up-arrow-wind.svg';
-import { getHour } from "../../../features/features";
+import { getHour, windStrength } from "../../../features/features";
 
 export const ForeCastTable = () => {
     const waveData = useSelector(selectForeCast);
@@ -50,7 +50,21 @@ export const ForeCastTable = () => {
 
       {/* Wind data */}
      {windStatus === 'succeeded'?
-     <td>Hallo</td>
+     <>
+     <td className="tableWindSpeed">{windData.wind[index].speed.toFixed(0)}</td>
+     <td className="tableWindGusts">{windData.wind[index].gust.toFixed(0)}<br/>kph</td>
+     <td className="tableWindDirection">
+        <img 
+                src={windArrow}
+                className="tableWindArrow"
+                alt="windArrow"
+                style={{
+                    transform: `rotate(${windData.wind[index].direction}deg)`
+                    }}
+                />
+        </td>
+        </>
+     
      //snelheid
      //richting met arrow
      //gust
