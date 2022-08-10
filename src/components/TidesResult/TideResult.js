@@ -2,6 +2,7 @@ import {React, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectTidesData, selectTidesStatus, getTidesData } from './TidesResultSlice';
 import { selectSpotKey, selectSpotName } from '../SpotSelector/SpotSlice';
+import { TidesStatus } from './TidesStatus/TidesStatus';
 
 export const TideResult = () => {
     const dispatch = useDispatch();
@@ -41,13 +42,16 @@ export const TideResult = () => {
         dispatch(getTidesData(urlAppendTide));
     },[urlAppendTide])
     
+    // Refactored logic starts here
+    // return (
+    //     <TidesStatus />
+    // )
+
     if (tidesStatus !== 'succeeded') {
         return (
             <div className="NoTideResult">
                 <h3>No tides available</h3>
                 <p>Loading status : {tidesStatus}</p>
-                <p>No data yet</p>
-    
             </div>
         )
     } else {
@@ -128,6 +132,8 @@ export const TideResult = () => {
             </div>
         )
     }
+
+
     
 
 }
