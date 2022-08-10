@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectTidesStatus, selectTidesData } from '../TidesResultSlice';
+import { timestampToTime } from '../../../features/features';
 
 export const TidesSummary = () => {
     const tidesStatus = useSelector(selectTidesStatus);

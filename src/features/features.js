@@ -23,3 +23,16 @@ export const windStrength = (speed) => {
     }
     return strength;
 }
+
+    // convert timestamp to changes
+export const timestampToTime = (stamp) => {
+        const converted = new Date(stamp);
+        let minutes;
+        if (converted.getMinutes() < 10){
+            minutes = '0'+converted.getMinutes();
+        } else {
+            minutes = converted.getMinutes();
+        }
+        const time = converted.getHours()+":"+minutes;
+        return time;
+    }

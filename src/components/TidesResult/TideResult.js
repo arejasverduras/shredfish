@@ -4,6 +4,7 @@ import { selectTidesData, selectTidesStatus, getTidesData } from './TidesResultS
 import { selectSpotKey, selectSpotName } from '../SpotSelector/SpotSlice';
 import { TidesStatus } from './TidesStatus/TidesStatus';
 import { TidesGraph } from './TidesGraph/TidesGraph';
+import { timestampToTime } from '../../features/features';
 
 export const TideResult = () => {
     const dispatch = useDispatch();
@@ -20,24 +21,6 @@ export const TideResult = () => {
 
     const tidesData = useSelector(selectTidesData)
     const tidesStatus = useSelector(selectTidesStatus);
-
-    const current = new Date();
-    const hour = current.getHours();
-    const timeNow = current.toLocaleTimeString();
-
-    // convert timestamp to changes
-    const timestampToTime = (stamp) => {
-        const converted = new Date(stamp);
-        const fulldate = converted.toString();
-        let minutes;
-        if (converted.getMinutes() < 10){
-            minutes = '0'+converted.getMinutes();
-        } else {
-            minutes = converted.getMinutes();
-        }
-        const time = converted.getHours()+":"+minutes;
-        return time;
-    }
 
     useEffect(()=>{
         dispatch(getTidesData(urlAppendTide));
