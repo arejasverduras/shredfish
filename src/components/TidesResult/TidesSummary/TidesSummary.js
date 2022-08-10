@@ -10,7 +10,6 @@ export const TidesSummary = () => {
     if (tidesStatus !== 'succeeded') {
         return (
             <div className="NoTidesSummary">
-                <p>Tides Summary not Loaded</p>
                 <p>Summary Loading status : {tidesStatus}</p>
             </div>
         )

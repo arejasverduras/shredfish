@@ -9,7 +9,6 @@ export const TidesGraph = () => {
     if (tidesStatus !== 'succeeded') {
         return (
             <div className="NoTidesGraph">
-                <p>Tides Graph not Loaded</p>
                 <p>Graph Loading status : {tidesStatus}</p>
             </div>
         )
