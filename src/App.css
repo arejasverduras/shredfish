@@ -271,3 +271,15 @@ td {
   display: flex;
   align-items: flex-end;
 }
+
+.TideColumn {
+  width: 4%;
+  border: 1px solid white;
+  background-color: aquamarine;
+}
+
+.currentTideColumn {
+  width: 6%;
+  border: 1px solid white;
+  background-color: orange;
+}

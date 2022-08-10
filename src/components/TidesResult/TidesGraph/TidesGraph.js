@@ -1,10 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectTidesStatus, selectTidesData } from "../TidesResultSlice";
+import { getHour } from "../../../features/features";
 
 export const TidesGraph = () => {
     const tidesStatus = useSelector(selectTidesStatus);
     const tidesData = useSelector(selectTidesData);
+
+    const {hour, timeNow} = getHour();
 
     if (tidesStatus !== 'succeeded') {
         return (
@@ -27,13 +30,9 @@ export const TidesGraph = () => {
         
         const tidesResultGraph = tidesOnly.map((hourdata, index) => 
         <div key={index} 
-            
+            className={index === hour? 'currentTideColumn':'TideColumn'}
             style={{
-            width: '4%', 
-            border: "1px solid black",
-            backgroundColor: 'aquamarine',
             height: hourdata.height*100,
-            fontSize: '8px'
             }}>
         </div>
             )
