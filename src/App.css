@@ -262,7 +262,6 @@ td {
   transform: translateX(10px)
 }
 
-
 .tableWindGusts {
   font-size: 0.8em;
   text-align: left;
@@ -299,8 +298,18 @@ td {
   background-color: white;
 }
 
+.tideGoingDown {
+  width: 4%;
+  background-color: gold;
+}
+
+.tideGoingUp {
+  width: 4%;
+  background-color: mediumaquamarine
+}
+
 .currentTideColumn {
-  width: 6%;
-  border: 1px solid rgb(102, 160, 205);
-  background-color: orange;
+  width: 4%;
+  border: 3px solid rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.544);
 }

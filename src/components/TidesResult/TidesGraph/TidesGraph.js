@@ -18,17 +18,25 @@ export const TidesGraph = () => {
     } else {
         //filter the tides array
         const tidesOnly = tidesData.tides.filter((hourdata) => hourdata.type === 'NORMAL');
+        console.log(tidesOnly[0].height);
+
 
         const tidesResultGraphIndex = tidesOnly.map((hourdata, index) => 
         <div key={index} style={{
             width: '4%', 
             }}>
                 {index}
-        </div>)    
+        </div>)
+        
+        const tidesHeights = tidesOnly.map((tideHeight, index)=> 
+        tideHeight.height
+        )
+
+        console.log(tidesHeights);
         
         const tidesResultGraph = tidesOnly.map((hourdata, index) => 
         <div key={index} 
-            className={index === hour? 'currentTideColumn':'TideColumn'}
+            className={hourdata.height <= tidesHeights[index+1]?`tideGoingUp ${index === hour? 'currentTideColumn': 'TideColumn'}` :`tideGoingDown ${index === hour? 'currentTideColumn': 'TideColumn'}`}
             style={{
             height: hourdata.height*100,
             }}>
