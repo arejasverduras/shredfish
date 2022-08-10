@@ -16,8 +16,6 @@ export const TideResult = () => {
 
     const reqUrl = `${type}?&spotId=${spotId}&days=${days}`;
 
-    // const urlAppendTide = tides+params+days;
-
     useEffect(()=>{
         dispatch(getTidesData(reqUrl));
     },[reqUrl])
