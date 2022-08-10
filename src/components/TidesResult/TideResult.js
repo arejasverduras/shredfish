@@ -9,18 +9,18 @@ import { TidesSummary } from './TidesSummary/TidesSummary';
 export const TideResult = () => {
     const dispatch = useDispatch();
 
-    const spotKey = useSelector(selectSpotKey);
+    //get variables for API call
+    const type = 'tides?';
+    const spotId = useSelector(selectSpotKey);
+    const days = 1;
 
-    const tides = 'tides?';
-    const spotId = spotKey;
-    const params = `spotId=${spotId}`;
-    const days = '&days=1'
+    const reqUrl = `${type}?&spotId=${spotId}&days=${days}`;
 
-    const urlAppendTide = tides+params+days;
+    // const urlAppendTide = tides+params+days;
 
     useEffect(()=>{
-        dispatch(getTidesData(urlAppendTide));
-    },[urlAppendTide])
+        dispatch(getTidesData(reqUrl));
+    },[reqUrl])
     
     // Refactored logic starts here
     return (

@@ -1,7 +1,7 @@
 import {React, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getWindData, selectWindData, selectWindStatus } from './WindSlice';
-import { selectSpotKey, selectSpotName } from '../SpotSelector/SpotSlice';
+import { getWindData } from './WindSlice';
+import { selectSpotKey } from '../SpotSelector/SpotSlice';
 
 export const WindResult = () => {
     const dispatch = useDispatch();
