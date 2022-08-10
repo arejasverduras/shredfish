@@ -44,12 +44,12 @@ export const TideResult = () => {
     },[urlAppendTide])
     
     // Refactored logic starts here
-    return (
-        <>
-            <TidesStatus />
-            <TidesGraph />
-        </>
-    )
+    // return (
+    //     <>
+    //         <TidesStatus />
+    //         <TidesGraph />
+    //     </>
+    // )
 
     if (tidesStatus !== 'succeeded') {
         return (
@@ -82,10 +82,7 @@ export const TideResult = () => {
         </div>
             )
 
-        const tidesResultType = tidesOnly.map((hourdata, index) => 
-            <td key={index}>{hourdata.type}</td>
-            )
-        
+        // Refactor from here    
         const tideResultInfo = tidesData.tides.filter((hourdata) => hourdata.type !== 'NORMAL');
         console.log(tideResultInfo);
 
@@ -117,6 +114,7 @@ export const TideResult = () => {
                 <div style={{display: 'flex'}}>
                     {tidesResultGraph}
                 </div>
+
                 <div className="tidesInfo">
                     <table>
                         <tr>
@@ -126,13 +124,7 @@ export const TideResult = () => {
                             {tideHighCells}
                         </tr>
                     </table>
-                <div className="tideTable">
-                    <table>
-                            {/* {tideTable} */}
-                    </table>
                 </div>
-                </div>
-
             </div>
         )
     }
