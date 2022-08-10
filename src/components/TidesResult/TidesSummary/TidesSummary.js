@@ -39,12 +39,14 @@ export const TidesSummary = () => {
         return (
                 <div className="TidesSummary">
                     <table>
-                        <tr>
-                            {tideLowCells}
-                        </tr>
-                        <tr>
-                            {tideHighCells}
-                        </tr>
+                        <tbody>
+                            <tr>
+                                {tideLowCells}
+                            </tr>
+                            <tr>
+                                {tideHighCells}
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
         )
