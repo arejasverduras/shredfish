@@ -54,13 +54,6 @@ export const TideResult = () => {
         //filter the tides array
         const tidesOnly = tidesData.tides.filter((hourdata) => hourdata.type === 'NORMAL');
 
-        // const tidesHeader = tidesOnly.map((hourdata, index) =>
-        //     <td className='tidesHeaderCell' key={index}>{index}</td>)
-
-        // const tidesResultHeight = tidesOnly.map((hourdata, index) => 
-        //     <td className="tidesHeights" key={index}>{hourdata.height}m</td>
-        //     )
-
         const tidesResultGraphIndex = tidesOnly.map((hourdata, index) => 
         <div key={index} style={{
             width: '4%', 
@@ -110,18 +103,6 @@ export const TideResult = () => {
             <div className="TideResult">
                 <h3>Tides available</h3>
                 <p>Loading status: {tidesStatus}</p>
-                <table className="tidesTable">
-                    <thead>
-                        <tr>
-                            {/* {tidesHeader} */}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            {/* {tidesResultHeight} */}
-                        </tr>                  
-                    </tbody>
-                </table>
                 <div className="tidesGraph" style={{display: 'flex'}}>
                     {tidesResultGraphIndex} 
                 </div>
