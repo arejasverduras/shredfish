@@ -3,7 +3,7 @@ import Surfline from "../../features/ForeCastData/Surfline";
 
 export const getWeatherData = createAsyncThunk('/weather/weatherinfo',
 async (arg, thunkAPI) => {
-    const response = await Surfline.getWeatherData(arg);
+    const response = await Surfline.getDataFromAPI(arg);
     return response.data;
 })
 

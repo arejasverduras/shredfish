@@ -4,7 +4,7 @@ import Surfline from "../../features/ForeCastData/Surfline";
 
     export const getTidesData = createAsyncThunk('/tides',
     async (arg, thunkAPI) => {
-        const response = await Surfline.getTideData(arg);
+        const response = await Surfline.getDataFromAPI(arg);
         return response.data
     })
 
