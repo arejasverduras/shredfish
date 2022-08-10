@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectTidesData, selectTidesStatus, getTidesData } from './TidesResultSlice';
 import { selectSpotKey, selectSpotName } from '../SpotSelector/SpotSlice';
 import { TidesStatus } from './TidesStatus/TidesStatus';
+import { TidesGraph } from './TidesGraph/TidesGraph';
 
 export const TideResult = () => {
     const dispatch = useDispatch();
@@ -43,9 +44,12 @@ export const TideResult = () => {
     },[urlAppendTide])
     
     // Refactored logic starts here
-    // return (
-    //     <TidesStatus />
-    // )
+    return (
+        <>
+            <TidesStatus />
+            <TidesGraph />
+        </>
+    )
 
     if (tidesStatus !== 'succeeded') {
         return (

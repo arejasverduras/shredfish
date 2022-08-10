@@ -256,3 +256,18 @@ td {
 }
 
 /* Tides */
+
+.TidesGraph {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.TidesGraphIndex {
+  display: flex;
+}
+
+.TidesGraphColumns {
+  display: flex;
+  align-items: flex-end;
+}
