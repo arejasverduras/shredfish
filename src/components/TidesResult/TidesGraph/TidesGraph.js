@@ -38,7 +38,7 @@ export const TidesGraph = () => {
         <div key={index} 
             className={hourdata.height <= tidesHeights[index+1]?`tideGoingUp ${index === hour? 'currentTideColumn': 'TideColumn'}` :`tideGoingDown ${index === hour? 'currentTideColumn': 'TideColumn'}`}
             style={{
-            height: hourdata.height*100,
+            height: hourdata.height*75,
             }}>
         </div>
             )

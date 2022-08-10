@@ -275,6 +275,7 @@ td {
 
 .TidesGraph {
   max-width: 644px;
+
   margin: 20px auto;
   padding: 20px;
   background-color: rgb(102, 160, 205);
@@ -289,7 +290,6 @@ td {
 .TidesGraphColumns {
   display: flex;
   align-items: flex-end;
-  
 }
 
 .TideColumn {
