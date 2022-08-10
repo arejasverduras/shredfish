@@ -33,7 +33,7 @@ button:hover {
   background-color: mediumaquamarine;
 } */
 
-/* Summary */
+/* Current */
 
 .CurrentWrapper {
   display: flex;
@@ -171,6 +171,23 @@ button:hover {
   background-color: darkred;
 }
 
+/* Current Tide */
+.currentTide  {
+  background-color: rgb(102, 160, 205);
+  max-width: 80%;
+  box-shadow:rgb(0, 0, 0) 10px 10px;
+  
+}
+
+.currentTide .TidesGraph {
+  box-shadow: none;
+}
+
+.current .TidesGraphIndex {
+  color: black;
+  /* font-weight: bold; */
+  font-size: 0.6em;
+}
 
 .ForeCastResult {
   /* main wrapper for component */
@@ -259,27 +276,31 @@ td {
 
 .TidesGraph {
   max-width: 644px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
+  background-color: rgb(102, 160, 205);
+  box-shadow: #000 10px 10px;
 }
 
 .TidesGraphIndex {
   display: flex;
+  font-size: 0.8em;
 }
 
 .TidesGraphColumns {
   display: flex;
   align-items: flex-end;
+  
 }
 
 .TideColumn {
   width: 4%;
-  border: 1px solid white;
-  background-color: aquamarine;
+  border: 1px solid rgb(102, 160, 205);
+  background-color: white;
 }
 
 .currentTideColumn {
   width: 6%;
-  border: 1px solid white;
+  border: 1px solid rgb(102, 160, 205);
   background-color: orange;
 }

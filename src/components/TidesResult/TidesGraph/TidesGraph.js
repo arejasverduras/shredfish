@@ -22,8 +22,6 @@ export const TidesGraph = () => {
         const tidesResultGraphIndex = tidesOnly.map((hourdata, index) => 
         <div key={index} style={{
             width: '4%', 
-            borderLeft: "1px solid black",
-            fontSize: '8px'
             }}>
                 {index}
         </div>)    

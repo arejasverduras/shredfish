@@ -1,6 +1,7 @@
 import React from "react";
 import { CurrentSwell } from "./CurrentSwell/CurrentSwell";
 import { CurrentWind} from "./CurrentWind/CurrentWind";
+import { CurrentTide } from "./CurrentTide/CurrentTide";
 
 export const Current = () => {
     return (
@@ -10,6 +11,7 @@ export const Current = () => {
             <div className="CurrentWrapper">
                 <CurrentSwell />
                 <CurrentWind />
+                <CurrentTide />
             </div>
             <div className="spotBasic"></div>
         </div>
