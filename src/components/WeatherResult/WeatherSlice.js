@@ -11,10 +11,20 @@ const WeatherSlice = createSlice({
     name: 'weather',
     initialState: {
         weatherStatus: 'idle',
-        weatherData: ''
+        weatherData: {
+            sunlightTimes: [],
+            weather: []
+        },
+        currentWeather: {
+            temp: '-10',
+            condition: 'No se tio'            
+        }
     },
     reducers: {
-
+        setCurrentWeather: (state, action) => {
+            state.currentWeather.temp = action.payload.temp;
+            state.currentWeather.condition = action.payload.condition;
+        }
     },
     extraReducers: {
         [getWeatherData.pending]: (state,action) => {
@@ -35,10 +45,12 @@ const WeatherSlice = createSlice({
 })
 
 // export slice actions
+export const {setCurrentWeather} = WeatherSlice.actions;
 
 //create and export sliceSelector 
 export const selectWeatherData = state => state.weather.weatherData;
 export const selectWeatherStatus = state => state.weather.weatherStatus;
+export const selectCurrentWeather = state => state.weather.currentWeather;
 
 // export the reducer as default
 export default WeatherSlice.reducer;
