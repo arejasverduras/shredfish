@@ -1,35 +1,28 @@
-import {React, useEffect} from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setCurrentWeather, selectCurrentWeather, selectWeatherData, selectWeatherStatus } from "../../WeatherResult/WeatherSlice";
-import { getHour } from "../../../features/features";
+import {React} from "react";
+import { useSelector } from "react-redux";
+import { selectCurrentWeather, selectWeatherStatus } from "../../WeatherResult/WeatherSlice";
+
 
 export const CurrentWeather = () => {
-    const dispatch = useDispatch();
-    const {hour} = getHour();
+
 
     const weatherStatus = useSelector(selectWeatherStatus);
-    const weatherData = useSelector(selectWeatherData);
-    
-    let currentWeatherObject = {
-        temp: 'what',
-        condition: 'dude'
-    }
 
-    // useEffect(dispatch(setCurrentWeather(currentWeatherObject)),[weatherData]);
+    const currentWeather = useSelector(selectCurrentWeather);
 
     if (weatherStatus !== 'succeeded'){
         return (
-            <>
-            </>
+            <div className="current CurrentWeather">
+                <p>Weather status: {weatherStatus}</p>
+            </div>
         )
     } else {
     
-    const {temperature, condition} = weatherData.weather[hour];
+        const {temperature, condition} = currentWeather;
 
         return (
-        <div className="current CurentWeather">
-            <p>{temperature.toFixed(0)} degrees Celsius</p>
-            <p>{condition.toLowerCase()}</p>
+        <div className="current CurrentWeather">
+            <p>{temperature.toFixed(0)}.C | {condition.toLowerCase()}</p>
         </div>
     )
     }

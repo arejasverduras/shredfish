@@ -1,5 +1,6 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import Surfline from "../../features/ForeCastData/Surfline";
+import { getHour } from "../../features/features";
 
 export const getWeatherData = createAsyncThunk('/weather/weatherinfo',
 async (arg, thunkAPI) => {
@@ -16,8 +17,7 @@ const WeatherSlice = createSlice({
             weather: []
         },
         currentWeather: {
-            temp: '-10',
-            condition: 'No se tio'            
+                  
         }
     },
     reducers: {
@@ -33,9 +33,12 @@ const WeatherSlice = createSlice({
         },
         [getWeatherData.fulfilled]: (state,action) => {
             state.weatherStatus = 'succeeded';
-            state.weatherData = (action.payload)
+            state.weatherData = (action.payload);
+            const {hour} = getHour();
+
+            state.currentWeather = (action.payload.weather[hour])
             // for analyzing of the response object
-            console.log(state.weatherData)
+            console.log(state.currentWeather)
         },
         [getWeatherData.rejected]: (state, action) => {
             state.weatherStatus = 'rejected';

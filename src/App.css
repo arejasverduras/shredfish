@@ -178,7 +178,13 @@ button:hover {
   box-shadow:rgb(0, 0, 0) 10px 10px;  
 }
 
-
+.CurrentWeather {
+  background-color: white;
+  color: black;
+  min-width: 80%;
+  max-width: 80%;
+  display: flex;
+}
 
 .ForeCastResult {
   /* main wrapper for component */

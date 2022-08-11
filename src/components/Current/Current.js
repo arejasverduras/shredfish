@@ -9,6 +9,7 @@ export const Current = () => {
         <div className="Current">
             <div className="spotBasic"></div>
             <h2 style={{display: 'none'}}>Current</h2>
+            
             <div className="CurrentWrapper">
                 <CurrentWeather />
                 <CurrentSwell />
