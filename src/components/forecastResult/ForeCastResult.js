@@ -16,7 +16,7 @@ export const ForeCastResult = () => {
     const spotId = useSelector(selectSpotKey);
     const days = 1;
 
-    const reqUrl = `${type}?&spotId=${spotId}&days=${days}`;
+    const reqUrl = `${type}?&spotId=${spotId}&days=${days}&sds=true`;
 
     useEffect(()=>{
         dispatch(getWaveData(reqUrl));  
