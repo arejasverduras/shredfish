@@ -18,7 +18,8 @@ const Surfline = {
         }
     },
     async getDataFromAPI(arg){
-        const baseURL = 'https://services.surfline.com/kbyg/spots/forecasts/';
+        //https://quiet-hamlet-33642.herokuapp.com/
+        const baseURL = 'https://quiet-hamlet-33642.herokuapp.com/https://services.surfline.com/kbyg/spots/forecasts/';
         const params = arg
         const reqURL = baseURL+params;
         
