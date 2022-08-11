@@ -18,8 +18,6 @@ export const TidesGraph = () => {
     } else {
         //filter the tides array
         const tidesOnly = tidesData.tides.filter((hourdata) => hourdata.type === 'NORMAL');
-        console.log(tidesOnly[0].height);
-
 
         const tidesResultGraphIndex = tidesOnly.map((hourdata, index) => 
         <div key={index} style={{
@@ -32,8 +30,11 @@ export const TidesGraph = () => {
         tideHeight.height
         )
 
-        console.log(tidesHeights);
+        // map a new array with tide Type values
+        //combine this later with tidesHeights, with an Object as result
+
         
+     
         const tidesResultGraph = tidesOnly.map((hourdata, index) => 
         <div key={index} 
             className={hourdata.height <= tidesHeights[index+1]?`tideGoingUp ${index === hour? 'currentTideColumn': 'TideColumn'}` :`tideGoingDown ${index === hour? 'currentTideColumn': 'TideColumn'}`}
@@ -45,7 +46,7 @@ export const TidesGraph = () => {
 
         return (
         <div className="TidesGraph">
-     
+            <h3>Tide</h3>
             <div className="TidesGraphColumns">
                 {tidesResultGraph}
             </div>

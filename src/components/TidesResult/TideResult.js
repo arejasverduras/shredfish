@@ -20,7 +20,6 @@ export const TideResult = () => {
         dispatch(getTidesData(reqUrl));
     },[reqUrl])
     
-    // Refactored logic starts here
     return (
         <div className="TideResult">
             <TidesStatus />
