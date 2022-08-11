@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import Surfline from "../../features/ForeCastData/Surfline";
+import GeoCoding from "../../features/OpenWeather/GeoCoding";
 
     export const getSpotInfo = createAsyncThunk('/spot/spotinfo',
     async (arg, thunkAPI) => {
@@ -7,9 +8,19 @@ import Surfline from "../../features/ForeCastData/Surfline";
         return response.data;
     })
 
+    export const getGeoLocation = createAsyncThunk('spot/spotGeo',
+    async (arg, thunkAPI) => {
+        const response = await GeoCoding.getGeoCords(arg);
+        return response.data;
+    })
+
 const spotSlice = createSlice({
     name: "spot",
     initialState: {
+        currentSpot: {
+            geoStatus: 'idle',
+            data: {}
+        },
         spotName: 'Scheveningen Nord',
         spotKey: '584204204e65fad6a77095f0',
         spotStatus: 'idle',
@@ -54,7 +65,22 @@ const spotSlice = createSlice({
         [getSpotInfo.rejected]: (state, action) => {
             state.spotStatus = 'rejected';
             state.spotKey = 'lost the keys mate';
+        },
+        [getGeoLocation.pending]: (state,action) => {
+            state.currentSpot.geoStatus = 'loading';
+            
+        },
+        [getGeoLocation.fulfilled]: (state,action) => {
+            state.currentSpot.geoStatus = 'succeeded';
+            state.currentSpot.data = (action.payload)
+            // for analyzing of the response object
+            // console.log(state.spotKey.wave)
+        },
+        [getGeoLocation.rejected]: (state, action) => {
+            state.currentSpot.geoStatus = 'rejected';
+            state.currentSpot.data = {}
         }
+
     }
 })
 
@@ -66,6 +92,7 @@ export const selectSpotName = state => state.spot.spotName;
 export const selectSpotKey = state => state.spot.spotKey;
 export const selectSpotStatus = state => state.spot.spotStatus;
 export const selectFavoriteSpots = state => state.spot.favoriteSpots;
+export const selectCurrentSpot = state => state.spot.currentSpot;
 
 // export the reducer as default
 export default spotSlice.reducer;
