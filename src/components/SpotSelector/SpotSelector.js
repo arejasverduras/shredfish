@@ -1,14 +1,19 @@
 import {React, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectFavoriteSpots, selectSpotName, setSpotInfo } from './SpotSlice';
+import { selectFavoriteSpots, selectSpotName, setSearchTerm, setSpotInfo } from './SpotSlice';
 
 export const SpotSelector = () => {
     const dispatch = useDispatch();
     const spotName = useSelector(selectSpotName);
     const favoriteSpots = useSelector(selectFavoriteSpots);
 
+    const handleClick = (spot) => {
+        dispatch(setSpotInfo(spot));
+        dispatch(setSearchTerm(spot.name));
+    }
+
     const spotButtons = favoriteSpots.map((spot, index)=> 
-        <button onClick={()=>{dispatch(setSpotInfo(spot))}}>{spot.name}</button>
+        <button onClick={()=>{handleClick(spot)}}>{spot.name}</button>
     )
     
     return (

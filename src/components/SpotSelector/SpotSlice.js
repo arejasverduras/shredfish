@@ -17,7 +17,7 @@ import GeoCoding from "../../features/OpenWeather/GeoCoding";
 const spotSlice = createSlice({
     name: "spot",
     initialState: {
-        searchTerm: '',
+        searchTerm: 'Den Haag',
         currentSpot: {
             geoStatus: 'idle',
             data: {}
@@ -26,19 +26,24 @@ const spotSlice = createSlice({
         spotKey: '584204204e65fad6a77095f0',
         spotStatus: 'idle',
         favoriteSpots: [{
-            name: 'Skiffa',
+            name: 'Scheveningen',
             key: '584204204e65fad6a77095f0'
         },{
-            name: 'Ter heije',
+            name: 'Ter Heijde',
             key: '584204204e65fad6a77095f3'
         },{
-            name: 'Hoekie',
+            name: 'Hoek van Holland',
             key: '584204204e65fad6a77095f2'
         },
         {
             name: 'Sopelana',
             key: '5842041f4e65fad6a7708e75'
-        }]
+        },
+        {
+            name: 'Pupukea',
+            key: '5842041f4e65fad6a7708890'
+        }
+    ]
     },
     reducers: {
         setSearchTerm: (state, action ) => {
@@ -47,7 +52,7 @@ const spotSlice = createSlice({
         ,setSpotInfo: (state, action) => {
             state.spotKey = action.payload.key;
             state.spotName = action.payload.name;
-        }, 
+        },
         addFavoriteSpot: (state, action) => {
             // to be written
         },
