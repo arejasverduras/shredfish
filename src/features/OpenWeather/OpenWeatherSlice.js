@@ -9,7 +9,7 @@ async (arg, thunkAPI) => {
 })
 
 const OpenWeatherSlice = createSlice({
-    name: 'OpenWeather',
+    name: 'openweather',
     initialState: {
         openWeatherStatus: 'idle',
         openWeatherData: {
@@ -51,9 +51,9 @@ const OpenWeatherSlice = createSlice({
 export const {setCurrentWeather} = OpenWeatherSlice.actions;
 
 //create and export sliceSelector 
-export const selectOpenWeatherData = state => state.weather.weatherData;
-export const selectOpenWeatherStatus = state => state.weather.weatherStatus;
-export const selectOpenCurrentWeather = state => state.weather.currentWeather;
+export const selectOpenWeatherData = state => state.openweather.openWeatherData;
+export const selectOpenWeatherStatus = state => state.openweather.openWeatherStatus;
+export const selectOpenCurrentWeather = state => state.openweather.CurrentWeather;
 
 // export the reducer as default
 export default OpenWeatherSlice.reducer;

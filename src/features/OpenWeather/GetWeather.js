@@ -1,6 +1,7 @@
 import {React, useEffect }from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectCurrentSpot } from "../../components/SpotSelector/SpotSlice";
+import { getOpenWeatherData } from "./OpenWeatherSlice";
 
 export const GetWeather =() =>{
     const dispatch = useDispatch();
@@ -8,10 +9,14 @@ export const GetWeather =() =>{
 
      //get variables for API call
     const {lat, long} = currentSpot.data;
+    const arg = {
+        lat: lat,
+        long: long
+    }
 
 
     useEffect(()=>{
-        dispatch(getGeoLocation(cityName));
+        dispatch(getOpenWeatherData(arg));
     },[])
     
     return (

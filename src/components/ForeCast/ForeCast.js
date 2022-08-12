@@ -13,6 +13,7 @@ export const ForeCast = ()=>{
             <SpotSelector />
             <GetCoordinates />
             <GetCoordinatesResult />
+            
             <ForeCastResult />
             <TideResult />
             <WindResult />
