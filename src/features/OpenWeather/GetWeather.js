@@ -8,10 +8,10 @@ export const GetWeather =() =>{
     const currentSpot = useSelector(selectCurrentSpot);
 
      //get variables for API call
-    const {lat, long} = currentSpot.data;
+    const {lat, lon} = currentSpot.data[0];
     const arg = {
         lat: lat,
-        long: long
+        lon: lon
     }
 
 

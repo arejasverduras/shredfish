@@ -1,6 +1,7 @@
 import {React, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentSpot, selectSearchTerm } from "../../../components/SpotSelector/SpotSlice";
+import { GetWeather } from "../GetWeather";
 
 export const GetCoordinatesResult = () => {
     const dispatch = useDispatch();
@@ -29,6 +30,7 @@ export const GetCoordinatesResult = () => {
     return (
         <>
             <p>{name}, {lat}, {lon}</p>
+            <GetWeather />
         </>
     )
     }

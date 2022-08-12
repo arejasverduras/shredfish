@@ -23,8 +23,8 @@ const GeoCoding = {
     async getWeatherFromGeo(arg){
         const baseURL = 'https://api.openweathermap.org/data/2.5/weather?';
         const appId = `&appid=${this.api}`;
-        const {lat, long} = arg;
-        const params = `lat=${lat}&long=${long}`;
+        const {lat, lon} = arg;
+        const params = `lat=${lat}&lon=${lon}`;
         // arg = lat={lat}&lon={lon}
         const reqURL = baseURL+params+appId;
         // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}

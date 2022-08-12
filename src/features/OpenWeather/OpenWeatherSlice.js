@@ -5,17 +5,14 @@ import { getHour } from "../features";
 export const getOpenWeatherData = createAsyncThunk('/openweather/weatherinfo',
 async (arg, thunkAPI) => {
     const response = await GeoCoding.getWeatherFromGeo(arg);
-    return response.data;
+    return response;
 })
 
 const OpenWeatherSlice = createSlice({
     name: 'openweather',
     initialState: {
         openWeatherStatus: 'idle',
-        openWeatherData: {
-            sunlightTimes: [],
-            weather: []
-        },
+        openWeatherData: '',
         currentWeather: {
                   
         }
@@ -28,17 +25,12 @@ const OpenWeatherSlice = createSlice({
     },
     extraReducers: {
         [getOpenWeatherData.pending]: (state,action) => {
-            state.weatherStatus = 'loading';
+            state.openWeatherStatus = 'pending';
             
         },
-        [getOpenWeatherData.fulfilled]: (state,action) => {
+        [getOpenWeatherData.fulfilled]: (state, action) => {
             state.openWeatherStatus = 'succeeded';
-            state.openWeatherData = (action.payload);
-            const {hour} = getHour();
-
-            // state.currentWeather = (action.payload.weather[hour])
-            // for analyzing of the response object
-            // console.log(state.currentWeather)
+            state.theWeather = (action.payload);
         },
         [getOpenWeatherData.rejected]: (state, action) => {
             state.openWeatherStatus = 'rejected';
