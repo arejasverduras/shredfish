@@ -12,11 +12,34 @@ const GeoCoding = {
             const response = await fetch(reqURL); 
             if (response.ok) {
                 const jsonResponse = await response.json();
+                console.log(jsonResponse);
                 return jsonResponse;
+
             }
         } catch (error) {
             console.log(error);
         }
+    },
+    async getWeatherFromGeo(arg){
+        const baseURL = 'https://api.openweathermap.org/data/2.5/weather?';
+        const appId = `&appid=${this.api}`;
+        const params = arg
+        // arg = lat={lat}&lon={lon}
+        const reqURL = baseURL+params+appId;
+        // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+
+        try {
+            const response = await fetch(reqURL); 
+            if (response.ok) {
+                const jsonResponse = await response.json();
+                console.log(jsonResponse);
+                return jsonResponse;
+
+            }
+        } catch (error) {
+            console.log(error);
+        }
+        
     }
 }
 

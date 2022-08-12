@@ -11,7 +11,7 @@ import GeoCoding from "../../features/OpenWeather/GeoCoding";
     export const getGeoLocation = createAsyncThunk('spot/spotGeo',
     async (arg, thunkAPI) => {
         const response = await GeoCoding.getGeoCords(arg);
-        return response.data;
+        return response;
     })
 
 const spotSlice = createSlice({
@@ -72,7 +72,7 @@ const spotSlice = createSlice({
         },
         [getGeoLocation.fulfilled]: (state,action) => {
             state.currentSpot.geoStatus = 'succeeded';
-            state.currentSpot.data = (action.payload)
+            state.currentSpot.data = (action.payload);
             // for analyzing of the response object
             // console.log(state.spotKey.wave)
         },
