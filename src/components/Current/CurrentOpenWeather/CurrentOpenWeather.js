@@ -18,12 +18,13 @@ export const CurrentOpenWeather = () => {
     } else {
     
         // const {temperature, condition} = openCurrentWeather;
+        const {weather, name, sys} = openCurrentWeather;
         console.log(openCurrentWeather);
 
         return (
         <div className="current CurrentWeather">
             {/* <p>{temperature.toFixed(0)}.C | {condition.toLowerCase()}</p> */}
-            <p>Bla here = succes!</p>
+            <p>Weather for {name}, {sys.country}: {weather[0].main}</p>
         </div>
     )
     }

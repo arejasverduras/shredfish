@@ -30,7 +30,7 @@ const OpenWeatherSlice = createSlice({
         },
         [getOpenWeatherData.fulfilled]: (state, action) => {
             state.openWeatherStatus = 'succeeded';
-            state.theWeather = (action.payload);
+            state.openWeatherData = (action.payload);
         },
         [getOpenWeatherData.rejected]: (state, action) => {
             state.openWeatherStatus = 'rejected';
