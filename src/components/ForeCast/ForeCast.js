@@ -1,9 +1,9 @@
 import React from "react";
 import { SpotGeoDisplay } from "../SpotLoader/SpotGeoDisplay/SpotGeoDisplay";
+import { CallAPIs } from "../../features/CallAPIs/CallAPIs";
 import { ForeCastResult } from "../forecastResult/ForeCastResult";
 import { TideResult } from "../TidesResult/TideResult";
 import { WindResult } from "../WindResult/WindResult";
-import { WeatherResult } from "../WeatherResult/WeatherResult";
 import { GetWeather } from "../../features/OpenWeather/GetWeather";
 import { selectCurrentSpot, selectSearchTerm } from "../../components/SpotSelector/SpotSlice";
 import { useSelector } from "react-redux";
@@ -32,11 +32,7 @@ export const ForeCast = ()=>{
     return (
         <div className="ForeCast">
             <SpotGeoDisplay />
-            {/* Call Api's */}
-                <GetWeather />
-                <ForeCastResult />
-                <TideResult />
-                <WindResult />
+            <CallAPIs />
 
             {/* Renders Current */}
             {/* Renders forecast table */}
