@@ -1,25 +1,43 @@
 import React from "react";
-import { SpotSelector } from "../SpotSelector/SpotSelector";
+import { SpotGeoDisplay } from "../SpotLoader/SpotGeoDisplay/SpotGeoDisplay";
 import { ForeCastResult } from "../forecastResult/ForeCastResult";
 import { TideResult } from "../TidesResult/TideResult";
 import { WindResult } from "../WindResult/WindResult";
 import { WeatherResult } from "../WeatherResult/WeatherResult";
-import { GetCoordinates } from "../../features/OpenWeather/SpotSearch/getCoordinates";
-import { GetCoordinatesResult } from "../../features/OpenWeather/SpotSearch/GetCoordsResult";
-import { SpotLoader } from "../SpotLoader/SpotLoader";
+import { GetWeather } from "../../features/OpenWeather/GetWeather";
+import { selectCurrentSpot, selectSearchTerm } from "../../components/SpotSelector/SpotSlice";
+import { useSelector } from "react-redux";
+
 
 export const ForeCast = ()=>{
+    const currentSpot = useSelector(selectCurrentSpot);
+    const searchTerm = useSelector(selectSearchTerm);
+
+    if (currentSpot.geoStatus !== 'succeeded' || !currentSpot.data) {
+        return (
+            <>
+                <p>GeoLocation not loaded: {currentSpot.geoStatus}</p>
+            </>
+        )
+        
+    } else if (currentSpot.data.length <1) {
+        return (
+            <>
+                <p>No spot found for '{searchTerm}'</p>
+            </>
+        )
+    }
+    else {
+
     return (
         <div className="ForeCast">
-            <SpotLoader />
-            <SpotSelector />
-            <GetCoordinates />
-            <GetCoordinatesResult />
-            
+            <SpotGeoDisplay />
+            <GetWeather />
             <ForeCastResult />
             <TideResult />
             <WindResult />
             <WeatherResult />
         </div>
     )
-}
+    }
+    }

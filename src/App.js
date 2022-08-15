@@ -1,7 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
-import { ForeCast } from './components/ForeCast/ForeCast';
-import { ForeCastResult } from './components/forecastResult/ForeCastResult';
+import { SurfForeCast } from './components/SurfForeCast/SurfForeCast';
 import './App.css';
 
 function App() {
@@ -11,7 +9,7 @@ function App() {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
       </header>
       <main>
-        <ForeCast />
+        <SurfForeCast />
       </main>
     </div>
   );

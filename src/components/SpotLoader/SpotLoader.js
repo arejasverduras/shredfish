@@ -1,4 +1,4 @@
-import {React, useEffect} from "react";
+import {React} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GetCoordinates } from "../../features/OpenWeather/SpotSearch/getCoordinates";
 import { setSearchTerm, selectSearchTerm } from "../SpotSelector/SpotSlice";
