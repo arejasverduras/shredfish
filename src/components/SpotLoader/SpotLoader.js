@@ -1,6 +1,5 @@
 import {React} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GetCoordinates } from "../../features/OpenWeather/SpotSearch/getCoordinates";
 import { setSearchTerm, selectSearchTerm } from "../SpotSelector/SpotSlice";
 
 export const SpotLoader = () => {
@@ -17,7 +16,6 @@ export const SpotLoader = () => {
         <>
         <h2>Find Spot Coordinates</h2>
          <input onChange={handleChange} value={searchTerm}></input>
-         <GetCoordinates term={searchTerm} />
         </>
     )
 }

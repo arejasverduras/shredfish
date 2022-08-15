@@ -1,5 +1,6 @@
-import {React, useEffect} from "react";
-import { useDispatch } from "react-redux";
+import {useEffect} from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectSearchTerm } from "../../../components/SpotSelector/SpotSlice";
 import { getGeoLocation } from "../../../components/SpotSelector/SpotSlice";
 
 
@@ -7,11 +8,10 @@ export const GetCoordinates = ({term}) => {
     const dispatch = useDispatch();
     
     //get variables for API call
-    const cityName = term; //search input
-
+    const searchTerm = useSelector(selectSearchTerm);
 
     useEffect(()=>{
-        dispatch(getGeoLocation(cityName));
-    },[cityName])
+        dispatch(getGeoLocation(searchTerm));
+    },[searchTerm])
     
 }
