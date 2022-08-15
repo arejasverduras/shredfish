@@ -2,7 +2,6 @@ import React from "react";
 import { CurrentSwell } from "./CurrentSwell/CurrentSwell";
 import { CurrentWind} from "./CurrentWind/CurrentWind";
 import { CurrentTide } from "./CurrentTide/CurrentTide";
-import { CurrentWeather } from "./CurrentWeather/CurrentWeather";
 import { CurrentOpenWeather } from "./CurrentOpenWeather/CurrentOpenWeather";
 
 export const Current = () => {
@@ -13,7 +12,6 @@ export const Current = () => {
             
             <div className="CurrentWrapper">
                 <CurrentOpenWeather />
-                {/* <CurrentWeather /> */}
                 <CurrentSwell />
                 <CurrentWind />
                 <CurrentTide />
