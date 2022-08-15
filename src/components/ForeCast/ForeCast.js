@@ -32,11 +32,16 @@ export const ForeCast = ()=>{
     return (
         <div className="ForeCast">
             <SpotGeoDisplay />
-            <GetWeather />
-            <ForeCastResult />
-            <TideResult />
-            <WindResult />
-            <WeatherResult />
+            {/* Call Api's */}
+                <GetWeather />
+                <ForeCastResult />
+                <TideResult />
+                <WindResult />
+
+            {/* Renders Current */}
+            {/* Renders forecast table */}
+            {/* Renders Tides (contains TidesStatus, graph, summary) */}
+                {/* Wind is displayed in Forecast table and CurrentWind, no need to render anyhthing */}
         </div>
     )
     }

@@ -12,7 +12,7 @@ const tidesSlice = createSlice({
     name: "tides",
     initialState: {
         tidesdata: '',
-        tidesstatus: 'yyy'
+        tidesstatus: 'idle'
     },
     reducers: {
 
