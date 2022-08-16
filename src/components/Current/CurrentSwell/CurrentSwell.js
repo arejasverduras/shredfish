@@ -1,6 +1,6 @@
 import {React} from 'react';
 import { useSelector } from 'react-redux';
-import { selectForeCast, selectStatus } from '../../../features/ForeCastData/ForeCastDataSlice';
+import { selectForeCast, selectStatus } from '../../../containers/ForeCastResult/ForeCastDataSlice';
 import arrow from '../../../up-arrow-swell.svg'
 import { getHour } from '../../../features/features';
 

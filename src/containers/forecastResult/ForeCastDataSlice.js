@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import Surfline from "./Surfline";
+import Surfline from "../../features/ForeCastData/Surfline";
 
 export const getWaveData = createAsyncThunk('/',
     async (arg, thunkAPI) => {

@@ -2,7 +2,7 @@ import React from "react";
 import { SpotGeoDisplay } from "../SpotLoader/SpotGeoDisplay/SpotGeoDisplay";
 import { CallAPIs } from "../../features/CallAPIs/CallAPIs";
 import { Current } from "../Current/Current";
-import { selectStatus } from "../../features/ForeCastData/ForeCastDataSlice";
+import { selectStatus } from "../../containers/ForeCastResult/ForeCastDataSlice";
 import { ForeCastTable } from "./ForeCastTable/ForeCastTable";
 import { Tides } from "../Tides/Tides";
 import { selectCurrentSpot, selectSearchTerm } from "../../components/SpotSelector/SpotSlice";

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectForeCast, selectStatus } from "../../../features/ForeCastData/ForeCastDataSlice";
+import { selectForeCast, selectStatus } from "../../../containers/ForeCastResult/ForeCastDataSlice";
 import { selectWindData, selectWindStatus } from "../../../containers/WindResult/WindSlice";
 import swellArrow from '../../../up-arrow-swell.svg';
 import windArrow from '../../../up-arrow-wind.svg';

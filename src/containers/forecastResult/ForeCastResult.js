@@ -1,7 +1,7 @@
 import {React, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectSpotKey } from '../../components/SpotSelector/SpotSlice';
-import { getWaveData } from '../../features/ForeCastData/ForeCastDataSlice';
+import { getWaveData } from './ForeCastDataSlice';
 
 export const ForeCastResult = () => {
     const dispatch = useDispatch();

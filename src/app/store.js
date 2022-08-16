@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import ForeCastDataSlice from '../features/ForeCastData/ForeCastDataSlice';
+import ForeCastDataSlice from '../containers/ForeCastResult/ForeCastDataSlice';
 import TidesResultSlice from '../containers/TidesResult/TidesResultSlice';
 import SpotSlice from '../components/SpotSelector/SpotSlice';
 import WindSlice from '../containers/WindResult/WindSlice';
