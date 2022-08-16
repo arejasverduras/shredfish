@@ -2,6 +2,8 @@ import React from "react";
 import { SpotGeoDisplay } from "../SpotLoader/SpotGeoDisplay/SpotGeoDisplay";
 import { CallAPIs } from "../../features/CallAPIs/CallAPIs";
 import { Current } from "../Current/Current";
+import { ForeCastTable } from "../forecastResult/ForeCastTable/ForeCastTable";
+import { Tides } from "../Tides/Tides";
 import { selectCurrentSpot, selectSearchTerm } from "../../components/SpotSelector/SpotSlice";
 import { useSelector } from "react-redux";
 
@@ -33,9 +35,11 @@ export const ForeCast = ()=>{
             
             {/* Renders Current */}
             <Current />
-            {/* Renders forecast table */}
-            {/* Renders Tides (contains TidesStatus, graph, summary) */}
-                {/* Wind is displayed in Forecast table and CurrentWind, no need to render anyhthing */}
+            <ForeCastTable />
+            <Tides />
+                {/* Wind is displayed in Forecast table and CurrentWind, 
+                no need to render anyhthing */}
+                {/* Weather is Integrated in Current, and will be integrated in ForecastTable */}
         </div>
     )
     }

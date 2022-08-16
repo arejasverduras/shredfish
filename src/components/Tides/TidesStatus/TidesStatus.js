@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectTidesStatus } from '../TidesResultSlice';
+import { selectTidesStatus } from '../../../containers/TidesResult/TidesResultSlice';
 
 export const TidesStatus = () =>{
     const tidesStatus = useSelector(selectTidesStatus);

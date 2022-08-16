@@ -1,10 +1,10 @@
 import {React, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTidesData } from './TidesResultSlice';
-import { selectSpotKey } from '../SpotSelector/SpotSlice';
-import { TidesStatus } from './TidesStatus/TidesStatus';
-import { TidesGraph } from './TidesGraph/TidesGraph';
-import { TidesSummary } from './TidesSummary/TidesSummary';
+import { selectSpotKey } from '../../components/SpotSelector/SpotSlice';
+import { TidesStatus } from '../../components/Tides/TidesStatus/TidesStatus';
+import { TidesGraph } from '../../components/Tides/TidesGraph/TidesGraph';
+import { TidesSummary } from '../../components/Tides/TidesSummary/TidesSummary';
 
 export const TideResult = () => {
     const dispatch = useDispatch();

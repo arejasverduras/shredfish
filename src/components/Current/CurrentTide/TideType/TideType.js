@@ -1,6 +1,6 @@
 import {React} from 'react';
 import { useSelector } from 'react-redux';
-import { selectTidesStatus } from '../../../TidesResult/TidesResultSlice';
+import { selectTidesStatus } from '../../../../containers/TidesResult/TidesResultSlice';
 
 export const TideType = () => {
 

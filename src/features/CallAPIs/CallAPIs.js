@@ -1,7 +1,7 @@
 import React from "react";
 import { GetWeather } from "../OpenWeather/GetWeather";
 import { ForeCastResult } from "../../components/forecastResult/ForeCastResult";
-import { TideResult } from "../../components/TidesResult/TideResult";
+import { TideResult } from "../../containers/TidesResult/TideResult";
 import { WindResult } from "../../components/WindResult/WindResult";
 
 export const CallAPIs = () => {

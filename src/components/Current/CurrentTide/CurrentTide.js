@@ -1,5 +1,5 @@
 import {React} from 'react';
-import { TidesGraph} from '../../TidesResult/TidesGraph/TidesGraph';
+import { TidesGraph } from '../../Tides/TidesGraph/TidesGraph';
 import { TideType } from './TideType/TideType';
 
 export const CurrentTide = () => {
