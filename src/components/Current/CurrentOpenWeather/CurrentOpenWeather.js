@@ -3,13 +3,13 @@ import { useSelector } from "react-redux";
 import { selectCurrentWeatherStatus, selectOpenCurrentWeather } from "../../../containers/WeatherResult/OpenWeatherSlice";
 
 export const CurrentOpenWeather = () => {
-    const openWeatherStatus = useSelector(selectCurrentWeatherStatus);
+    const openCurrentWeatherStatus = useSelector(selectCurrentWeatherStatus);
     const openCurrentWeather = useSelector(selectOpenCurrentWeather);
 
-    if (openWeatherStatus !== 'succeeded'){
+    if (openCurrentWeatherStatus !== 'succeeded'){
         return (
             <div className="current CurrentWeather">
-                <p>Weather status: {openWeatherStatus}</p>
+                <p>Weather status: {openCurrentWeatherStatus}</p>
             </div>
         )
     } else {
