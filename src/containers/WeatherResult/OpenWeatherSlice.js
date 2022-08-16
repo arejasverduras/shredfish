@@ -16,21 +16,23 @@ async (arg, thunkAPI) => {
 const OpenWeatherSlice = createSlice({
     name: 'openweather',
     initialState: {
+        currentWeatherStatus: 'idle',
+        currentWeather: '',
         openWeatherStatus: 'idle',
-        openWeatherData: '',
-        currentWeather: ''
+        openWeatherData: ''
+        
     },
     extraReducers: {
         [getOpenWeatherData.pending]: (state,action) => {
-            state.openWeatherStatus = 'pending';
+            state.currentWeatherStatus = 'pending';
             
         },
         [getOpenWeatherData.fulfilled]: (state, action) => {
-            state.openWeatherStatus = 'succeeded';
+            state.currentWeatherStatus = 'succeeded';
             state.currentWeather = (action.payload);
         },
         [getOpenWeatherData.rejected]: (state, action) => {
-            state.openWeatherStatus = 'rejected';
+            state.currentWeatherStatus = 'rejected';
             state.currentWeather = 'The sun rose in the east';
         },
 
@@ -54,6 +56,7 @@ const OpenWeatherSlice = createSlice({
 //create and export sliceSelector 
 export const selectOpenWeatherData = state => state.openweather.openWeatherData;
 export const selectOpenWeatherStatus = state => state.openweather.openWeatherStatus;
+export const selectCurrentWeatherStatus = state => state.openweather.currentWeatherStatus;
 export const selectOpenCurrentWeather = state => state.openweather.currentWeather;
 
 // export the reducer as default

@@ -1,9 +1,9 @@
 import {React} from "react";
 import { useSelector } from "react-redux";
-import { selectOpenWeatherStatus, selectOpenWeatherData, selectOpenCurrentWeather } from "../../../containers/WeatherResult/OpenWeatherSlice";
+import { selectCurrentWeatherStatus, selectOpenCurrentWeather } from "../../../containers/WeatherResult/OpenWeatherSlice";
 
 export const CurrentOpenWeather = () => {
-    const openWeatherStatus = useSelector(selectOpenWeatherStatus);
+    const openWeatherStatus = useSelector(selectCurrentWeatherStatus);
     const openCurrentWeather = useSelector(selectOpenCurrentWeather);
 
     if (openWeatherStatus !== 'succeeded'){
