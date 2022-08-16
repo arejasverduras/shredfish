@@ -16,7 +16,7 @@ export const CurrentOpenWeather = () => {
     } else {
     
         // const {temperature, condition} = openCurrentWeather;
-        const {weather, name, sys, main} = openCurrentWeather;
+        const {weather, name, sys, main, timezone} = openCurrentWeather;
         const {sunrise, sunset} = sys;
 
         return (

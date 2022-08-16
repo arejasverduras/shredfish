@@ -3,6 +3,7 @@ import { CurrentSwell } from "./CurrentSwell/CurrentSwell";
 import { CurrentWind} from "./CurrentWind/CurrentWind";
 import { CurrentTide } from "./CurrentTide/CurrentTide";
 import { CurrentOpenWeather } from "./CurrentOpenWeather/CurrentOpenWeather";
+import { CurrentWindOW } from "./CurrentWind/CurrentWindOW";
 
 export const Current = () => {
     return (
@@ -14,6 +15,7 @@ export const Current = () => {
                 <CurrentOpenWeather />
                 <CurrentSwell />
                 <CurrentWind />
+                <CurrentWindOW />
                 <CurrentTide />
             </div>
             <div className="spotBasic"></div>
