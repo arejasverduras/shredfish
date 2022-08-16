@@ -14,7 +14,7 @@ export const Current = () => {
             <div className="CurrentWrapper">
                 <CurrentOpenWeather />
                 <CurrentSwell />
-                <CurrentWind />
+                {/* <CurrentWind /> */}
                 <CurrentWindOW />
                 <CurrentTide />
             </div>
