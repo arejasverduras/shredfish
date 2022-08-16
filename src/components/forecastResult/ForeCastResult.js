@@ -1,15 +1,10 @@
 import {React, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectSpotName, selectSpotKey } from '../SpotSelector/SpotSlice';
-import { selectStatus, getWaveData } from '../../features/ForeCastData/ForeCastDataSlice';
-import { Current } from '../Current/Current';
-import { ForeCastTable } from './ForeCastTable/ForeCastTable';
+import { selectSpotKey } from '../SpotSelector/SpotSlice';
+import { getWaveData } from '../../features/ForeCastData/ForeCastDataSlice';
 
 export const ForeCastResult = () => {
     const dispatch = useDispatch();
-    
-    const spotName = useSelector(selectSpotName);
-    const status = useSelector(selectStatus);
     
     //get variables for API call
     const type = 'wave';
@@ -23,12 +18,7 @@ export const ForeCastResult = () => {
     },[reqUrl])
 
     return (
-        <div className='ForeCastResult'>
-            <p>Get data: {status}</p>
-            <h1>{spotName}</h1>
-            <Current />          
-            <h2>ForeCast</h2>
-            <ForeCastTable />
-            </div>
+        <>
+        </>
     )
 }

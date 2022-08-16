@@ -21,7 +21,7 @@ button:hover {
 }
 
 
-/* ForeCastResult */
+/* ForeCast page */
 .ForeCast {
   margin: 0 auto;
   max-width: 100%;
@@ -186,10 +186,6 @@ button:hover {
   display: flex;
 }
 
-.ForeCastResult {
-  /* main wrapper for component */
-  /* padding: 20px;   */
-}
 
 /* ForeCastTable */
 
