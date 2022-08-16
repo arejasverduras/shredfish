@@ -42,6 +42,30 @@ const GeoCoding = {
             console.log(error);
         }
         
+    },
+    async getAllWeatherFromGeo(arg){
+        const baseURL = 'https://api.openweathermap.org/data/3.0/onecall?';
+        const appId = `&appid=${this.api}`;
+        const {lat, lon} = arg;
+        const units = 'metric';
+        // const exclude = 'minutely'
+        const params = `lat=${lat}&lon=${lon}&units=${units}`;
+        // arg = lat={lat}&lon={lon}
+        const reqURL = baseURL+params+appId;
+        // https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&appid={API key}
+
+        try {
+            const response = await fetch(reqURL); 
+            if (response.ok) {
+                const jsonResponse = await response.json();
+                console.log(jsonResponse);
+                return jsonResponse;
+
+            }
+        } catch (error) {
+            console.log(error);
+        }
+        
     }
 }
 
