@@ -12,7 +12,6 @@ const GeoCoding = {
             const response = await fetch(reqURL); 
             if (response.ok) {
                 const jsonResponse = await response.json();
-                console.log(jsonResponse);
                 return jsonResponse;
 
             }
@@ -34,7 +33,6 @@ const GeoCoding = {
             const response = await fetch(reqURL); 
             if (response.ok) {
                 const jsonResponse = await response.json();
-                console.log(jsonResponse);
                 return jsonResponse;
 
             }
@@ -58,7 +56,6 @@ const GeoCoding = {
             const response = await fetch(reqURL); 
             if (response.ok) {
                 const jsonResponse = await response.json();
-                console.log(jsonResponse);
                 return jsonResponse;
 
             }
