@@ -26,7 +26,7 @@ export const windStrength = (speed) => {
 
     // convert timestamp to changes
 export const timestampToTime = (stamp) => {
-        const converted = new Date(stamp);
+        const converted = new Date(stamp*1000);
         let minutes;
         if (converted.getMinutes() < 10){
             minutes = '0'+converted.getMinutes();

@@ -25,14 +25,14 @@ export const TidesSummary = () => {
         const tideLowCells= tideLows.map((low, index) =>
         <>
         <td key={index}>{low.type}</td>
-        <td key={index+10}>{timestampToTime(low.timestamp*1000)}</td>
+        <td key={index+10}>{timestampToTime(low.timestamp)}</td>
         </>
         )
 
         const tideHighCells= tideHighs.map((high, index) =>
         <>
         <td key={index}>{high.type}</td>
-        <td key={index+10}>{timestampToTime(high.timestamp*1000)}</td>
+        <td key={index+10}>{timestampToTime(high.timestamp)}</td>
         </>
         )
             

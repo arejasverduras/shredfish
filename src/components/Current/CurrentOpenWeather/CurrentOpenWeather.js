@@ -1,6 +1,7 @@
 import {React} from "react";
 import { useSelector } from "react-redux";
 import { selectCurrentWeatherStatus, selectOpenCurrentWeather } from "../../../containers/WeatherResult/OpenWeatherSlice";
+import { timestampToTime } from "../../../features/features";
 
 export const CurrentOpenWeather = () => {
     const openCurrentWeatherStatus = useSelector(selectCurrentWeatherStatus);
@@ -16,13 +17,23 @@ export const CurrentOpenWeather = () => {
     
         // const {temperature, condition} = openCurrentWeather;
         const {weather, name, sys, main} = openCurrentWeather;
-        console.log(openCurrentWeather);
+        const {sunrise, sunset} = sys;
 
         return (
+        <>
         <div className="current CurrentWeather">
             {/* <p>{temperature.toFixed(0)}.C | {condition.toLowerCase()}</p> */}
-            <p>{name}, {sys.country}: {weather[0].main}. {main.temp.toFixed(0)}.C</p>
+            <p>{name}, {sys.country}: {weather[0].main}, {weather[0].description}. {main.temp.toFixed(0)}.C</p>
         </div>
+        <div className="current CurrentWeather">
+        {/* <p>{temperature.toFixed(0)}.C | {condition.toLowerCase()}</p> */}
+        
+        <ul className="CurrentSunLightList">
+            <li>Sunrise: {timestampToTime(sunrise)}</li>
+            <li>Sunset: {timestampToTime(sunset)}</li>
+        </ul>
+        </div>
+    </>
     )
     }
 }
