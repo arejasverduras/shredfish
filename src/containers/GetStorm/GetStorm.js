@@ -1,6 +1,7 @@
 import {React, useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectCurrentSpot } from "../../components/SpotSelector/SpotSlice";
+import { getSwell } from "./StormSlice";
 
 export const GetStorm = () =>{
     const dispatch = useDispatch();
@@ -15,7 +16,7 @@ export const GetStorm = () =>{
 
     //gets current Weather
     useEffect(()=>{
-        dispatch(getAllOpenWeatherData(arg));
+        dispatch(getSwell(arg));
     },[])
     
     return (
