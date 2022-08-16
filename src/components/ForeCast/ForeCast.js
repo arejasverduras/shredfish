@@ -32,8 +32,9 @@ export const ForeCast = ()=>{
         <div className="ForeCast">
             <SpotGeoDisplay />
             <CallAPIs />
-            
-            {/* Renders Current */}
+                {/* ForeCast result in Callapi's need to be spliced
+                in container and presentational components */}
+
             <Current />
             <ForeCastTable />
             <Tides />
