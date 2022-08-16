@@ -3,7 +3,7 @@ import ForeCastDataSlice from '../features/ForeCastData/ForeCastDataSlice';
 import TidesResultSlice from '../containers/TidesResult/TidesResultSlice';
 import SpotSlice from '../components/SpotSelector/SpotSlice';
 import WindSlice from '../containers/WindResult/WindSlice';
-import OpenWeatherSlice from '../features/OpenWeather/OpenWeatherSlice';
+import OpenWeatherSlice from '../containers/WeatherResult/OpenWeatherSlice';
 
 export const store = configureStore({
   reducer: {

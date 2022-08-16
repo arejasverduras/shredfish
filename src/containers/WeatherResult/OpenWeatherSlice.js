@@ -1,6 +1,5 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
-import GeoCoding from "./GeoCoding";
-import { getHour } from "../features";
+import GeoCoding from "../../features/OpenWeather/GeoCoding";
 
 export const getOpenWeatherData = createAsyncThunk('/openweather/weatherinfo',
 async (arg, thunkAPI) => {

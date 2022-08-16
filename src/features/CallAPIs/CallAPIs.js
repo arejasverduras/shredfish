@@ -1,5 +1,5 @@
 import React from "react";
-import { GetWeather } from "../OpenWeather/GetWeather";
+import { GetWeather } from "../../containers/WeatherResult/GetWeather";
 import { ForeCastResult } from "../../containers/ForeCastResult/ForeCastResult";
 import { TideResult } from "../../containers/TidesResult/TideResult";
 import { WindResult } from "../../containers/WindResult/WindResult";

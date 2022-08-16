@@ -1,6 +1,6 @@
 import {React} from "react";
 import { useSelector } from "react-redux";
-import { selectOpenWeatherStatus, selectOpenWeatherData } from "../../../features/OpenWeather/OpenWeatherSlice";
+import { selectOpenWeatherStatus, selectOpenWeatherData } from "../../../containers/WeatherResult/OpenWeatherSlice";
 
 export const CurrentOpenWeather = () => {
 
