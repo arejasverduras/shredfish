@@ -23,6 +23,7 @@ const OpenWeatherSlice = createSlice({
         
     },
     extraReducers: {
+        // gets currentWeather from openWeather
         [getOpenWeatherData.pending]: (state,action) => {
             state.currentWeatherStatus = 'pending';
             
@@ -35,7 +36,7 @@ const OpenWeatherSlice = createSlice({
             state.currentWeatherStatus = 'rejected';
             state.currentWeather = 'The sun rose in the east';
         },
-
+        //gets all weather date (onecall) from openWeather
         [getAllOpenWeatherData.pending]: (state,action) => {
             state.openWeatherStatus = 'pending';
             

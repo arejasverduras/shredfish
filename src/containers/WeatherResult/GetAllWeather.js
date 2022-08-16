@@ -1,9 +1,9 @@
 import {React, useEffect }from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectCurrentSpot } from "../../components/SpotSelector/SpotSlice";
-import { getOpenWeatherData } from "./OpenWeatherSlice";
+import { getAllOpenWeatherData } from "./OpenWeatherSlice";
 
-export const GetWeather =() =>{
+export const GetAllWeather =() =>{
     const dispatch = useDispatch();
     const currentSpot = useSelector(selectCurrentSpot);
 
@@ -16,7 +16,7 @@ export const GetWeather =() =>{
 
     //gets current Weather
     useEffect(()=>{
-        dispatch(getOpenWeatherData(arg));
+        dispatch(getAllOpenWeatherData(arg));
     },[])
     
     return (
