@@ -34,7 +34,6 @@ export const ForeCast = ()=>{
             <CallAPIs />
                 {/* ForeCast result in Callapi's need to be spliced
                 in container and presentational components */}
-
             <Current />
             <ForeCastTable />
             <Tides />
