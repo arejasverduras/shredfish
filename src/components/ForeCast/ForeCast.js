@@ -34,8 +34,6 @@ export const ForeCast = ()=>{
         <div className="ForeCast">
             <SpotGeoDisplay />
             <CallAPIs />
-            {/* move getWEather from 'features' to container folder */}
-
             {/* make this into a mini component? */}
             <div className='ForeCastNameAndStatus'>
                 <h1>{currentSpot.data[0].name}</h1>
