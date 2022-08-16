@@ -1,6 +1,6 @@
 import {React} from "react";
 import { useSelector } from "react-redux";
-import { selectWindData, selectWindStatus } from "../../WindResult/WindSlice";
+import { selectWindData, selectWindStatus } from "../../../containers/WindResult/WindSlice";
 import windArrow from '../../../up-arrow-wind.svg';
 import { getHour, windStrength } from "../../../features/features";
 

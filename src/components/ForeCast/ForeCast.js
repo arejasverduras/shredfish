@@ -34,7 +34,6 @@ export const ForeCast = ()=>{
         <div className="ForeCast">
             <SpotGeoDisplay />
             <CallAPIs />
-            {/* move ForeCastResult to container folder */}
             {/* move WindResult to container folder */}
             {/* move getWEather from 'features' to container folder */}
 
