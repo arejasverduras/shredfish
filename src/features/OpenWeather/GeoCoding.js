@@ -44,12 +44,12 @@ const GeoCoding = {
         
     },
     async getAllWeatherFromGeo(arg){
-        const baseURL = 'https://api.openweathermap.org/data/3.0/onecall?';
+        const baseURL = 'https://api.openweathermap.org/data/2.5/forecast?';
         const appId = `&appid=${this.api}`;
         const {lat, lon} = arg;
         const units = 'metric';
-        // const exclude = 'minutely'
-        const params = `lat=${lat}&lon=${lon}&units=${units}`;
+        const exclude = 'minutely,alerts'
+        const params = `lat=${lat}&lon=${lon}&units=${units}&exclude=${exclude}`;
         // arg = lat={lat}&lon={lon}
         const reqURL = baseURL+params+appId;
         // https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&appid={API key}
