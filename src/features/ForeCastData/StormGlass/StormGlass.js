@@ -67,7 +67,31 @@ const StormGlass = {
             console.log(error);
         }
     },
+    async getTides(arg){
+        const apiEndpoint = this.apiEndpoint;
+        const endpoint = 'tide/sea-level/';
+        const type = 'point?';
+        const {lat, lon} = arg;
+        const location = `lat=${lat}&lng=${lon}`;
+        const source = '&source=noaa';
+        const requestURL = apiEndpoint+endpoint+type+location+source;
 
+        const headers = {
+            headers : this.authorization
+        }
+        
+        try {
+            const response = await fetch(requestURL, headers); 
+            if (response.ok) {
+                const jsonResponse = await response.json();
+                console.log(jsonResponse);
+                return jsonResponse;
+
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    },
 
 
 };

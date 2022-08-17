@@ -7,7 +7,7 @@ export const TidesGraph = () => {
     const tidesStatus = useSelector(selectTidesStatus);
     const tidesData = useSelector(selectTidesData);
 
-    const {hour, timeNow} = getHour();
+    const {hour} = getHour();
 
     if (tidesStatus !== 'succeeded') {
         return (

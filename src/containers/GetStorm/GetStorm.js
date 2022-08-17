@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectCurrentSpot } from "../../components/SpotSelector/SpotSlice";
 import { getSwell } from "./StormSlice";
 import { getWindData } from "../WindResult/WindSlice";
+import { getTidesFromStormGlass } from "../TidesResult/TidesResultSlice";
 
 export const GetStorm = () =>{
     const dispatch = useDispatch();
@@ -24,6 +25,11 @@ export const GetStorm = () =>{
     useEffect(()=>{
         dispatch(getWindData(arg));
     },[])
+
+    useEffect(()=>{
+        dispatch(getTidesFromStormGlass(arg));
+    },[])
+    
     
     return (
     <>

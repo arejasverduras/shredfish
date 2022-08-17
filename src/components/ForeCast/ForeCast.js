@@ -35,10 +35,9 @@ export const ForeCast = ()=>{
             <SpotGeoDisplay />
             <CallAPIs />
             {/* make this into a mini component? */}
-            <div className='ForeCastNameAndStatus'>
-                <h1>{currentSpot.data[0].name}</h1>
-            </div>
-
+                <div className='ForeCastNameAndStatus'>
+                    <h1>{currentSpot.data[0].name}</h1>
+                </div>
             <Current />
             <ForeCastTableStormGlass />
             <Tides />
