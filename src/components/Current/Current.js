@@ -17,7 +17,7 @@ export const Current = () => {
                 <CurrentOpenWeather />
                 <CurrentSwell source={source} />
                 {/* <CurrentWind /> */}
-                <CurrentWindOW />
+                <CurrentWind source={source} />
                 <CurrentTide />
             </div>
             <div className="spotBasic"></div>

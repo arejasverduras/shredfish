@@ -4,13 +4,13 @@ import { selectWindData, selectWindStatus } from "../../../containers/WindResult
 import windArrow from '../../../up-arrow-wind.svg';
 import { getHour, windStrength } from "../../../features/features";
 
-export const CurrentWind = () => {
+export const CurrentWind = ({source}) => {
     const windStatus = useSelector(selectWindStatus);
     const windData = useSelector(selectWindData);
     
-    const {hour, timeNow} = getHour();
+    const {hour } = getHour();
 
-    if (windStatus !== 'succeeded') {
+    if (windStatus !== 'succeeded' || windData.hours.length <1) {
         return (
             <div className="current NoCurrentWind">
                 <p>No wind data available. Loading wind status: {windStatus}</p>
@@ -18,9 +18,10 @@ export const CurrentWind = () => {
         )
     } else {
     
-    const {timestamp, speed, direction, directionType, gust} = windData.wind[hour];
+    const {windSpeed, windDirection, gust} = windData.hours[hour];
+    const windSpeedKmh = (windSpeed[source]*3.6).toFixed(0);
 
-    const classNames='current '+windStrength(speed);
+    const classNames='current '+windStrength(windSpeedKmh);
 
     return (
         <div className={classNames}>
@@ -30,12 +31,12 @@ export const CurrentWind = () => {
                 className="windArrow"
                 alt="windArrow"
                 style={{
-                    transform: `rotate(${direction}deg)`
+                    transform: `rotate(${windDirection[source]}deg)`
                     }}
                 />
             
-            <p className="highlight currentWindSpeed">{speed.toFixed(0)}kph</p>
-            <p className="directionType">{directionType}</p>
+            <p className="highlight currentWindSpeed">{windSpeedKmh}kph</p>
+            {/* <p className="directionType">{directionType}</p> */}
             
         </div>
     )
