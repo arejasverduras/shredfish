@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 import { selectWindStatus, selectWindData } from "../../../containers/WindResult/WindSlice";
 import { TableSwellCells } from "./TableSwellCells/TableSwellCells";
+import { WindCells } from "./WindCells/WindCells";
 
 import { getHour, windStrength } from "../../../features/features";
 
@@ -36,6 +37,7 @@ export const ForeCastTableStormGlass = ({hourStart, hourEnd}) => {
     <tr key={index} className={index === hour? 'currentHourRow':''}>
         <td className='tableHour'>{index}</td>
         <TableSwellCells hourly={hourly} source={source} />
+        <WindCells hourly={hourly} source={source} />
     </tr>
     )
 
