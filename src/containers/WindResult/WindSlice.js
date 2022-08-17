@@ -1,10 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import Surfline from "../../features/ForeCastData/Surfline";
+// import Surfline from "../../features/ForeCastData/Surfline";
+import StormGlass from "../../features/ForeCastData/StormGlass/StormGlass";
 
     export const getWindData = createAsyncThunk('/wind',
     async (arg, thunkAPI) => {
-        const response = await Surfline.getDataFromAPI(arg);
-        return response.data
+        // const response = await Surfline.getDataFromAPI(arg);
+        const response = await StormGlass.getWind(arg);
+        return response
     })
 
 const WindSlice = createSlice({

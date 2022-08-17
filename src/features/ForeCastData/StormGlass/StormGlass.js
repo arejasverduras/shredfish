@@ -36,6 +36,37 @@ const StormGlass = {
             console.log(error);
         }
     },
+    async getWind(arg){
+        const apiEndpoint = this.apiEndpoint;
+        const endpoint = 'weather/';
+        const type = 'point?';
+        const {lat, lon} = arg;
+        const location = `lat=${lat}&lng=${lon}`;
+        const requestedParams = 'windDirection,windSpeed,gust'
+        // windSpeed and gust are in meters/second
+        const params = `&params=${requestedParams}`;
+        const source = '&source=noaa';
+
+        // const start = 'timestart';
+        // const end = 'Timestamp in UTC for last forecast hour - UNIX format or URL encoded ISO format.'
+        const requestURL = apiEndpoint+endpoint+type+location+params+source;
+
+        const headers = {
+            headers : this.authorization
+        }
+        
+        try {
+            const response = await fetch(requestURL, headers); 
+            if (response.ok) {
+                const jsonResponse = await response.json();
+                console.log(jsonResponse);
+                return jsonResponse;
+
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    },
 
 
 

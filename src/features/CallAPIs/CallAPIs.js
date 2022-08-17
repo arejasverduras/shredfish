@@ -14,7 +14,7 @@ export const CallAPIs = () => {
             <GetWeather />
             <ForeCastResult />
             <TideResult />
-            <WindResult />
+            {/* <WindResult /> */}
             <GetAllWeather />
 
 
