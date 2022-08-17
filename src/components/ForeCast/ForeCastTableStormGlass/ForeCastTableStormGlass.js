@@ -2,6 +2,7 @@ import React from "react";
 import { TableSwellCells } from "./TableSwellCells/TableSwellCells";
 import { WindCells } from "./WindCells/WindCells";
 import { getHour } from "../../../features/features";
+import { SecondarySwellCells } from "./SecondarySwellCells/SecondarySwellCells";
 
 export const ForeCastTableStormGlass = ({hourStart, hourEnd}) => {
     //goal: render a table, independent of data sources
@@ -26,6 +27,7 @@ export const ForeCastTableStormGlass = ({hourStart, hourEnd}) => {
     <tr key={index} className={index === hour? 'currentHourRow':''}>
         <td className='tableHour'>{index}</td>
         <TableSwellCells hourly={hourly} source={source} />
+        <SecondarySwellCells hourly={hourly} source={source} />
         <WindCells hourly={hourly} source={source} />
     </tr>
     )

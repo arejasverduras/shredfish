@@ -2,6 +2,7 @@ import {React, useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectCurrentSpot } from "../../components/SpotSelector/SpotSlice";
 import { getSwell } from "./StormSlice";
+import { getSecondarySwell } from "./StormSlice";
 import { getWindData } from "../WindResult/WindSlice";
 import { getTidesFromStormGlass } from "../TidesResult/TidesResultSlice";
 
@@ -20,6 +21,11 @@ export const GetStorm = () =>{
     useEffect(()=>{
         dispatch(getSwell(arg));
     },[])
+
+    useEffect(()=>{
+        dispatch(getSecondarySwell(arg));
+    },[])
+
 
     //gets wind
     useEffect(()=>{

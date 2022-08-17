@@ -7,11 +7,19 @@ async (arg, thunkAPI) => {
     return response;
 });
 
+export const getSecondarySwell = createAsyncThunk('/storm/getSecondarySwell',
+async (arg, thunkAPI) => {
+    const response = await StormGlass.getSecondarySwell(arg);
+    return response;
+});
+
 const StormSlice = createSlice({
     name: 'storm',
     initialState: {
         stormStatus: 'idle',
         stormData: '',
+        secondarySwellStatus: 'idle',
+        secondarySwellData: ''
         
     },
     extraReducers: {
@@ -26,6 +34,19 @@ const StormSlice = createSlice({
         [getSwell.rejected]: (state, action) => {
             state.stormStatus = 'rejected';
             state.stormData = 'The sun rose in the east';
+        },
+
+        [getSecondarySwell.pending]: (state,action) => {
+            state.secondarySwellStatus = 'pending';
+            
+        },
+        [getSecondarySwell.fulfilled]: (state, action) => {
+            state.secondarySwellStatus = 'succeeded';
+            state.secondarySwellData = (action.payload);
+        },
+        [getSecondarySwell.rejected]: (state, action) => {
+            state.secondarySwellStatus = 'rejected';
+            state.secondarySwellData = 'The sun rose in the east';
         }
     }
 })
@@ -35,6 +56,8 @@ const StormSlice = createSlice({
 // create & export selectors
 export const selectStormStatus = state => state.storm.stormStatus;
 export const selectStormData = state => state.storm.stormData;
+export const selectSecondarySwellStatus = state => state.storm.secondarySwellStatus;
+export const selectSecondarySwellData = state => state.storm.secondarySwellData;
 
 // export the reducer as default
 export default StormSlice.reducer;

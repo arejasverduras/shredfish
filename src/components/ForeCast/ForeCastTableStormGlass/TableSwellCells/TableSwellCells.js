@@ -20,7 +20,6 @@ export const TableSwellCells = ({hourly, source}) => {
         )
     } else {    
         const {swellHeight, waveHeight, swellPeriod, swellDirection} = swellData.hours[hourly];
-        const {secondarySwellDirection, secondarySwellHeight, secondarySwellPeriod} = swellData.hours[hourly];
 
     return (
         <>
@@ -38,18 +37,6 @@ export const TableSwellCells = ({hourly, source}) => {
                 style={{
                 transform: `rotate(${swellDirection[source]}deg)`
                 }} />
-            </td>
-            
-            {/* secondary swell */}
-            <td className={secondarySwellHeight[source].toFixed(1)<= 0.09?'':'secondarySwell'}>
-                {secondarySwellHeight[source].toFixed(1)<= 0.09? '':secondarySwellHeight[source].toFixed(1)+'m '+secondarySwellPeriod[source].toFixed(0)+'s '}
-                {secondarySwellHeight[source].toFixed(1)<= 0.09? '':
-                (
-                    <img src={swellArrow} className="swell-arrow" alt="swell-arrow" 
-                    style={{
-                    transform: `rotate(${secondarySwellDirection[source]}deg)`
-                    }} />
-                )}
             </td>
         </>
     )

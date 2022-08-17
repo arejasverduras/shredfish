@@ -10,7 +10,39 @@ const StormGlass = {
         const type = 'point?';
         const {lat, lon} = arg;
         const location = `lat=${lat}&lng=${lon}`;
-        const requestedParams = 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection,secondarySwellDirection,secondarySwellHeight,secondarySwellPeriod'
+        const requestedParams = 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection'
+        // 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection,secondarySwellDirection,secondarySwellHeight,secondarySwellPeriod
+        const params = `&params=${requestedParams}`;
+        const source = '&source=noaa';
+        //'Comma separeted list of the parameters you want to retrieve, Eg swellHeight,waveHeight'
+
+        // const start = 'timestart';
+        // const end = 'Timestamp in UTC for last forecast hour - UNIX format or URL encoded ISO format.'
+        const requestURL = apiEndpoint+endpoint+type+location+params+source;
+
+        const headers = {
+            headers : this.authorization
+        }
+        
+        try {
+            const response = await fetch(requestURL, headers); 
+            if (response.ok) {
+                const jsonResponse = await response.json();
+                console.log(jsonResponse);
+                return jsonResponse;
+
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    async getSecondarySwell(arg){
+        const apiEndpoint = this.apiEndpoint;
+        const endpoint = 'weather/';
+        const type = 'point?';
+        const {lat, lon} = arg;
+        const location = `lat=${lat}&lng=${lon}`;
+        const requestedParams = 'secondarySwellDirection,secondarySwellHeight,secondarySwellPeriod'
         // 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection,secondarySwellDirection,secondarySwellHeight,secondarySwellPeriod
         const params = `&params=${requestedParams}`;
         const source = '&source=noaa';
