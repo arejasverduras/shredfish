@@ -2,7 +2,6 @@ import React from "react";
 import { SpotGeoDisplay } from "../SpotLoader/SpotGeoDisplay/SpotGeoDisplay";
 import { CallAPIs } from "../../features/CallAPIs/CallAPIs";
 import { Current } from "../Current/Current";
-import { selectStatus } from "../../containers/ForeCastResult/ForeCastDataSlice";
 import { ForeCastTableStormGlass } from "./ForeCastTableStormGlass/ForeCastTableStormGlass";
 
 import { Tides } from "../Tides/Tides";
@@ -13,7 +12,7 @@ import { useSelector } from "react-redux";
 export const ForeCast = ()=>{
     const currentSpot = useSelector(selectCurrentSpot);
     const searchTerm = useSelector(selectSearchTerm);
-    const waveStatus = useSelector(selectStatus);
+
 
     if (currentSpot.geoStatus !== 'succeeded' || !currentSpot.data) {
         return (
@@ -38,7 +37,6 @@ export const ForeCast = ()=>{
             {/* make this into a mini component? */}
             <div className='ForeCastNameAndStatus'>
                 <h1>{currentSpot.data[0].name}</h1>
-                <p>Get data: {waveStatus}</p>
             </div>
 
             <Current />

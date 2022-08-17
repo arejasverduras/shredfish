@@ -3,7 +3,6 @@ import { CurrentSwell } from "./CurrentSwell/CurrentSwell";
 import { CurrentWind} from "./CurrentWind/CurrentWind";
 import { CurrentTide } from "./CurrentTide/CurrentTide";
 import { CurrentOpenWeather } from "./CurrentOpenWeather/CurrentOpenWeather";
-import { CurrentWindOW } from "./CurrentWind/CurrentWindOW";
 
 export const Current = () => {
     const source = 'noaa';
@@ -16,7 +15,6 @@ export const Current = () => {
             <div className="CurrentWrapper">
                 <CurrentOpenWeather />
                 <CurrentSwell source={source} />
-                {/* <CurrentWind /> */}
                 <CurrentWind source={source} />
                 <CurrentTide />
             </div>
