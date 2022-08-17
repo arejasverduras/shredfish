@@ -20,7 +20,7 @@ export const GetStorm = () =>{
         dispatch(getSwell(arg));
     },[])
 
-    //getw wind
+    //gets wind
     useEffect(()=>{
         dispatch(getWindData(arg));
     },[])

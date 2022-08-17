@@ -1,16 +1,16 @@
 import {React} from 'react';
 import { useSelector } from 'react-redux';
-import { selectForeCast, selectStatus } from '../../../containers/ForeCastResult/ForeCastDataSlice';
+import { selectStormStatus, selectStormData } from '../../../containers/GetStorm/StormSlice';
 import arrow from '../../../up-arrow-swell.svg'
 import { getHour } from '../../../features/features';
 
-export const CurrentSwell = () => {
-    const swellStatus = useSelector(selectStatus);
-    const swellData = useSelector(selectForeCast);
+export const CurrentSwell = ({source}) => {
+    const swellStatus = useSelector(selectStormStatus);
+    const swellData = useSelector(selectStormData);
 
-    const {hour, timeNow} = getHour();
+    const {hour} = getHour();
 
-    if (swellStatus !== 'succeeded') {
+    if (swellStatus !== 'succeeded' || swellData.hours.length <1) {
         return (
             <div className="current NoCurrentSwell">
                 <p>No swell data available. Loading swell status: {swellStatus}</p>
@@ -18,18 +18,17 @@ export const CurrentSwell = () => {
         )
     } else {
     
-    const {min, max, humanRelation } = swellData.wave[hour].surf;
-    const {swells} = swellData.wave[hour];
+    const {swellHeight, waveHeight, swellPeriod, swellDirection} = swellData.hours[hour];
 
     return (
         <div className="current SurfHeight">
             <h3>Swell</h3>
             <img src={arrow} className="swell-arrow" alt="swell-arrow" style={{
-                transform: `rotate(${swells[0].direction}deg)`
+                transform: `rotate(${swellDirection[source]}deg)`
                 }} />
-                <p className="highlight">{min} - {max}m</p>
-                <p>{humanRelation}</p>
-                <p className='highlight'>{swells[0].period}s</p>
+                <p className="highlight">{swellHeight[source].toFixed(1)}-
+                {waveHeight[source].toFixed(1)}m</p>
+                <p className='highlight'>{swellPeriod[source].toFixed(0)}s</p>
         </div>
     )
     }

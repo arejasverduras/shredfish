@@ -22,7 +22,6 @@ export const TableSwellCells = ({hourly, source}) => {
         const {swellHeight, waveHeight, swellPeriod, swellDirection} = swellData.hours[hourly];
         const {secondarySwellDirection, secondarySwellHeight, secondarySwellPeriod} = swellData.hours[hourly];
 
-
     return (
         <>
             {/* Surf */}

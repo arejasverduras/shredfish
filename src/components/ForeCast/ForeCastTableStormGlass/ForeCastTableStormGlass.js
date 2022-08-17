@@ -1,19 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
-
-import { selectWindStatus, selectWindData } from "../../../containers/WindResult/WindSlice";
 import { TableSwellCells } from "./TableSwellCells/TableSwellCells";
 import { WindCells } from "./WindCells/WindCells";
-
-import { getHour, windStrength } from "../../../features/features";
+import { getHour } from "../../../features/features";
 
 export const ForeCastTableStormGlass = ({hourStart, hourEnd}) => {
     //goal: render a table, independent of data sources
     //idea: render data sources as different components
-    // apllication: for every table row rendered, 
-        // render a component that loads those specific cells: 
-        // cells for swell height and data. can choose the primary swell
-        //cells for wind data
             //cells for weather data (optional)
             //cells for tide data (optional)
             // cells for 'matches prefered conditions' (optional)
@@ -27,9 +19,6 @@ export const ForeCastTableStormGlass = ({hourStart, hourEnd}) => {
     for (let x=firstIndex;x<=lastIndex;x++){
         indexArray.push(x);
     }
-
-    const windStatus = useSelector(selectWindStatus);
-    const windData = useSelector(selectWindData);
     
     const {hour} = getHour();
 

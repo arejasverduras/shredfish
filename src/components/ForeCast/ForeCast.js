@@ -3,8 +3,6 @@ import { SpotGeoDisplay } from "../SpotLoader/SpotGeoDisplay/SpotGeoDisplay";
 import { CallAPIs } from "../../features/CallAPIs/CallAPIs";
 import { Current } from "../Current/Current";
 import { selectStatus } from "../../containers/ForeCastResult/ForeCastDataSlice";
-
-import { ForeCastTable } from "./ForeCastTable/ForeCastTable";
 import { ForeCastTableStormGlass } from "./ForeCastTableStormGlass/ForeCastTableStormGlass";
 
 import { Tides } from "../Tides/Tides";
@@ -44,11 +42,9 @@ export const ForeCast = ()=>{
             </div>
 
             <Current />
-            {/* <ForeCastTable /> */}
             <ForeCastTableStormGlass />
             <Tides />
-                {/* Wind is displayed in Forecast table and CurrentWind, 
-                no need to render anyhthing */}
+
                 {/* Weather is Integrated in Current, and will be integrated in ForecastTable */}
         </div>
     )

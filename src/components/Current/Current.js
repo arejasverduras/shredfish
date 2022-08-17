@@ -6,6 +6,8 @@ import { CurrentOpenWeather } from "./CurrentOpenWeather/CurrentOpenWeather";
 import { CurrentWindOW } from "./CurrentWind/CurrentWindOW";
 
 export const Current = () => {
+    const source = 'noaa';
+    
     return (
         <div className="Current">
             <div className="spotBasic"></div>
@@ -13,7 +15,7 @@ export const Current = () => {
             
             <div className="CurrentWrapper">
                 <CurrentOpenWeather />
-                <CurrentSwell />
+                <CurrentSwell source={source} />
                 {/* <CurrentWind /> */}
                 <CurrentWindOW />
                 <CurrentTide />
