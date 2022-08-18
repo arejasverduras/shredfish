@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectTidesStatus } from '../../../containers/TidesResult/TidesResultSlice';
+import { selectTidesStatusSG } from '../../../containers/TidesResult/TidesResultSlice';
 
 export const TidesStatus = () =>{
-    const tidesStatus = useSelector(selectTidesStatus);
+    const tidesStatus = useSelector(selectTidesStatusSG);
     
     return (
         <div className='TidesStatus'>
