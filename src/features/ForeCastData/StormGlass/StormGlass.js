@@ -118,6 +118,7 @@ const StormGlass = {
         }
     },
     async getTidesExtremes(arg){
+        //return tides Extremes in UTC
         const apiEndpoint = this.apiEndpoint;
         const endpoint = 'tide/extremes/';
         const type = 'point?';
