@@ -12,7 +12,7 @@ export const SpotSelector = () => {
     }
 
     const spotButtons = favoriteSpots.map((spot, index)=> 
-        <button onClick={()=>{handleClick(spot)}}>{spot.name}</button>
+        <button key={index} onClick={()=>{handleClick(spot)}}>{spot.name}</button>
     )
     
     return (

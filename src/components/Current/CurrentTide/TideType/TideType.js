@@ -14,7 +14,7 @@ if (tidesStatus !== 'succeeded'){
 } else {
 
     const currentTideClasses = document.getElementsByClassName('currentTideColumn')[0];
-    console.log(currentTideClasses);
+    // console.log(currentTideClasses);
 
 
     return (

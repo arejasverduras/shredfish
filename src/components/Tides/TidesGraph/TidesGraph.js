@@ -30,11 +30,7 @@ export const TidesGraph = () => {
         tideHeight.height
         )
 
-        // map a new array with tide Type values
-        //combine this later with tidesHeights, with an Object as result
-
         
-     
         const tidesResultGraph = tidesOnly.map((hourdata, index) => 
         <div key={index} 
             className={hourdata.height <= tidesHeights[index+1]?`tideGoingUp ${index === hour? 'currentTideColumn': 'TideColumn'}` :`tideGoingDown ${index === hour? 'currentTideColumn': 'TideColumn'}`}

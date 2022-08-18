@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 // import Surfline from "../../features/ForeCastData/Surfline";
 import StormGlass from "../../features/ForeCastData/StormGlass/StormGlass";
 
-    export const getWindData = createAsyncThunk('/wind',
+    export const getWindData = createAsyncThunk('/wind/StormGlass',
     async (arg, thunkAPI) => {
         // const response = await Surfline.getDataFromAPI(arg);
         const response = await StormGlass.getWind(arg);
@@ -25,9 +25,7 @@ const WindSlice = createSlice({
         },
         [getWindData.fulfilled]: (state,action) => {
             state.windstatus = 'succeeded';
-            state.winddata = (action.payload)
-            // for analyzing of the response object
-            console.log(state.winddata)
+            state.winddata = (action.payload);
         },
         [getWindData.rejected]: (state, action) => {
             state.windstatus = 'rejected';

@@ -16,11 +16,10 @@ export const TidesSummary = () => {
         } 
 
     const tideResultInfo = tidesData.tides.filter((hourdata) => hourdata.type !== 'NORMAL');
-        console.log(tideResultInfo);
 
         const tideLows = tideResultInfo.filter((peak) => peak.type === 'LOW');
         const tideHighs = tideResultInfo.filter((peak) => peak.type === 'HIGH');
-        console.log(tideHighs);
+
 
         const tideLowCells= tideLows.map((low, index) =>
         <>
@@ -31,8 +30,8 @@ export const TidesSummary = () => {
 
         const tideHighCells= tideHighs.map((high, index) =>
         <>
-        <td key={index}>{high.type}</td>
-        <td key={index+10}>{timestampToTime(high.timestamp)}</td>
+        <td key={index+100}>{high.type}</td>
+        <td key={index+1000}>{timestampToTime(high.timestamp)}</td>
         </>
         )
             

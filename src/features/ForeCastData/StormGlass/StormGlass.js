@@ -28,7 +28,6 @@ const StormGlass = {
             const response = await fetch(requestURL, headers); 
             if (response.ok) {
                 const jsonResponse = await response.json();
-                console.log(jsonResponse);
                 return jsonResponse;
 
             }
@@ -60,7 +59,6 @@ const StormGlass = {
             const response = await fetch(requestURL, headers); 
             if (response.ok) {
                 const jsonResponse = await response.json();
-                console.log(jsonResponse);
                 return jsonResponse;
 
             }
@@ -91,7 +89,6 @@ const StormGlass = {
             const response = await fetch(requestURL, headers); 
             if (response.ok) {
                 const jsonResponse = await response.json();
-                console.log(jsonResponse);
                 return jsonResponse;
 
             }
@@ -105,8 +102,8 @@ const StormGlass = {
         const type = 'point?';
         const {lat, lon} = arg;
         const location = `lat=${lat}&lng=${lon}`;
-        const source = '&source=noaa';
-        const requestURL = apiEndpoint+endpoint+type+location+source;
+        //optional: start, end
+        const requestURL = apiEndpoint+endpoint+type+location;
 
         const headers = {
             headers : this.authorization
@@ -116,7 +113,6 @@ const StormGlass = {
             const response = await fetch(requestURL, headers); 
             if (response.ok) {
                 const jsonResponse = await response.json();
-                console.log(jsonResponse);
                 return jsonResponse;
 
             }
