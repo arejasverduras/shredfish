@@ -9,8 +9,8 @@ export const TidesGraphSG = ({hourStart, hourEnd}) => {
 
     const {hour} = getHour();
 
-    const firstIndex = 0 //hourStart;
-    const lastIndex = 23 //hourEnd;
+    const firstIndex = hourStart || 0;
+    const lastIndex = hourEnd || 23 //hourEnd;
 
     let indexArray= [];
 

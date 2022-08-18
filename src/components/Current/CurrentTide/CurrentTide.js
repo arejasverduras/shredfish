@@ -1,13 +1,15 @@
 import {React} from 'react';
-import { TidesGraph } from '../../Tides/TidesGraph/TidesGraph';
+import { TidesGraphSG } from '../../Tides/TidesGraphSG/TidesGraphSG';
 import { TideType } from './TideType/TideType';
 
 export const CurrentTide = () => {
 
 return (
-    <div className="current currentTide">
-        <TidesGraph className="currentTide"/>
+    <>
+        <TidesGraphSG  
+            hourStart='0' 
+            hourEnd='23'/>
         <TideType />
-    </div>
+    </>
 )
 }

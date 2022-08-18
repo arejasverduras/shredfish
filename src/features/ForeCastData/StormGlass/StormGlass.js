@@ -102,8 +102,9 @@ const StormGlass = {
         const type = 'point?';
         const {lat, lon} = arg;
         const location = `lat=${lat}&lng=${lon}`;
+        const source= '&source=noaa'
         //optional: start, end
-        const requestURL = apiEndpoint+endpoint+type+location;
+        const requestURL = apiEndpoint+endpoint+type+location+source;
 
         const headers = {
             headers : this.authorization
