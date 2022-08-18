@@ -4,7 +4,7 @@ import { selectCurrentSpot } from "../../components/SpotSelector/SpotSlice";
 import { getSwell } from "./StormSlice";
 import { getSecondarySwell } from "./StormSlice";
 import { getWindData } from "../WindResult/WindSlice";
-import { getTidesFromStormGlass } from "../TidesResult/TidesResultSlice";
+import { getTidesExtremes, getTidesFromStormGlass } from "../TidesResult/TidesResultSlice";
 
 export const GetStorm = () =>{
     const dispatch = useDispatch();
@@ -32,8 +32,14 @@ export const GetStorm = () =>{
         dispatch(getWindData(arg));
     },[])
 
+    //getTides
     useEffect(()=>{
         dispatch(getTidesFromStormGlass(arg));
+    },[])
+
+    //getTidesExtremes
+    useEffect(()=>{
+        dispatch(getTidesExtremes(arg));
     },[])
     
     

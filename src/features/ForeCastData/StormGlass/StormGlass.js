@@ -29,7 +29,6 @@ const StormGlass = {
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
-
             }
         } catch (error) {
             console.log(error);
@@ -60,7 +59,6 @@ const StormGlass = {
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
-
             }
         } catch (error) {
             console.log(error);
@@ -90,7 +88,6 @@ const StormGlass = {
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
-
             }
         } catch (error) {
             console.log(error);
@@ -115,14 +112,35 @@ const StormGlass = {
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
-
             }
         } catch (error) {
             console.log(error);
         }
     },
+    async getTidesExtremes(arg){
+        const apiEndpoint = this.apiEndpoint;
+        const endpoint = 'tide/extremes/';
+        const type = 'point?';
+        const {lat, lon} = arg;
+        const location = `lat=${lat}&lng=${lon}`;
+        const source= '&source=noaa'
+        //optional: start, end
+        const requestURL = apiEndpoint+endpoint+type+location+source;
 
-
+        const headers = {
+            headers : this.authorization
+        }
+        
+        try {
+            const response = await fetch(requestURL, headers); 
+            if (response.ok) {
+                const jsonResponse = await response.json();
+                return jsonResponse;
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    },
 };
 
 export default StormGlass;

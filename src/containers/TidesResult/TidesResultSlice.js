@@ -15,6 +15,12 @@ import Surfline from "../../features/ForeCastData/Surfline";
         return response;
     })
 
+    export const getTidesExtremes = createAsyncThunk('/tides/stormglass/extremes',
+    async (arg, thunkAPI) => {
+        const response = await StormGlass.getTidesExtremes(arg);
+        return response;
+    })
+
 
 const tidesSlice = createSlice({
     name: "tides",
@@ -22,7 +28,9 @@ const tidesSlice = createSlice({
         tidesdata: '',
         tidesstatus: 'idle',
         tidesDataSG: '',
-        tidesStatusSG: 'idle'
+        tidesStatusSG: 'idle',
+        tidesExtremesData: '',
+        tidesExtremesStatus: 'idle'
     },
     reducers: {
 
@@ -41,6 +49,7 @@ const tidesSlice = createSlice({
             state.tidesdata = 'the moon has left us';
         },
 
+        //get TidesFromStormGlass
         [getTidesFromStormGlass.pending]: (state,action) => {
             state.tidesStatusSG = 'loading';
             
@@ -53,6 +62,21 @@ const tidesSlice = createSlice({
         [getTidesFromStormGlass.rejected]: (state, action) => {
             state.tidesStatusSG = 'rejected';
             state.tidesDataSG = 'the sg moon has left us';
+        },
+
+        //getTidesExtremes
+        [getTidesExtremes.pending]: (state,action) => {
+            state.tidesExtremesStatus = 'loading';
+            
+        },
+        [getTidesExtremes.fulfilled]: (state,action) => {
+            state.tidesExtremesStatus = 'succeeded';
+            state.tidesExtremesData = (action.payload)
+ 
+        },
+        [getTidesExtremes.rejected]: (state, action) => {
+            state.tidesExtremesStatus = 'rejected';
+            state.tidesExtremesData = 'the sg moon has left us';
         }
     }
 })
