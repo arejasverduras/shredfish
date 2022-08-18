@@ -17,6 +17,17 @@ export const GetStorm = () =>{
         lon: lon
     }
 
+    
+    //get dates for tidesExtremes
+
+
+    // const argTidesExtremes = {
+    //     late: lat,
+    //     lon: lon,
+    //     start: start,
+    //     end: end
+    // }
+
     //gets Swell
     useEffect(()=>{
         dispatch(getSwell(arg));

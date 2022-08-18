@@ -126,6 +126,7 @@ const StormGlass = {
         const location = `lat=${lat}&lng=${lon}`;
         const source= '&source=noaa'
         //optional: start, end
+        const end='&end=2022-08-18T24:00:00'
         const requestURL = apiEndpoint+endpoint+type+location+source;
 
         const headers = {

@@ -1,10 +1,19 @@
 export const getHour = () => {
     const current = new Date();
+    const year = current.getFullYear();
+    const month = current.getMonth()+1;
+    const day = current.getDate();
     const hour = current.getHours();
-    const timeNow = current.toLocaleTimeString();    
+    const timeNow = current.toLocaleTimeString();  
+    const dateNow = current.toDateString();  
     return {
+        current: current,
+        year: year,
+        month: month,
+        day: day,
         hour: hour,
-        timeNow: timeNow
+        timeNow: timeNow,
+        dateNow: dateNow
     }
 }
 

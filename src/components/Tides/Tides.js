@@ -2,6 +2,7 @@ import {React} from 'react';
 // import { TidesStatus } from './TidesStatus/TidesStatus';
 import { TidesGraphSG } from './TidesGraphSG/TidesGraphSG';
 import { TidesSummary } from './TidesSummary/TidesSummary';
+import { TidesSummarySG } from './TidesSummary/TidesSummarySG';
 
 export const Tides = () => {
     return (
@@ -9,6 +10,7 @@ export const Tides = () => {
             {/* <TidesStatus /> */}
             <TidesGraphSG />
             <TidesSummary />
+            <TidesSummarySG />
         </div>
     )
 }
