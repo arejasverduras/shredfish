@@ -9,7 +9,7 @@ export const Tides = () => {
         <div className="TideResult">
             {/* <TidesStatus /> */}
             <TidesGraphSG />
-            <TidesSummary />
+            {/* <TidesSummary /> */}
             <TidesSummarySG />
         </div>
     )
