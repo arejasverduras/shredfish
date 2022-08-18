@@ -48,7 +48,7 @@ export const TidesGraphSG = ({hourStart, hourEnd}) => {
             <div key={index} 
                 className={hourdata <= tidesHeights[index+1]?`tideGoingUp ${index === hour? 'currentTideColumn': 'TideColumn'}` :`tideGoingDown ${index === hour? 'currentTideColumn': 'TideColumn'}`}
                 style={{
-                height: (hourdata+2)*30,
+                height: (hourdata+5)*30,
                 }}
                 title={hourdata}>
                     <p className="TideColumnDesc" 

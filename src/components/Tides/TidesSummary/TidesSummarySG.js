@@ -15,7 +15,8 @@ export const TidesSummarySG = () => {
     console.log(current);
     console.log(year, month, day);
 
-    const wantedDay = day + 2;
+    const daysAhead = 0;
+    const wantedDay = day + daysAhead;
     
     const xmonth = (month <= 9?`0${month}`:month);
     const xday = (wantedDay <= 9?`0${wantedDay}`:wantedDay);
@@ -35,5 +36,25 @@ export const TidesSummarySG = () => {
         let todayXs = tidesData.data.filter(extreme => 
             extreme.time.includes(dateString));
         console.log(todayXs);
+
+        const tideCells = todayXs.map((x, index) => 
+            // {const sliced = x.time.slice(11,19)}
+            <td key={index}>
+                {x.type.toUpperCase()}: {x.time.slice(11,16)}
+            </td>
+        )
+
+        return (
+            <div className="TidesSummary">
+            <table>
+                <tbody>
+                    <tr>
+                        {tideCells}
+                    </tr>
+          
+                </tbody>
+            </table>
+        </div>
+        )
     }
 }
