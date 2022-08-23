@@ -15,12 +15,12 @@
     // availability of data
     //requested by the user
     //subscription type (premium, basic)
-import React from "react";
+import {React, useState }from "react";
 import { DailyCast } from "./DailyCast/DailyCast";
 
 export const WeeklyCast = () => {
 //input a number of days
-const numberOfDays = 7;
+const [numberOfDays, setNumberOfDays] = useState(7);
 
 //generate dailycast times the number of days
 //dailycast will set the correct hourindexes
@@ -39,6 +39,11 @@ const dailyCastList = daysArray.map((day, index)=>
 )
     return (
         <div className="WeeklyCast">
+            <div className="selectForeCastDays">
+                <button onClick={()=>{setNumberOfDays(3)}}>3-day Forecast</button>
+                <button onClick={()=>{setNumberOfDays(7)}}>7-day Forecast</button>
+                <button onClick={()=>{setNumberOfDays(10)}}>10-day Forecast</button>
+            </div>
             {dailyCastList}
         </div>
     )
