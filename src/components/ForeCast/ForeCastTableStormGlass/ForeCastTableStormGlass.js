@@ -12,7 +12,7 @@ export const ForeCastTableStormGlass = ({hourStart, hourEnd, interval}) => {
             // cells for 'matches prefered conditions' (optional)
 
     const firstIndex = hourStart || 0 //hourStart;
-    const lastIndex = hourEnd || 23 //hourEnd;
+    const lastIndex = hourEnd || 24 //hourEnd;
     const source = 'noaa' //later passed as prop (like hourStart);
 
     let indexArray= [];
@@ -27,7 +27,7 @@ export const ForeCastTableStormGlass = ({hourStart, hourEnd, interval}) => {
 
     const tableRows = indexArray.map((hourly, index) => 
     <tr key={index} className={hourly === hour? 'currentHourRow':''}>
-        <td className='tableHour'>{hourly}</td>
+        <td className='tableHour'>{index*interval}</td>
         <TableSwellCells hourly={hourly} source={source} />
         <SecondarySwellCells hourly={hourly} source={source} />
         <WindCells hourly={hourly} source={source} />
