@@ -20,7 +20,7 @@ export const TidesGraphSG = ({hourStart, hourEnd}) => {
 
     let tidesResultGraphIndex = [];
 
-    if (tidesStatus !== 'succeeded' || tidesData.data.length < 1) {
+    if (tidesStatus !== 'succeeded' || !tidesData.data.hasOwnProperty(lastIndex)) {
         return (
             <div className="NoTidesGraph">
                 <p>Graph Loading status : {tidesStatus}</p>
