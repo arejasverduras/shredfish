@@ -41,8 +41,8 @@ export const ForeCast = ()=>{
                 </div>
             <Current />
             <WeeklyCast />
-            <ForeCastTableStormGlass />
-            <Tides />
+            {/* <ForeCastTableStormGlass />
+            <Tides /> */}
 
                 {/* Weather is Integrated in Current, and will be integrated in ForecastTable */}
         </div>

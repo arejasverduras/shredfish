@@ -192,6 +192,18 @@ button:hover {
   text-align: left;
 }
 
+/* DailyCast */
+
+.DailyCastHeader {
+  display: flex;
+  padding: 0px 10px;
+  background-color: lightslategray;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color:white;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 
 /* ForeCastTable */

@@ -1,6 +1,7 @@
 import React from "react";
 import { ForeCastTableStormGlass } from "../../ForeCastTableStormGlass/ForeCastTableStormGlass";
 import { Tides } from "../../../Tides/Tides";
+import { DailyCastHeader } from "./DailyCastHeader/DailyCastHeader";
 
 export const DailyCast = ({dayNo}) => {
     if (isNaN(dayNo) || dayNo < 0){
@@ -28,6 +29,10 @@ export const DailyCast = ({dayNo}) => {
 
     return (
         <div className="DailyCast">
+            <DailyCastHeader
+                dayNo={dayNo} 
+            />
+
             <ForeCastTableStormGlass
                 hourStart={hourStart}
                 hourEnd={hourEnd} 
