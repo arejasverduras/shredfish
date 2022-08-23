@@ -3,12 +3,14 @@ import {React} from 'react';
 import { TidesGraphSG } from './TidesGraphSG/TidesGraphSG';
 import { TidesSummarySG } from './TidesSummary/TidesSummarySG';
 
-export const Tides = () => {
+export const Tides = ({hourStart, hourEnd, dayNo}) => {
     return (
         <div className="TideResult">
             {/* <TidesStatus /> */}
-            <TidesGraphSG />
-            <TidesSummarySG />
+            <TidesGraphSG 
+                hourStart={hourStart} 
+                hourEnd={hourEnd} />
+            <TidesSummarySG dayNo={dayNo|| 0}/>
         </div>
     )
 }

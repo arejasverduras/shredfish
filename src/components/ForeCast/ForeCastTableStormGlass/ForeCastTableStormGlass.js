@@ -11,8 +11,8 @@ export const ForeCastTableStormGlass = ({hourStart, hourEnd}) => {
             //cells for tide data (optional)
             // cells for 'matches prefered conditions' (optional)
 
-    const firstIndex = 0 //hourStart;
-    const lastIndex = 23 //hourEnd;
+    const firstIndex = hourStart || 0 //hourStart;
+    const lastIndex = hourEnd || 23 //hourEnd;
     const source = 'noaa' //later passed as prop (like hourStart);
 
     let indexArray= [];

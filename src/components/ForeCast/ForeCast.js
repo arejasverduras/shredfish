@@ -7,6 +7,7 @@ import { ForeCastTableStormGlass } from "./ForeCastTableStormGlass/ForeCastTable
 import { Tides } from "../Tides/Tides";
 import { selectCurrentSpot, selectSearchTerm } from "../../components/SpotSelector/SpotSlice";
 import { useSelector } from "react-redux";
+import { WeeklyCast } from "./WeeklyCast/WeeklyCast";
 
 
 export const ForeCast = ()=>{
@@ -39,6 +40,7 @@ export const ForeCast = ()=>{
                     <h1>{currentSpot.data[0].name}</h1>
                 </div>
             <Current />
+            <WeeklyCast />
             <ForeCastTableStormGlass />
             <Tides />
 
