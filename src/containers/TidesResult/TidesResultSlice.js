@@ -56,7 +56,7 @@ const tidesSlice = createSlice({
         },
         [getTidesFromStormGlass.fulfilled]: (state,action) => {
             if (action.payload === '402') {
-                state.tidesStatusSG = 'rejected';
+                state.tidesStatusSG = 'API request max reached';
                 state.tidesDataSG = ('no money g')
             } else {
             state.tidesStatusSG = 'succeeded';
@@ -76,7 +76,7 @@ const tidesSlice = createSlice({
         },
         [getTidesExtremes.fulfilled]: (state,action) => {
             if (action.payload === '402') {
-                state.tidesExtremesStatus = 'rejected';
+                state.tidesExtremesStatus = 'API request max reached';
                 state.tidesExtremesData = ('no money g')
             } else {
 

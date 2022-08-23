@@ -25,7 +25,7 @@ const WindSlice = createSlice({
         },
         [getWindData.fulfilled]: (state,action) => {
             if (action.payload === '402') {
-                state.windstatus = 'rejected';
+                state.windstatus = 'API request max reached';
                 state.winddata = ('no money g')
             } else {
             state.windstatus = 'succeeded';
