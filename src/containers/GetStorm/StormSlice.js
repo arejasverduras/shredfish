@@ -48,7 +48,7 @@ const StormSlice = createSlice({
         [getSecondarySwell.fulfilled]: (state, action) => {
             if (action.payload === '402') {
                 state.secondarySwellStatus = 'API request max reached';
-                state.secondarySwellData = ('no money g')
+                state.secondarySwellData = ('no money g') 
             } else {
             state.secondarySwellStatus = 'succeeded';
             state.secondarySwellData = (action.payload);
