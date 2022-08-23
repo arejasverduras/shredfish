@@ -28,8 +28,13 @@ const StormSlice = createSlice({
             
         },
         [getSwell.fulfilled]: (state, action) => {
+            if (action.payload === '402') {
+                state.stormStatus = 'rejected';
+                state.stormData = ('no money g')
+            } else {
             state.stormStatus = 'succeeded';
             state.stormData = (action.payload);
+            }
         },
         [getSwell.rejected]: (state, action) => {
             state.stormStatus = 'rejected';
@@ -41,8 +46,13 @@ const StormSlice = createSlice({
             
         },
         [getSecondarySwell.fulfilled]: (state, action) => {
+            if (action.payload === '402') {
+                state.secondarySwellStatus = 'rejected';
+                state.secondarySwellData = ('no money g')
+            } else {
             state.secondarySwellStatus = 'succeeded';
             state.secondarySwellData = (action.payload);
+            }
         },
         [getSecondarySwell.rejected]: (state, action) => {
             state.secondarySwellStatus = 'rejected';

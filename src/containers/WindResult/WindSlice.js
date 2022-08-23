@@ -24,8 +24,13 @@ const WindSlice = createSlice({
             
         },
         [getWindData.fulfilled]: (state,action) => {
+            if (action.payload === '402') {
+                state.windstatus = 'rejected';
+                state.winddata = ('no money g')
+            } else {
             state.windstatus = 'succeeded';
             state.winddata = (action.payload);
+            }
         },
         [getWindData.rejected]: (state, action) => {
             state.windstatus = 'rejected';

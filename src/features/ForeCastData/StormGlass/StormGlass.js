@@ -26,6 +26,10 @@ const StormGlass = {
         
         try {
             const response = await fetch(requestURL, headers); 
+            if (response.status === 402){
+                return '402';
+            }
+            
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
@@ -56,6 +60,10 @@ const StormGlass = {
         
         try {
             const response = await fetch(requestURL, headers); 
+            if (response.status === 402){
+                return '402';
+            }
+            
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
@@ -85,6 +93,10 @@ const StormGlass = {
         
         try {
             const response = await fetch(requestURL, headers); 
+            if (response.status === 402){
+                return '402';
+            }
+            
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
@@ -109,6 +121,10 @@ const StormGlass = {
         
         try {
             const response = await fetch(requestURL, headers); 
+            if (response.status === 402){
+                return '402';
+            }
+            
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
@@ -135,6 +151,9 @@ const StormGlass = {
         
         try {
             const response = await fetch(requestURL, headers); 
+            if (response.status === 402){
+                return '402';
+            }
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;

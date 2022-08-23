@@ -55,8 +55,13 @@ const tidesSlice = createSlice({
             
         },
         [getTidesFromStormGlass.fulfilled]: (state,action) => {
+            if (action.payload === '402') {
+                state.tidesStatusSG = 'rejected';
+                state.tidesDataSG = ('no money g')
+            } else {
             state.tidesStatusSG = 'succeeded';
             state.tidesDataSG = (action.payload)
+            }
  
         },
         [getTidesFromStormGlass.rejected]: (state, action) => {
@@ -70,9 +75,14 @@ const tidesSlice = createSlice({
             
         },
         [getTidesExtremes.fulfilled]: (state,action) => {
+            if (action.payload === '402') {
+                state.tidesExtremesStatus = 'rejected';
+                state.tidesExtremesData = ('no money g')
+            } else {
+
             state.tidesExtremesStatus = 'succeeded';
             state.tidesExtremesData = (action.payload)
- 
+            }
         },
         [getTidesExtremes.rejected]: (state, action) => {
             state.tidesExtremesStatus = 'rejected';
