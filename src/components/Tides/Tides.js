@@ -9,7 +9,9 @@ export const Tides = ({hourStart, hourEnd, dayNo}) => {
             {/* <TidesStatus /> */}
             <TidesGraphSG 
                 hourStart={hourStart} 
-                hourEnd={hourEnd} />
+                hourEnd={hourEnd}
+                dayNo={dayNo} 
+            />
             <TidesSummarySG dayNo={dayNo|| 0}/>
         </div>
     )

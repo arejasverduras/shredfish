@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { selectTidesStatusSG, selectTidesDataSG } from "../../../containers/TidesResult/TidesResultSlice";
 import { getHour } from "../../../features/features";
 
-export const TidesGraphSG = ({hourStart, hourEnd}) => {
+export const TidesGraphSG = ({hourStart, hourEnd, dayNo}) => {
     const tidesStatus = useSelector(selectTidesStatusSG);
     const tidesData = useSelector(selectTidesDataSG);
 
@@ -31,7 +31,7 @@ export const TidesGraphSG = ({hourStart, hourEnd}) => {
         <div key={index} style={{
             width: '4.16%', 
             }}>
-                {hourdata}
+                {index}
         </div>)
 
         // map a new array with tidesHeight based on requested indexes with firstIndex, lastIndex
@@ -43,10 +43,9 @@ export const TidesGraphSG = ({hourStart, hourEnd}) => {
             tidesHeights.push(tidesData.data[x].sg)
         }
 
-        const tidesResultGraph = tidesHeights.map((hourdata, index) => 
-        <>
+        const tidesResultGraph = tidesHeights.map((hourdata, index) =>   
             <div key={index} 
-                className={hourdata <= tidesHeights[index+1]?`tideGoingUp ${index === hour? 'currentTideColumn': 'TideColumn'}` :`tideGoingDown ${index === hour? 'currentTideColumn': 'TideColumn'}`}
+                className={hourdata <= tidesHeights[index+1]?`tideGoingUp ${index === hour && dayNo ===0? 'currentTideColumn': 'TideColumn'}` :`tideGoingDown ${index === hour? 'currentTideColumn': 'TideColumn'}`}
                 style={{
                 height: (hourdata+5)*30,
                 }}
@@ -57,9 +56,6 @@ export const TidesGraphSG = ({hourStart, hourEnd}) => {
                         transform: 'translateY(-25px)'
                     }}>{hourdata.toFixed(1)}</p>
             </div>
-
-        </>
-
             )
     
 

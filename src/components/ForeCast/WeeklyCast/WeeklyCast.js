@@ -34,7 +34,7 @@ for (let x=0;x<numberOfDays;x++){
 const dailyCastList = daysArray.map((day, index)=>
     <DailyCast 
         dayNo={index}
-        index={index}
+        key={index}
     />
 )
     return (

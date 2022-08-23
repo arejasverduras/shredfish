@@ -7,9 +7,11 @@ export const CurrentTide = () => {
 return (
     <>
         <TidesGraphSG  
-            hourStart='0' 
-            hourEnd='23'/>
-        <TideType />
+            hourStart={0} 
+            hourEnd={23}
+            dayNo={0}
+        />
+        {/* <TideType /> */}
     </>
 )
 }
