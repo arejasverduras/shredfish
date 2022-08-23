@@ -4,7 +4,7 @@ import { WindCells } from "./WindCells/WindCells";
 import { getHour } from "../../../features/features";
 import { SecondarySwellCells } from "./SecondarySwellCells/SecondarySwellCells";
 
-export const ForeCastTableStormGlass = ({hourStart, hourEnd}) => {
+export const ForeCastTableStormGlass = ({hourStart, hourEnd, interval}) => {
     //goal: render a table, independent of data sources
     //idea: render data sources as different components
             //cells for weather data (optional)
@@ -17,15 +17,17 @@ export const ForeCastTableStormGlass = ({hourStart, hourEnd}) => {
 
     let indexArray= [];
 
-    for (let x=firstIndex;x<=lastIndex;x++){
+    interval = interval || 1;
+
+    for (let x=firstIndex;x<=lastIndex;x=x+interval){
         indexArray.push(x);
     }
     
     const {hour} = getHour();
 
     const tableRows = indexArray.map((hourly, index) => 
-    <tr key={index} className={index === hour? 'currentHourRow':''}>
-        <td className='tableHour'>{index}</td>
+    <tr key={index} className={hourly === hour? 'currentHourRow':''}>
+        <td className='tableHour'>{hourly}</td>
         <TableSwellCells hourly={hourly} source={source} />
         <SecondarySwellCells hourly={hourly} source={source} />
         <WindCells hourly={hourly} source={source} />
