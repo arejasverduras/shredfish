@@ -5,7 +5,7 @@ import { DailyCastHeader } from "./DailyCastHeader/DailyCastHeader";
 
 export const DailyCast = ({dayNo}) => {
      //interval
-     const [interval, setInterval] = useState(3);
+     const [interval, setInterval] = useState(6);
 
     
     if (isNaN(dayNo) || dayNo < 0){

@@ -5,6 +5,7 @@ import WindSlice from '../containers/WindResult/WindSlice';
 import OpenWeatherSlice from '../containers/WeatherResult/OpenWeatherSlice';
 
 import StormSlice from '../containers/GetStorm/StormSlice';
+import AstronomySlice from '../containers/AstronomyResult/AstronomySlice';
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     storm: StormSlice,
     tides: TidesResultSlice,
     wind: WindSlice,
-    openweather: OpenWeatherSlice
+    astronomy: AstronomySlice,
+    openweather: OpenWeatherSlice,
   },
 });

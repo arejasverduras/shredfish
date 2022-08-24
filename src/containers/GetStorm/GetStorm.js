@@ -12,22 +12,16 @@ export const GetStorm = () =>{
 
      //get variables for API call
     const {lat, lon} = currentSpot.data[0];
+
+    //get start argument : today, at 00:00
+
+
     const arg = {
         lat: lat,
         lon: lon
     }
 
     
-    //get dates for tidesExtremes
-
-
-    // const argTidesExtremes = {
-    //     late: lat,
-    //     lon: lon,
-    //     start: start,
-    //     end: end
-    // }
-
     //gets Swell
     useEffect(()=>{
         dispatch(getSwell(arg));

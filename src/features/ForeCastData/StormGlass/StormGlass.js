@@ -10,7 +10,7 @@ const StormGlass = {
         const type = 'point?';
         const {lat, lon} = arg;
         const location = `lat=${lat}&lng=${lon}`;
-        const requestedParams = 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection'
+        const requestedParams = 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection,waterTemperature'
         // 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection,secondarySwellDirection,secondarySwellHeight,secondarySwellPeriod
         const params = `&params=${requestedParams}`;
         const source = '&source=noaa';
@@ -142,8 +142,38 @@ const StormGlass = {
         const location = `lat=${lat}&lng=${lon}`;
         const source= '&source=noaa'
         //optional: start, end
-        const end='&end=2022-08-18T24:00:00'
+        // const end='&end=2022-08-18T24:00:00'
         const requestURL = apiEndpoint+endpoint+type+location+source;
+
+        const headers = {
+            headers : this.authorization
+        }
+        
+        try {
+            const response = await fetch(requestURL, headers); 
+            if (response.status === 402){
+                return '402';
+            }
+            if (response.ok) {
+                const jsonResponse = await response.json();
+                return jsonResponse;
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    async getAstronomy(arg){
+        //return tides Extremes in UTC
+        const apiEndpoint = this.apiEndpoint;
+        const endpoint = 'astronomy/';
+        const type = 'point?';
+        const {lat, lon, start} = arg;
+        const location = `lat=${lat}&lng=${lon}`;
+        const source= '&source=noaa'
+        const dateStart = `&start=${start}`
+        //optional: start, end
+        // const end='&end=2022-08-18T24:00:00'
+        const requestURL = apiEndpoint+endpoint+type+location+source+dateStart;
 
         const headers = {
             headers : this.authorization
