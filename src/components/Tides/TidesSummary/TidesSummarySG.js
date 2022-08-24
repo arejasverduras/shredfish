@@ -29,9 +29,18 @@ export const TidesSummarySG = ({dayNo}) => {
         let todayXs = tidesData.data.filter(extreme => 
             extreme.time.includes(dateString));
 
+        const toLocalTime = (UTCdate) =>{
+            const localDate = new Date (UTCdate);
+
+            const localHours = localDate.getHours();
+            const localMinutes = localDate.getMinutes();
+            const localTime = `${localHours}:${localMinutes}`;
+            return localTime;
+        }
+
         const tideCells = todayXs.map((x, index) => 
             <td key={index}>
-                {x.type.toUpperCase()}: {x.time.slice(11,16)}
+                {x.type.toUpperCase()}: {toLocalTime(x.time)}
             </td>
         )
 

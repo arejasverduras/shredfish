@@ -5,7 +5,8 @@ export const getHour = () => {
     const day = current.getDate();
     const hour = current.getHours();
     const timeNow = current.toLocaleTimeString();  
-    const dateNow = current.toDateString();  
+    const dateNow = current.toDateString(); 
+     
     return {
         current: current,
         year: year,

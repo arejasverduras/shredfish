@@ -20,7 +20,8 @@ const spotSlice = createSlice({
         searchTerm: 'Den Haag',
         currentSpot: {
             geoStatus: 'idle',
-            data: {}
+            data: {},
+            timezoneDifference: 0
         },
         spotName: 'Scheveningen Nord',
         spotKey: '584204204e65fad6a77095f0',
@@ -102,6 +103,7 @@ export const selectSpotKey = state => state.spot.spotKey;
 export const selectSpotStatus = state => state.spot.spotStatus;
 export const selectFavoriteSpots = state => state.spot.favoriteSpots;
 export const selectCurrentSpot = state => state.spot.currentSpot;
+export const selectTimezoneDifference = state => state.spot.currentSpot.timezoneDifference;
 export const selectSearchTerm = state => state.spot.searchTerm;
 
 // export the reducer as default

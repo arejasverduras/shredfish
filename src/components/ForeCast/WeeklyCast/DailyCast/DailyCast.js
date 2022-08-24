@@ -1,12 +1,14 @@
 import {React, useState} from "react";
+import { useSelector } from "react-redux";
 import { ForeCastTableStormGlass } from "../../ForeCastTableStormGlass/ForeCastTableStormGlass";
 import { Tides } from "../../../Tides/Tides";
 import { DailyCastHeader } from "./DailyCastHeader/DailyCastHeader";
+import { selectTimezoneDifference } from "../../../SpotSelector/SpotSlice";
 
 export const DailyCast = ({dayNo}) => {
      //interval
      const [interval, setInterval] = useState(6);
-
+    const timeZoneDifference = useSelector(selectTimezoneDifference);
     
     if (isNaN(dayNo) || dayNo < 0){
         return (
@@ -33,12 +35,14 @@ export const DailyCast = ({dayNo}) => {
             <ForeCastTableStormGlass
                 hourStart={hourStart}
                 hourEnd={hourEnd}
-                interval={interval} 
+                interval={interval}
+                timeDifference={timeZoneDifference} 
             />
             <Tides
                 hourStart={hourStart}
                 hourEnd={hourEnd}
-                dayNo={dayNo}     
+                dayNo={dayNo}   
+                timeDifference={timeZoneDifference}   
             />
         </div>
     )

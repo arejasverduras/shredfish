@@ -3,14 +3,14 @@ import { useSelector } from "react-redux";
 import { selectTidesStatusSG, selectTidesDataSG } from "../../../containers/TidesResult/TidesResultSlice";
 import { getHour } from "../../../features/features";
 
-export const TidesGraphSG = ({hourStart, hourEnd, dayNo}) => {
+export const TidesGraphSG = ({hourStart, hourEnd, dayNo, timeDifference}) => {
     const tidesStatus = useSelector(selectTidesStatusSG);
     const tidesData = useSelector(selectTidesDataSG);
 
     const {hour} = getHour();
 
-    const firstIndex = hourStart || 0;
-    const lastIndex = hourEnd || 23 //hourEnd;
+    const firstIndex = hourStart|| 0;
+    const lastIndex = hourEnd+timeDifference || 23 //hourEnd;
 
     let indexArray= [];
 
