@@ -19,7 +19,6 @@ export const GetAstronomy = () =>{
     const startHour = '00:00:00';
 
     const start = `${dateOnly}T${startHour}`;
-    console.log(start);
 
     const arg = {
         lat: lat,

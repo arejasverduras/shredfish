@@ -8,7 +8,7 @@ const StormGlass = {
         const apiEndpoint = this.apiEndpoint;
         const endpoint = 'weather/';
         const type = 'point?';
-        const {lat, lon} = arg;
+        const {lat, lon, start} = arg;
         const location = `lat=${lat}&lng=${lon}`;
         const requestedParams = 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection,waterTemperature'
         // 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection,secondarySwellDirection,secondarySwellHeight,secondarySwellPeriod
@@ -18,7 +18,7 @@ const StormGlass = {
 
         // const start = 'timestart';
         // const end = 'Timestamp in UTC for last forecast hour - UNIX format or URL encoded ISO format.'
-        const requestURL = apiEndpoint+endpoint+type+location+params+source;
+        const requestURL = apiEndpoint+endpoint+type+location+params+source+start;
 
         const headers = {
             headers : this.authorization
@@ -42,7 +42,7 @@ const StormGlass = {
         const apiEndpoint = this.apiEndpoint;
         const endpoint = 'weather/';
         const type = 'point?';
-        const {lat, lon} = arg;
+        const {lat, lon, start} = arg;
         const location = `lat=${lat}&lng=${lon}`;
         const requestedParams = 'secondarySwellDirection,secondarySwellHeight,secondarySwellPeriod'
         // 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection,secondarySwellDirection,secondarySwellHeight,secondarySwellPeriod
@@ -52,7 +52,7 @@ const StormGlass = {
 
         // const start = 'timestart';
         // const end = 'Timestamp in UTC for last forecast hour - UNIX format or URL encoded ISO format.'
-        const requestURL = apiEndpoint+endpoint+type+location+params+source;
+        const requestURL = apiEndpoint+endpoint+type+location+params+source+start;
 
         const headers = {
             headers : this.authorization
@@ -76,7 +76,7 @@ const StormGlass = {
         const apiEndpoint = this.apiEndpoint;
         const endpoint = 'weather/';
         const type = 'point?';
-        const {lat, lon} = arg;
+        const {lat, lon, start} = arg;
         const location = `lat=${lat}&lng=${lon}`;
         const requestedParams = 'windDirection,windSpeed,gust'
         // windSpeed and gust are in meters/second
@@ -85,7 +85,7 @@ const StormGlass = {
 
         // const start = 'timestart';
         // const end = 'Timestamp in UTC for last forecast hour - UNIX format or URL encoded ISO format.'
-        const requestURL = apiEndpoint+endpoint+type+location+params+source;
+        const requestURL = apiEndpoint+endpoint+type+location+params+start+source;
 
         const headers = {
             headers : this.authorization
@@ -109,11 +109,12 @@ const StormGlass = {
         const apiEndpoint = this.apiEndpoint;
         const endpoint = 'tide/sea-level/';
         const type = 'point?';
-        const {lat, lon} = arg;
+        const {lat, lon, start} = arg;
         const location = `lat=${lat}&lng=${lon}`;
         const source= '&source=noaa'
         //optional: start, end
-        const requestURL = apiEndpoint+endpoint+type+location+source;
+ 
+        const requestURL = apiEndpoint+endpoint+type+location+source+start;
 
         const headers = {
             headers : this.authorization

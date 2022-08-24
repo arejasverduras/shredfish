@@ -1,24 +1,40 @@
 import {React, useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectCurrentSpot } from "../../components/SpotSelector/SpotSlice";
+import { selectCurrentSpot, selectTimezoneDifference } from "../../components/SpotSelector/SpotSlice";
 import { getSwell } from "./StormSlice";
 import { getSecondarySwell } from "./StormSlice";
 import { getWindData } from "../WindResult/WindSlice";
 import { getTidesExtremes, getTidesFromStormGlass } from "../TidesResult/TidesResultSlice";
+import dateFormat, {masks} from "dateformat";
 
 export const GetStorm = () =>{
     const dispatch = useDispatch();
     const currentSpot = useSelector(selectCurrentSpot);
+    const timeDiff = useSelector(selectTimezoneDifference);
 
      //get variables for API call
     const {lat, lon} = currentSpot.data[0];
 
-    //get start argument : today, at 00:00
+    //get start argument today, compensated with time difference (yesterday minus + hours)
+    const getPreviousDay = (date = new Date()) => {
+        const previous = new Date(date.getTime());
+        previous.setDate(date.getDate() - 1);
+    
+        return previous;
+  }
+    const yesterday = getPreviousDay();
 
+    //format correctly for request, substracts time difference
+    const dateOnly = dateFormat(yesterday, "yyyy-mm-dd");
+    const hourMinTimeDiff = 24-timeDiff;
+    const startHour = `${hourMinTimeDiff}:00:00`;
+
+    const start = `&start=${dateOnly}T${startHour}`;
 
     const arg = {
         lat: lat,
-        lon: lon
+        lon: lon,
+        start: start
     }
 
     

@@ -21,7 +21,7 @@ const spotSlice = createSlice({
         currentSpot: {
             geoStatus: 'idle',
             data: {},
-            timezoneDifference: 0
+            timezoneDifference: 2
         },
         spotName: 'Scheveningen Nord',
         spotKey: '584204204e65fad6a77095f0',
