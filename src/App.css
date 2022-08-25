@@ -8,13 +8,26 @@
   margin: 0;
 }
 
+h1 {
+  font-size: 4rem;
+}
 
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 2rem;
+}
 
 .App {
   text-align: center;
   background: linear-gradient(0.75turn, mediumaquamarine, rgb(102, 160, 205));
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+  font-family: 'Amatic SC Regular'
 }
 
 .App-header {
