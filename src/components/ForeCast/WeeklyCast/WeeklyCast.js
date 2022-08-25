@@ -41,8 +41,8 @@ const dailyCastList = daysArray.map((day, index)=>
         <div className="WeeklyCast">
             <div className="selectForeCastDays">
                 <button onClick={()=>{setNumberOfDays(3)}}>3-day Forecast</button>
-                <button onClick={()=>{setNumberOfDays(7)}}>7-day Forecast</button>
-                <button onClick={()=>{setNumberOfDays(10)}}>10-day Forecast</button>
+                <button onClick={()=>{setNumberOfDays(5)}}>5-day Forecast</button>
+                <button onClick={()=>{setNumberOfDays(9)}}>9-day Forecast</button>
             </div>
             {dailyCastList}
         </div>
