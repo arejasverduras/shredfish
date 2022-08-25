@@ -191,7 +191,7 @@ button:hover {
   margin: 0 auto;
 }
 
-.DailyCast button {
+.ForeCast button {
   background-color: white;
   border: none;
   border-radius: 15px;
@@ -201,7 +201,7 @@ button:hover {
   transition: all 0.2s;
 }
 
-.DailyCast button:hover {
+.ForeCast button:hover {
   background-color: rgb(195, 57, 57);
   color: white;
   position: relative;
@@ -210,7 +210,7 @@ button:hover {
   box-shadow: white 6px 6px;
 }
 
-.DailyCast button:active {
+.ForeCast button:active {
   top: 0px;
   left: 0px;
   box-shadow: white 2px 2px;
