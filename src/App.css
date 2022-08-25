@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: linear-gradient(0.75turn, mediumaquamarine, rgb(102, 160, 205));
 }
 
 /* spot selector */
@@ -24,7 +25,10 @@ button:hover {
 .ForeCast {
   margin: 0 auto;
   max-width: 100%;
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(163, 200, 236); */
+
+
+  ;
 }
 
 
@@ -38,15 +42,15 @@ button:hover {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-image: linear-gradient(45deg, #000 25%, transparent 25%, transparent 50%, rgb(0, 0, 0) 50%, #000 75%, transparent 75%, #fff);
+  background-image: linear-gradient(45deg, rgb(249, 244, 244) 25%, transparent 25%, transparent 50%, rgb(0, 0, 0) 50%, #000 75%, transparent 75%, #fff);
   background-size: 50px 15px;
   /* border: 10px solid black; */
 
-  --c:rgb(0, 0, 0);   /* Color */
+  --c: rgba(255, 255, 255, 0.161);   /* Color */
   --t:2px;   /* Thickness */
   --h:25px;  /* Height (vertical distance between two curve) */
   --w:120px; /* Width  */
-  --p:8px;  /* adjust this to correct the position when changing the other values*/
+  --p:6px;  /* adjust this to correct the position when changing the other values*/
   background:
     radial-gradient(farthest-side at 50% calc(100% + var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t))),
     radial-gradient(farthest-side at 50% calc(0%   - var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t)));
@@ -63,11 +67,11 @@ button:hover {
   margin: 0 auto;
   padding-bottom: 20px;
 
-  --c:rgb(0, 0, 0);   /* Color */
-  --t:2px;   /* Thickness */
+  --c:rgba(255, 255, 255, 0.161);   ;   /* Color */
+  --t:4px;   /* Thickness */
   --h:15px;  /* Height (vertical distance between two curve) */
   --w:120px; /* Width  */
-  --p:6px;  /* adjust this to correct the position when changing the other values*/
+  --p:4px;  /* adjust this to correct the position when changing the other values*/
   background:
     radial-gradient(farthest-side at 50% calc(100% + var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t))),
     radial-gradient(farthest-side at 50% calc(0%   - var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t)));
@@ -103,7 +107,7 @@ button:hover {
   background-color: mediumaquamarine;
   color: white;
   width: 100%;
-  box-shadow: #000 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 10px 10px;
   margin: 10px;
   padding: 20px
 }
@@ -192,26 +196,25 @@ button:hover {
   margin: 0 auto;
 }
 
-
 /* ForeCastTable */
 .ForeCastTableHolder {
   max-width: 100%;
 }
 
-
 table {
   text-align: center;
   margin: 0 auto;
+  background-color: white;
 }
 
 td {
   padding: 6px;
-  /* border: 1px solid black; */
 }
 
 .ForeCastTable {
   border-collapse: collapse;
   max-width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.5) 10px 10px;
 }
 
 .ForeCastTable thead {
@@ -307,7 +310,7 @@ td {
   margin: 20px auto;
   padding: 20px;
   background-color: rgb(102, 160, 205);
-  box-shadow: #000 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 10px 10px;
 }
 
 .currentTide .TidesGraph {
