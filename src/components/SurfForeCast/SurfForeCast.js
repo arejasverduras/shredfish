@@ -7,9 +7,11 @@ import { ForeCast } from "../ForeCast/ForeCast";
 export const SurfForeCast = () => {
     return (
         <div className="SurfForeCast">
-        <SpotLoader />
-        <SpotSelector />
-        <GetCoordinates />
+            <div className="SpotHeader">
+                <SpotLoader />
+                <SpotSelector />
+                <GetCoordinates />
+            </div>
         <ForeCast />
         </div>
     )

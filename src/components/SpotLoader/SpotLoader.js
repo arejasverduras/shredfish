@@ -13,9 +13,9 @@ export const SpotLoader = () => {
     }
     
     return (
-        <>
-        <h2>Find Spot Coordinates</h2>
-         <input onChange={handleChange} value={searchTerm}></input>
-        </>
+        <div className="SpotLoader">
+            <h2>Find a Spot</h2>
+            <input onChange={handleChange} value={searchTerm}></input>
+        </div>
     )
 }

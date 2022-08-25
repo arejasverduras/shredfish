@@ -17,7 +17,7 @@ export const SpotSelector = () => {
     
     return (
         <div className="SpotSelector">
-        <h1>Select Spot</h1>
+        <h2>Select Spot</h2>
                 <div className="spotButtons">
                     {spotButtons}
                 </div>

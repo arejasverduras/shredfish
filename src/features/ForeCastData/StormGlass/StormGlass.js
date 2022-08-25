@@ -10,7 +10,7 @@ const StormGlass = {
         const type = 'point?';
         const {lat, lon, start} = arg;
         const location = `lat=${lat}&lng=${lon}`;
-        const requestedParams = 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection,waterTemperature'
+        const requestedParams = 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection'
         // 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection,secondarySwellDirection,secondarySwellHeight,secondarySwellPeriod
         const params = `&params=${requestedParams}`;
         const source = '&source=noaa';
