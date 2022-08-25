@@ -1,7 +1,14 @@
+@font-face {
+  font-family: 'Amatic SC Regular';
+  src: local('AmaticSC-Regular'), url(./fonts/Amatic_SC/AmaticSC-Regular.ttf) format('truetype');
+}
+
 * {
   padding: 0;
   margin: 0;
 }
+
+
 
 .App {
   text-align: center;
@@ -10,19 +17,44 @@
 
 }
 
+.App-header {
+  padding: 10px;
+}
+
 .App-header p{
-  background-color: rgb(55, 55, 55);
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  
+  background-color: rgb(250, 246, 218);
+  /* background: linear-gradient(0.25turn,rgb(55,55,55), rgb(102,160,205)); */
   padding: 12px;
-  color: white;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  letter-spacing: 0.2em;
-  text-align: left;
+  color: rgb(55,55,55);
+  font-family: 'Amatic SC Regular';
+  font-size: 2.5rem;
+  /* letter-spacing: 0.1em; */
+  text-shadow:rgb(0, 0, 0) -1px 1px;
+  border: 2px solid rgba(199, 76, 0, 0.895);
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-left-radius: 40%;
+  border-bottom-left-radius: 40%;
+  box-shadow: rgba(87, 33, 0, 0.895) -2px 2px;
+  background: linear-gradient(180deg, 
+    rgb(250, 246, 218) calc(50% - 1px), 
+    rgba(214, 191, 176, 0.865) calc(50%), 
+        rgb(250, 246, 218) calc(50% + 1px)
+    );
+}
+
+.App-header p span {
+  background-color: rgb(250, 246, 218);
 }
 
 @media screen and (min-width: 500px){
   .App-header p{
     width: 200px;
-    margin: 0 auto;
+    margin: 0px auto;
     text-align: center;
   }
 }

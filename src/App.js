@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Shred-Fish</p>
+        <p><span><b>Shred</b>Fish</span></p>
       </header>
       <main>
         <SurfForeCast />
