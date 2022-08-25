@@ -14,7 +14,7 @@ export const SpotLoader = () => {
     
     return (
         <div className="SpotLoader">
-            <h2>Find a Spot</h2>
+            <h2>Find Spot</h2>
             <input onChange={handleChange} value={searchTerm}></input>
         </div>
     )

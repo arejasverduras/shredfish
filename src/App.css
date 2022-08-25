@@ -133,19 +133,25 @@ li {
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Spot loader (search) */
 .SpotLoader {
   padding: 20px;
-  background-color: rgb(55, 55, 55);
+  background-color: rgba(255, 255, 255, 0.335);
+  box-shadow: white 10px 10px;
+  /* border: 2px solid white; */
+  border-radius: 5px;
   width: 300px;
   margin: 20px auto;
+  min-width: 50%;
+  max-width: 100%;
 }
 
 .SpotLoader h2 {
   margin-bottom: 10px;
-  color: white;
+  font-size: 2.5em;
   letter-spacing: 0.1em;
 }
 
@@ -159,12 +165,25 @@ li {
 /* spot selector */
 
 .SpotSelector {
+  max-width: 20%;
+
   padding: 20px;
-  max-width: 50%;
+  background-color: rgba(255, 255, 255, 0.335);
+  box-shadow: white 10px 10px;
+  /* border: 2px solid white; */
+  border-radius: 5px;
+  width: 300px;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 768px){
+  .SpotSelector {
+    max-width: 100%;
+  }
 }
 
 button {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
   padding: 12px;
   margin-right: 8px;
@@ -174,9 +193,8 @@ button {
 }
 
 button:hover {
-  background-color: mediumaquamarine;
-  color: white;
-  border: 1px solid mediumaquamarine;
+  background-color: white;
+  color: black;
 }
 
 /* ForeCast page */
