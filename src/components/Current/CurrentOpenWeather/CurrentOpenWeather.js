@@ -23,14 +23,14 @@ export const CurrentOpenWeather = () => {
         <>
         <div className="current CurrentWeather">
             {/* <p>{temperature.toFixed(0)}.C | {condition.toLowerCase()}</p> */}
-            <p>{name}, {sys.country}: {weather[0].main}, {weather[0].description}. {main.temp.toFixed(0)}.C</p>
+            <p className="weatherP"><b>{name}</b>, {sys.country}: {weather[0].main}, {weather[0].description}. <b>{main.temp.toFixed(0)}.C</b></p>
         </div>
         <div className="current CurrentWeather">
         {/* <p>{temperature.toFixed(0)}.C | {condition.toLowerCase()}</p> */}
         
         <ul className="CurrentSunLightList">
-            <li>Sunrise: {timestampToTime(sunrise)}</li>
-            <li>Sunset: {timestampToTime(sunset)}</li>
+            <li><b>Sunrise:</b> {timestampToTime(sunrise)}</li>
+            <li><b>Sunset:</b> {timestampToTime(sunset)}</li>
         </ul>
         </div>
     </>

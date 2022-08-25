@@ -33,12 +33,12 @@ export const ForeCast = ()=>{
 
     return (
         <div className="ForeCast">
-            <SpotGeoDisplay />
             <CallAPIs />
             {/* make this into a mini component? */}
                 <div className='ForeCastNameAndStatus'>
                     <h1>{currentSpot.data[0].name}</h1>
                 </div>
+            <SpotGeoDisplay />
             <Current />
             <WeeklyCast />
             {/* <ForeCastTableStormGlass />

@@ -23,11 +23,11 @@ export const SpotGeoDisplay = () => {
     else {
 
     const {data} = currentSpot;
-    const {name, lat, lon} = data[0];
+    const {lat, lon} = data[0];
     
     return (
         <div className="SpotGeoDisplay">
-            <p>{name}, {lat}, {lon}</p>
+            <p>{lat}, {lon}</p>
         </div>
     )
     }
