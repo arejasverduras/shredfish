@@ -86,25 +86,17 @@ button:hover {
   max-width: 100%;
 }
 
-.currentSummary {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-image: linear-gradient(45deg, #000 25%, transparent 25%, transparent 50%, rgb(0, 0, 0) 50%, #000 75%, transparent 75%, #fff);
-  background-size: 50px 15px;
-  /* border: 10px solid black; */
+.CurrentWrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 10%;
+}
 
-  --c:rgb(0, 0, 0);   /* Color */
-  --t:2px;   /* Thickness */
-  --h:25px;  /* Height (vertical distance between two curve) */
-  --w:120px; /* Width  */
-  --p:8px;  /* adjust this to correct the position when changing the other values*/
-  background:
-    radial-gradient(farthest-side at 50% calc(100% + var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t))),
-    radial-gradient(farthest-side at 50% calc(0%   - var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t)));
-    
-  background-size:var(--w) var(--h);
-  background-position:calc(var(--w)/2) calc(var(--h)/2),0px calc(var(--h)/2);
+
+@media screen and (max-width: 768px) {
+  .CurrentWrapper {
+    padding: 0%;
+  }
 }
 
 .current {
@@ -171,11 +163,7 @@ button:hover {
 }
 
 /* Current Tide */
-.currentTide  {
-  background-color: rgb(102, 160, 205);
-  max-width: 80%;
-  box-shadow:rgb(0, 0, 0) 10px 10px;  
-}
+
 
 .CurrentWeather {
   background-color: white;
@@ -285,7 +273,7 @@ td {
 /* Tides */
 
 .TidesGraph {
-  max-width: 400px;
+  width: 400px;
   color: white;
   margin: 20px auto;
   padding: 20px;
