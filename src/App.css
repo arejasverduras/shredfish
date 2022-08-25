@@ -12,7 +12,6 @@ button {
   font-size: 1.2em;
   box-shadow: #000 3px 3px;
   color: black;
-
 }
 
 button:hover {
@@ -25,10 +24,6 @@ button:hover {
 .ForeCast {
   margin: 0 auto;
   max-width: 100%;
-  /* background-color: rgb(163, 200, 236); */
-
-
-  ;
 }
 
 
@@ -194,6 +189,31 @@ button:hover {
   color:white;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.DailyCast button {
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  color: gray;
+  box-shadow: gray 2px 2px;
+  margin: 20px;
+  transition: all 0.2s;
+}
+
+.DailyCast button:hover {
+  background-color: rgb(195, 57, 57);
+  color: white;
+  position: relative;
+  top: -4px;
+  left: -4px;
+  box-shadow: white 6px 6px;
+}
+
+.DailyCast button:active {
+  top: 0px;
+  left: 0px;
+  box-shadow: white 2px 2px;
 }
 
 /* ForeCastTable */
