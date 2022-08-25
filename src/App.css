@@ -26,14 +26,11 @@
   margin: 0 auto;
   text-align: center;
   
-  background-color: rgb(250, 246, 218);
-  /* background: linear-gradient(0.25turn,rgb(55,55,55), rgb(102,160,205)); */
   padding: 12px;
   color: rgb(55,55,55);
   font-family: 'Amatic SC Regular';
-  font-size: 2.5rem;
-  /* letter-spacing: 0.1em; */
-  text-shadow:rgb(0, 0, 0) -1px 1px;
+  font-size: 3rem;
+  /* text-shadow:rgb(0, 0, 0) -1px 1px; */
   border: 2px solid rgba(199, 76, 0, 0.895);
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
@@ -45,6 +42,45 @@
     rgba(214, 191, 176, 0.865) calc(50%), 
         rgb(250, 246, 218) calc(50% + 1px)
     );
+    animation: rotate360 2s;
+    animation: wiggle 2s;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    position: relative;
+   
+    left: -1500px;
+  }
+  
+  
+  20% {
+    transform: rotate(25deg);
+    left: 0px;
+  }
+  
+  25% {
+    transform: rotate(25deg);
+  }
+
+  45% {
+    transform: rotate(-35deg);
+  }
+
+  100% {
+
+    transform: rotate(0deg);
+  }
 }
 
 .App-header p span {
