@@ -194,6 +194,10 @@ button:hover {
 
 
 /* ForeCastTable */
+.ForeCastTableHolder {
+  max-width: 100%;
+}
+
 
 table {
   text-align: center;
@@ -207,6 +211,7 @@ td {
 
 .ForeCastTable {
   border-collapse: collapse;
+  max-width: 100%;
 }
 
 .ForeCastTable thead {
@@ -268,6 +273,30 @@ td {
 }
 .tableWindArrow {
   height: 1.5em;
+}
+
+@media screen and (max-width: 555px){
+  .ForeCastTable thead {
+    font-size: 0.8em;
+  }
+
+  .ForeCastTable td {
+    padding: 6px;
+  }
+  
+  .tableSurf {
+    font-size: 0.9em;
+  }
+
+  .tableWindSpeed {
+    font-size: 1.2em;
+    padding: 0px;
+    transform: translateX(0);
+  }
+
+  .tableWindArrow {
+    height: 1em;
+  }
 }
 
 /* Tides */
