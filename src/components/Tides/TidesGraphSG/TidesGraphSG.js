@@ -29,7 +29,7 @@ export const TidesGraphSG = ({hourStart, hourEnd, dayNo, timeDifference}) => {
     } else {
         tidesResultGraphIndex = indexArray.map((hourdata, index) => 
         <div key={index} style={{
-            width: '4.16%', 
+            width: '4%', 
             }}>
                 {index}
         </div>)
@@ -50,11 +50,8 @@ export const TidesGraphSG = ({hourStart, hourEnd, dayNo, timeDifference}) => {
                 height: (hourdata+5)*30,
                 }}
                 title={hourdata}>
-                    <p className="TideColumnDesc" 
-                        style={{
-                        fontSize: '0.6em',
-                        transform: 'translateY(-25px)'
-                    }}>{hourdata.toFixed(1)}</p>
+                    {/* <p className="TideColumnDesc" 
+              >{hourdata.toFixed(1)}</p> */}
             </div>
             )
     

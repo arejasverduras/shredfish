@@ -10,12 +10,13 @@ import dateFormat, {masks} from "dateformat";
 export const GetStorm = () =>{
     const dispatch = useDispatch();
     const currentSpot = useSelector(selectCurrentSpot);
-    const timeDiff = useSelector(selectTimezoneDifference);
 
      //get variables for API call
     const {lat, lon} = currentSpot.data[0];
 
     //get start argument today, compensated with time difference (yesterday minus + hours)
+    const timeDiff = useSelector(selectTimezoneDifference);
+
     const getPreviousDay = (date = new Date()) => {
         const previous = new Date(date.getTime());
         previous.setDate(date.getDate() - 1);
@@ -43,6 +44,7 @@ export const GetStorm = () =>{
         dispatch(getSwell(arg));
     },[])
 
+    // gets secondary swell
     useEffect(()=>{
         dispatch(getSecondarySwell(arg));
     },[])

@@ -284,10 +284,8 @@ td {
 
 /* Tides */
 
-
-
 .TidesGraph {
-  max-width: 644px;
+  max-width: 400px;
   color: white;
   margin: 20px auto;
   padding: 20px;
@@ -309,6 +307,7 @@ td {
 .TidesGraphColumns {
   display: flex;
   align-items: flex-end;
+  max-width: 100%;
 }
 
 .TideColumn {
@@ -331,4 +330,30 @@ td {
   width: 4%;
   border: 3px solid rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, 0.544);
+}
+
+.TideColumnDesc {
+  font-size: 0.6em;
+  transform: translateY(-25px);
+}
+
+@media screen and (max-width : 768px){
+  .TideResult {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .TidesGraph {
+    max-width: 90%;
+  }
+
+  .TideColumnDesc {
+    font-size: 0.1em;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .TideResult {
+    width: 100%;
+  }
 }
