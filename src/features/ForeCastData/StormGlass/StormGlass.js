@@ -2,7 +2,6 @@ const StormGlass = {
     apiEndpoint: 'https://api.stormglass.io/v2/',
     authorization: {
         'Authorization': process.env.REACT_APP_SG_KEY
-        // '79b30aa0-1d58-11ed-abd9-0242ac130002-79b30afa-1d58-11ed-abd9-0242ac130002'
     } ,
     async getSwell(arg){
         const apiEndpoint = this.apiEndpoint;
