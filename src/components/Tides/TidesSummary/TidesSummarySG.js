@@ -22,7 +22,7 @@ export const TidesSummarySG = ({dayNo}) => {
     if (tidesStatus !== 'succeeded' || tidesData.data.length < 1) {
         return (
             <>
-                <p>Nada</p>
+                <p>Tide summary not able to load</p>
             </>
         )
     } else {
