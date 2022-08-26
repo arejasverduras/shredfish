@@ -15,13 +15,18 @@ export const SpotSelector = () => {
     //remove from favorites
 
     const spotLinks = favoriteSpots.map((spot, index)=> 
+      <div style ={{
+        display:'flex',
+        justifyContent:'space-between'
+      }}>
       <li key={index} className="favoriteLink" onClick={()=>{handleClick(spot)}}>
         {spot.name}
+            
+        </li> 
         <AddRemoveFavorites type='remove' spotname={spot.name} />
-        </li>
+    </div>
+    )
 
-)
-    
     return (
         <div className="SpotSelector">
         <h2>My Favorite Spots</h2>
