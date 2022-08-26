@@ -55,8 +55,12 @@ const spotSlice = createSlice({
         },
         addFavoriteSpot: (state, action) => {
             // to be written
+            const spotfound = state.favoriteSpots.find(spot => spot.name === action.payload.name);
+            if (spotfound !== undefined) {
+                console.log('spot already in favorites')
+            } else {
             state.favoriteSpots.push(action.payload);
-
+            }
         },
         removeFavoriteSpot: (state, action) => {
             //to be written
