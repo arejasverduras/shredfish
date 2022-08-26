@@ -17,7 +17,7 @@ export const GetWeather =() =>{
     //gets current Weather
     useEffect(()=>{
         dispatch(getOpenWeatherData(arg));
-    },[])
+    },[currentSpot])
     
     return (
     <>

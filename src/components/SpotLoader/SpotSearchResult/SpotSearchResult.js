@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectCurrentSpot, selectSearchTerm, setSearchTerm } from "../../SpotSelector/SpotSlice";
+import { selectCurrentSpot, selectSearchTerm, setSearchTerm, setCurrentSpot } from "../../SpotSelector/SpotSlice";
 
 
 export const SpotSearchResult = () => {
@@ -8,16 +8,19 @@ export const SpotSearchResult = () => {
     const spotResult = useSelector(selectCurrentSpot);
     const searchTerm = useSelector(selectSearchTerm);
 
-    const handleClick = ({name, state, country}) =>{
-        dispatch(setSearchTerm(`${name}, ${state}, ${country}`));
-        console.log(name, state, country)
+    const handleClick = (city) =>{
+        // dispatch(setSearchTerm(`${city.name}, ${city.country}`));
+        dispatch(setCurrentSpot(city));
+        console.log(city);
+        const title = document.getElementsByTagName('h1')[0];
+        title.scrollIntoView({behavior: 'smooth'});
     }
 
     if (spotResult.geoStatus !== 'succeeded' || !spotResult.data) {
         return (
-            <>
-                <p>GeoLocation not loaded: {spotResult.geoStatus}</p>
-            </>
+            <ul>
+                {/* <p>GeoLocation not loaded: {spotResult.geoStatus}</p> */}
+            </ul>
         )
         
     } else if (spotResult.data.length <1) {
@@ -33,10 +36,10 @@ export const SpotSearchResult = () => {
     )
     
     return (
-        <div className="SpotSearchResult">
+        <ul className="SpotSearchResult">
             {resultList}
         
-        </div>
+        </ul>
     )
     }
 }

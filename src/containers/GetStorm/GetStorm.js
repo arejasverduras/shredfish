@@ -6,6 +6,7 @@ import { getSecondarySwell } from "./StormSlice";
 import { getWindData } from "../WindResult/WindSlice";
 import { getTidesExtremes, getTidesFromStormGlass } from "../TidesResult/TidesResultSlice";
 import dateFormat, {masks} from "dateformat";
+import { current } from "@reduxjs/toolkit";
 
 export const GetStorm = () =>{
     const dispatch = useDispatch();
@@ -42,28 +43,28 @@ export const GetStorm = () =>{
     //gets Swell
     useEffect(()=>{
         dispatch(getSwell(arg));
-    },[])
+    },[currentSpot])
 
     // gets secondary swell
     useEffect(()=>{
         dispatch(getSecondarySwell(arg));
-    },[])
+    },[currentSpot])
 
 
     //gets wind
     useEffect(()=>{
         dispatch(getWindData(arg));
-    },[])
+    },[currentSpot])
 
     //getTides
     useEffect(()=>{
         dispatch(getTidesFromStormGlass(arg));
-    },[])
+    },[currentSpot])
 
     //getTidesExtremes
     useEffect(()=>{
         dispatch(getTidesExtremes(arg));
-    },[])
+    },[currentSpot])
     
     
     return (
