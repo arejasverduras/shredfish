@@ -80,7 +80,7 @@ const spotSlice = createSlice({
             // console.log(state.spotKey.wave)
         },
         [getSpotInfo.rejected]: (state, action) => {
-            state.spotStatus = 'rejected';
+            state.spotStatus = 'Rejected';
             state.spotKey = 'lost the keys mate';
         },
         [getGeoLocation.pending]: (state,action) => {

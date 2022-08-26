@@ -44,7 +44,7 @@ const tidesSlice = createSlice({
             state.tidesdata = (action.payload)
         },
         [getTidesData.rejected]: (state, action) => {
-            state.tidesstatus = 'rejected';
+            state.tidesstatus = 'Rejected: the moon has left us';
             state.tidesdata = 'the moon has left us';
         },
 
@@ -54,18 +54,12 @@ const tidesSlice = createSlice({
             
         },
         [getTidesFromStormGlass.fulfilled]: (state,action) => {
-            if (action.payload === '402') {
-                state.tidesStatusSG = 'API request max reached';
-                state.tidesDataSG = ('no money g')
-            } else {
             state.tidesStatusSG = 'succeeded';
             state.tidesDataSG = (action.payload)
-            }
- 
         },
         [getTidesFromStormGlass.rejected]: (state, action) => {
-            state.tidesStatusSG = 'rejected';
-            state.tidesDataSG = 'the sg moon has left us';
+            state.tidesStatusSG = 'Rejected: the moon has left us';
+            // state.tidesDataSG = 'the sg moon has left us';
         },
 
         //getTidesExtremes
@@ -74,18 +68,12 @@ const tidesSlice = createSlice({
             
         },
         [getTidesExtremes.fulfilled]: (state,action) => {
-            if (action.payload === '402') {
-                state.tidesExtremesStatus = 'API request max reached';
-                state.tidesExtremesData = ('no money g')
-            } else {
-
             state.tidesExtremesStatus = 'succeeded';
             state.tidesExtremesData = (action.payload)
-            }
         },
         [getTidesExtremes.rejected]: (state, action) => {
-            state.tidesExtremesStatus = 'rejected';
-            state.tidesExtremesData = 'the sg moon has left us';
+            state.tidesExtremesStatus = 'Rejected';
+            // state.tidesExtremesData = 'the sg moon has left us';
         }
     }
 })

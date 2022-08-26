@@ -37,8 +37,8 @@ const StormSlice = createSlice({
             }
         },
         [getSwell.rejected]: (state, action) => {
-            state.stormStatus = 'rejected';
-            state.stormData = 'The sun rose in the east';
+            state.stormStatus = `Rejected: The sun rose in the east. `;
+            // state.stormData = 'The sun rose in the east';
         },
 
         [getSecondarySwell.pending]: (state,action) => {
@@ -46,13 +46,10 @@ const StormSlice = createSlice({
             
         },
         [getSecondarySwell.fulfilled]: (state, action) => {
-            if (action.payload === '402') {
-                state.secondarySwellStatus = 'API request max reached';
-                state.secondarySwellData = ('no money g') 
-            } else {
+
             state.secondarySwellStatus = 'succeeded';
             state.secondarySwellData = (action.payload);
-            }
+            
         },
         [getSecondarySwell.rejected]: (state, action) => {
             state.secondarySwellStatus = 'rejected';

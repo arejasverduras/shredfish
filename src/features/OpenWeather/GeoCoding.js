@@ -15,8 +15,10 @@ const GeoCoding = {
                 return jsonResponse;
 
             }
+            throw new Error('Getting geocode failed')
         } catch (error) {
             console.log(error);
+            return Promise.reject();
         }
     },
     async getWeatherFromGeo(arg){
@@ -34,10 +36,11 @@ const GeoCoding = {
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
-
             }
+            throw new Error ('GeoWeather failed');
         } catch (error) {
             console.log(error);
+            return Promise.reject();
         }
         
     },
@@ -57,10 +60,11 @@ const GeoCoding = {
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
-
             }
+            throw new Error ('AllWeather Geo Data failed')
         } catch (error) {
             console.log(error);
+            return Promise.reject();
         }
         
     }

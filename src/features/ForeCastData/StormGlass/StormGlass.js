@@ -1,8 +1,8 @@
 const StormGlass = {
-    api: process.env.REACT_APP_SG_KEY,
     apiEndpoint: 'https://api.stormglass.io/v2/',
     authorization: {
-        'Authorization': '79b30aa0-1d58-11ed-abd9-0242ac130002-79b30afa-1d58-11ed-abd9-0242ac130002'
+        'Authorization': process.env.REACT_APP_SG_KEY
+        // '79b30aa0-1d58-11ed-abd9-0242ac130002-79b30afa-1d58-11ed-abd9-0242ac130002'
     } ,
     async getSwell(arg){
         const apiEndpoint = this.apiEndpoint;
@@ -26,16 +26,15 @@ const StormGlass = {
         
         try {
             const response = await fetch(requestURL, headers); 
-            if (response.status === 402){
-                return '402';
-            }
             
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
             }
+            throw new Error(`Swell Request Failed`);
         } catch (error) {
             console.log(error);
+            return Promise.reject();
         }
     },
     async getSecondarySwell(arg){
@@ -60,16 +59,15 @@ const StormGlass = {
         
         try {
             const response = await fetch(requestURL, headers); 
-            if (response.status === 402){
-                return '402';
-            }
             
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
             }
+            throw new Error(`Second Swell Request Failed`);
         } catch (error) {
             console.log(error);
+            return Promise.reject();
         }
     },
     async getWind(arg){
@@ -93,16 +91,14 @@ const StormGlass = {
         
         try {
             const response = await fetch(requestURL, headers); 
-            if (response.status === 402){
-                return '402';
-            }
-            
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
             }
+            throw new Error('Wind Request Failed');
         } catch (error) {
             console.log(error);
+            return Promise.reject();
         }
     },
     async getTides(arg){
@@ -112,7 +108,6 @@ const StormGlass = {
         const {lat, lon, start} = arg;
         const location = `lat=${lat}&lng=${lon}`;
         const source= '&source=noaa'
-        //optional: start, end
  
         const requestURL = apiEndpoint+endpoint+type+location+source+start;
 
@@ -122,16 +117,15 @@ const StormGlass = {
         
         try {
             const response = await fetch(requestURL, headers); 
-            if (response.status === 402){
-                return '402';
-            }
-            
+
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
             }
+            throw new Error('Tides Request Failed');
         } catch (error) {
             console.log(error);
+            return Promise.reject();
         }
     },
     async getTidesExtremes(arg){
@@ -152,15 +146,14 @@ const StormGlass = {
         
         try {
             const response = await fetch(requestURL, headers); 
-            if (response.status === 402){
-                return '402';
-            }
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
             }
+            throw new Error('TidesExtremes Request Failed');
         } catch (error) {
             console.log(error);
+            return Promise.reject();
         }
     },
     async getAstronomy(arg){
@@ -182,15 +175,15 @@ const StormGlass = {
         
         try {
             const response = await fetch(requestURL, headers); 
-            if (response.status === 402){
-                return '402';
-            }
+
             if (response.ok) {
                 const jsonResponse = await response.json();
                 return jsonResponse;
             }
+            throw new Error ('Astronomy Request Failed')
         } catch (error) {
             console.log(error);
+            return Promise.reject();
         }
     },
 };

@@ -24,17 +24,12 @@ const WindSlice = createSlice({
             
         },
         [getWindData.fulfilled]: (state,action) => {
-            if (action.payload === '402') {
-                state.windstatus = 'API request max reached';
-                state.winddata = ('no money g')
-            } else {
             state.windstatus = 'succeeded';
             state.winddata = (action.payload);
-            }
         },
         [getWindData.rejected]: (state, action) => {
-            state.windstatus = 'rejected';
-            state.winddata = 'Not a single breeze';
+            state.windstatus = `Rejected: Not a single breeze..`;
+            // state.winddata = 'Not a single breeze';
         }
     }
 })
