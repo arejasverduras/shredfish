@@ -10,6 +10,8 @@ export const SpotSelector = () => {
     const handleClick = (spot) => {
         dispatch(setSpotInfo(spot));
         dispatch(setSearchTerm(spot.name));
+        const title = document.getElementsByTagName('h1')[0];
+        title.scrollIntoView({behavior: 'smooth'});
     }
 
     //remove from favorites

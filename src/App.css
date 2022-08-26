@@ -116,7 +116,7 @@ li {
 }
 
 .SpotHeader {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
@@ -154,15 +154,17 @@ li {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
-  margin-top: 0;
+  margin: 0 auto;
   max-height: 100%;
+  max-width: 80%;
   transition: all 1s;
+  box-shadow: rgb(102, 160, 205) 10px 10px;
 }
 
 /* spot selector (Favorites) */
 
 .SpotSelector {
-  max-width: 20%;
+  max-width: 30%;
 
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.335);
@@ -223,8 +225,12 @@ button:active {
 
 /* ForeCast page */
 .ForeCast {
-  margin: 0 auto;
-  max-width: 100%;
+  margin: 0px auto;
+  max-width: 100%; 
+}
+
+.ForeCastNameAndStatus h1 {
+  padding-top: 50px;
 }
 
 
@@ -289,7 +295,7 @@ button:active {
 .CurrentWrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 10%;
+  /* padding: 10%; */
 }
 
 
