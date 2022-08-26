@@ -48,6 +48,9 @@ const spotSlice = createSlice({
     reducers: {
         setSearchTerm: (state, action ) => {
             state.searchTerm = action.payload;
+        }, 
+        setCurrentSpot: (state, action) => {
+            state.currentSpot.data = action.payload;
         }
         ,setSpotInfo: (state, action) => {
             state.spotKey = action.payload.key;

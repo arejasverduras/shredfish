@@ -5,7 +5,8 @@ const GeoCoding = {
         const baseURL = 'https://api.openweathermap.org/geo/1.0/direct?q=';
         const appId = `&appid=${this.api}`;
         const params = arg;
-        const reqURL = baseURL+params+appId;
+        const limit = `&limit=5`
+        const reqURL = baseURL+params+limit+appId;
         //arg = {city name},{state code},{country code}
         
         try {
