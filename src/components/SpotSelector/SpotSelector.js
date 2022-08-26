@@ -11,15 +11,23 @@ export const SpotSelector = () => {
         dispatch(setSearchTerm(spot.name));
     }
 
-    const spotButtons = favoriteSpots.map((spot, index)=> 
-        <button key={index} onClick={()=>{handleClick(spot)}}>{spot.name}</button>
-    )
+    //remove from favorites
+
+    const spotLinks = favoriteSpots.map((spot, index)=> 
+      <li key={index} className="favoriteLink" onClick={()=>{handleClick(spot)}}>{spot.name}</li>
+
+)
     
     return (
         <div className="SpotSelector">
         <h2>My Favorite Spots</h2>
-                <div className="spotButtons">
+                {/* <div className="spotButtons">
                     {spotButtons}
+                </div> */}
+                <div className="favoriteSpots">
+                    <ul className='favoriteList'>
+                        {spotLinks}
+                    </ul>
                 </div>
                 
         </div>

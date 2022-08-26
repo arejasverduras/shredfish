@@ -171,7 +171,31 @@ li {
   }
 }
 
-button {
+.favoriteList {
+  list-style-type: none;
+  text-align: left;
+}
+
+.favoriteLink {
+  border: none; 
+  box-shadow: none; 
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.favoriteLink:hover {
+  color: white;
+} 
+
+.favoriteLink::before {
+  content: '';
+  /* border: 1px solid black;
+  background-color: black;
+  border-bottom-right-radius: 99%;
+  border-bottom-left-radius: 1%; */
+}
+
+/* button {
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
   padding: 12px;
@@ -184,7 +208,9 @@ button {
 button:hover {
   background-color: white;
   color: black;
-}
+} */
+
+
 
 /* ForeCast page */
 .ForeCast {

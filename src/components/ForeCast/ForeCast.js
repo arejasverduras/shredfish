@@ -1,10 +1,9 @@
 import React from "react";
+import { SpotHeader } from "../SpotSelector/SpotHeader/SpotHeader";
 import { SpotGeoDisplay } from "../SpotLoader/SpotGeoDisplay/SpotGeoDisplay";
 import { CallAPIs } from "../../features/CallAPIs/CallAPIs";
 import { Current } from "../Current/Current";
-import { ForeCastTableStormGlass } from "./ForeCastTableStormGlass/ForeCastTableStormGlass";
 
-import { Tides } from "../Tides/Tides";
 import { selectCurrentSpot, selectSearchTerm } from "../../components/SpotSelector/SpotSlice";
 import { useSelector } from "react-redux";
 import { WeeklyCast } from "./WeeklyCast/WeeklyCast";
@@ -34,15 +33,10 @@ export const ForeCast = ()=>{
     return (
         <div className="ForeCast">
             <CallAPIs />
-            {/* make this into a mini component? */}
-                <div className='ForeCastNameAndStatus'>
-                    <h1>{currentSpot.data[0].name}</h1>
-                </div>
+            <SpotHeader />
             <SpotGeoDisplay />
             <Current />
             <WeeklyCast />
-            {/* <ForeCastTableStormGlass />
-            <Tides /> */}
 
                 {/* Weather is Integrated in Current, and will be integrated in ForecastTable */}
         </div>
