@@ -1,5 +1,5 @@
 const GeoCoding = {
-    api: 'eaf16b774db5bd5bdbc862aa052204bb',
+    api: process.env.REACT_APP_GEO_KEY,
     async getGeoCords(arg){
         // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
         const baseURL = 'https://api.openweathermap.org/geo/1.0/direct?q=';
