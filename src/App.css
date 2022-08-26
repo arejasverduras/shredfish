@@ -53,7 +53,6 @@ li {
   font-family: 'Rock Salt';
   font-size: 1.4rem;
   letter-spacing: 0.1em;
-  /* text-shadow:rgb(0, 0, 0) -1px 1px; */
   border: 2px solid rgba(199, 76, 0, 0.895);
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
@@ -130,7 +129,6 @@ li {
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.335);
   box-shadow: white 10px 10px;
-  /* border: 2px solid white; */
   border-radius: 5px;
   width: 300px;
   margin: 20px auto;
@@ -159,7 +157,6 @@ li {
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.335);
   box-shadow: white 10px 10px;
-  /* border: 2px solid white; */
   border-radius: 5px;
   width: 300px;
   margin: 20px auto;
@@ -187,11 +184,7 @@ li {
   color: white;
 } 
 
-.favoriteLink::before {
-  content: '';
-}
-
-.FavoritesButton {
+button {
   border: none;
   padding: 12px;
   margin: 4px;
@@ -203,7 +196,7 @@ li {
   transition: all 0.2s;
 }
 
-.FavoritesButton:hover {
+button:hover {
   background-color: rgb(195, 57, 57);
   color: white;
   position: relative;
@@ -212,7 +205,7 @@ li {
   box-shadow: white 6px 6px;
 }
 
-.FavoritesButton:active {
+button:active {
   top: 0px;
   left: 0px;
   box-shadow: white 2px 2px;
@@ -403,31 +396,9 @@ li {
 }
 
 .ForeCast button {
-  /* font-family: 'Amatic SC Regular';
-  font-size: 2em;
-  font-weight: bolder; */
-  background-color: white;
-  border: none;
   border-radius: 15px;
-  color: rgb(54, 54, 54);
-  box-shadow: gray 2px 2px;
   margin: 20px;
   transition: all 0.2s;
-}
-
-.ForeCast button:hover {
-  background-color: rgb(195, 57, 57);
-  color: white;
-  position: relative;
-  top: -4px;
-  left: -4px;
-  box-shadow: white 6px 6px;
-}
-
-.ForeCast button:active {
-  top: 0px;
-  left: 0px;
-  box-shadow: white 2px 2px;
 }
 
 /* ForeCastTable */
