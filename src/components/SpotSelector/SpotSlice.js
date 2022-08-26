@@ -23,12 +23,11 @@ const spotSlice = createSlice({
             data: {},
             timezoneDifference: 2
         },
-        spotName: 'Scheveningen Nord',
+        spotName: 'Scheveningen',
         spotKey: '584204204e65fad6a77095f0',
         spotStatus: 'idle',
         favoriteSpots: [{
             name: 'Scheveningen',
-            key: '584204204e65fad6a77095f0'
         },{
             name: 'Ter Heijde',
             key: '584204204e65fad6a77095f3'
@@ -56,9 +55,13 @@ const spotSlice = createSlice({
         },
         addFavoriteSpot: (state, action) => {
             // to be written
+            state.favoriteSpots.push(action.payload);
+
         },
         removeFavoriteSpot: (state, action) => {
             //to be written
+            state.favoriteSpots = state.favoriteSpots.filter(spot => 
+                spot.name !== action.payload)
         }
     },
     extraReducers: {
