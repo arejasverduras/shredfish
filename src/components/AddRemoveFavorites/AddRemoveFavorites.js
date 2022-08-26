@@ -25,23 +25,23 @@ export const AddRemoveFavorites = ({spotname, type})=> {
     if (type === 'add') {
         return (
             <button 
-            className='addToFavorites'
-            onClick={handleClickAdd} 
-            value={spotname}>
-            +
+                className='FavoritesButton'
+                onClick={handleClickAdd} 
+                value={spotname}>
+                +
         </button>
         )
     } else {
 
     return (
-        <>
             <button 
-                className='removeFromFavorites'
+                className='FavoritesButton'
                 onClick={handleClickRemove} 
                 value={spotname}>
-                -
-            </button>
-        </>
+            -
+    </button>
     )
     }
+
+
 }
