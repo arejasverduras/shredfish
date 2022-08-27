@@ -196,35 +196,41 @@ li {
   color: white;
 } 
 
-button {
-  border: none;
-  padding: 12px;
-  margin: 4px;
-  background-color: white;
-  border-radius: 40%;
-  color: rgb(54, 54, 54);
-  box-shadow: gray 2px 2px;
-  /* margin: 20px; */
-  transition: all 0.2s;
-}
 
-button:hover {
-  background-color: rgb(195, 57, 57);
-  color: white;
-  position: relative;
-  top: -4px;
-  left: -4px;
-  box-shadow: white 6px 6px;
-}
-
-button:active {
-  top: 0px;
-  left: 0px;
-  box-shadow: white 2px 2px;
-}
 
 .FavoritesButton  {
+  margin-left: 20px;
   background-color: transparent;
+  border: none;
+  
+}
+
+.FavoritesButton:hover {
+  background-color: transparent;
+}
+
+.faHeartPlus {
+  color: white;
+  transition: all 0.5s;
+}
+
+.faHeartPlus:hover {
+  color: rgb(255, 76, 76);
+  transform: rotateY(180deg);
+}
+
+.faHeartPlus:active {
+  transform: rotateY(360deg);
+}
+
+.faHeartMinus {
+  color: rgb(255, 76, 76);
+  transition: all 0.5s;
+}
+
+.faHeartMinus:hover {
+  color: white;
+  transform: rotateY(180deg);
 }
 
 /* ForeCast page */
@@ -402,6 +408,35 @@ button:active {
   text-align: left;
 }
 
+/* WeeklyCast */
+
+.WeeklyCast button {
+  border: none;
+  padding: 12px;
+  margin: 4px;
+  background-color: white;
+  border-radius: 15px;
+  color: rgb(54, 54, 54);
+  box-shadow: gray 2px 2px;
+  /* margin: 20px; */
+  transition: all 0.2s;
+}
+
+.WeeklyCast button:hover {
+  background-color: rgb(195, 57, 57);
+  color: white;
+  position: relative;
+  top: -4px;
+  left: -4px;
+  box-shadow: white 6px 6px;
+}
+
+.WeeklyCast button:active {
+  top: 0px;
+  left: 0px;
+  box-shadow: white 2px 2px;
+}
+
 /* DailyCast */
 
 .DailyCastHeader {
@@ -415,13 +450,15 @@ button:active {
   margin: 0 auto;
 }
 
-.ForeCast button {
-  border-radius: 15px;
+.DailyCast button {
   margin: 20px;
   transition: all 0.2s;
 }
 
 /* ForeCastTable */
+
+
+
 .ForeCastTableHolder {
   max-width: 100%;
 }

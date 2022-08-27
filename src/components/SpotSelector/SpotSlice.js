@@ -23,25 +23,21 @@ const spotSlice = createSlice({
             data: {},
             timezoneDifference: 2
         },
-        spotName: 'Scheveningen',
-        spotKey: '584204204e65fad6a77095f0',
+        // spotName: 'Scheveningen',
+        // spotKey: '584204204e65fad6a77095f0',
         spotStatus: 'idle',
         favoriteSpots: [{
             name: 'Scheveningen',
         },{
             name: 'Ter Heijde',
-            key: '584204204e65fad6a77095f3'
         },{
-            name: 'Hoek van Holland',
-            key: '584204204e65fad6a77095f2'
+            name: 'Hook of Holland',
         },
         {
             name: 'Sopelana',
-            key: '5842041f4e65fad6a7708e75'
         },
         {
-            name: 'Pupukea',
-            key: '5842041f4e65fad6a7708890'
+            name: 'Biarritz',
         }
     ]
     },

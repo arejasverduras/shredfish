@@ -1,7 +1,7 @@
 import React from 'react';
 import { SurfForeCast } from './components/SurfForeCast/SurfForeCast';
 import './App.css';
-import './iconLibrary';
+
 
 function App() {
   return (

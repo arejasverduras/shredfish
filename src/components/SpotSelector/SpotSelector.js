@@ -21,11 +21,14 @@ export const SpotSelector = () => {
         display:'flex',
         justifyContent:'space-between'
       }}>
-      <li key={index} className="favoriteLink" onClick={()=>{handleClick(spot)}}>
-        {spot.name}
-            
+        <li 
+            key={index} 
+            className="favoriteLink" 
+            onClick={()=>{handleClick(spot)}} 
+        >
+            {spot.name}   
         </li> 
-        <AddRemoveFavorites type='remove' spotname={spot.name} />
+        <AddRemoveFavorites spotname={spot.name} />
     </div>
     )
 
