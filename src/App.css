@@ -223,6 +223,10 @@ button:active {
   box-shadow: white 2px 2px;
 }
 
+.FavoritesButton  {
+  background-color: transparent;
+}
+
 /* ForeCast page */
 .ForeCast {
   margin: 0px auto;

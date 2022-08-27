@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addFavoriteSpot, removeFavoriteSpot } from '../SpotSelector/SpotSlice';
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faHeartCirclePlus, faHeart, faHeartCircleMinus} from '@fortawesome/free-solid-svg-icons';
 
 export const AddRemoveFavorites = ({spotname, type})=> {
     const dispatch = useDispatch();
@@ -8,37 +10,56 @@ export const AddRemoveFavorites = ({spotname, type})=> {
     //type = add or remove
     //render different layout button based on type
     //triggers different logic based on type
+    
+
 
     //logic to add to favorites
-    const handleClickRemove = ({target}) => {
-        console.log(target.value);
-        dispatch(removeFavoriteSpot(target.value));
+    const handleClickRemove = (spotname) => {
+        console.log(spotname);
+        dispatch(removeFavoriteSpot(spotname));
     }
 
-    const handleClickAdd = ({target}) => {
-        console.log(target.value);
+    const handleClickAdd = (spotname) => {
+        console.log(spotname);
         dispatch(addFavoriteSpot({
-                name: target.value})
+                name: spotname})
                 );
     }
 
     if (type === 'add') {
         return (
+            <>
             <button 
-                className='FavoritesButton'
-                onClick={handleClickAdd} 
+                className='FavoritesButton Plus'
+                onClick={()=>{handleClickAdd(spotname)}} 
                 value={spotname}>
-                +
+                <FontAwesomeIcon 
+                    icon={faHeart} 
+                    size="2x"
+                    style={{
+                        color: 'white',
+
+                    }}
+                    />
         </button>
+
+        </>
         )
     } else {
 
     return (
             <button 
-                className='FavoritesButton'
-                onClick={handleClickRemove} 
+                className='FavoritesButton Minus'
+                onClick={()=>{handleClickRemove(spotname)}} 
                 value={spotname}>
-            -
+                  <FontAwesomeIcon 
+                    icon={faHeartCircleMinus} 
+                    size="2x"
+                    style={{
+                        color: 'white',
+
+                    }}
+                    />
     </button>
     )
     }

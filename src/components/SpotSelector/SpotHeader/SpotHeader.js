@@ -10,6 +10,7 @@ export const SpotHeader = ()=>{
     const currentSpot = useSelector(selectCurrentSpot);
     const spotname = currentSpot.data[0].name;
 
+
     return (
         <div className='ForeCastNameAndStatus'>
             <h1>{spotname} 
