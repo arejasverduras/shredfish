@@ -9,7 +9,7 @@ export const SpotSelector = () => {
 
     const handleClick = (spot) => {
         dispatch(setSpotInfo(spot));
-        dispatch(setSearchTerm(spot.name));
+        dispatch(setSearchTerm(`${spot.name}, ${spot.state || ''}, ${spot.country}`));
         const title = document.getElementsByTagName('h1')[0];
         title.scrollIntoView({behavior: 'smooth'});
     }
@@ -28,7 +28,7 @@ export const SpotSelector = () => {
         >
             {spot.name}   
         </li> 
-        <AddRemoveFavorites spotname={spot.name} />
+        <AddRemoveFavorites spotname={spot.name} spot={spot} />
     </div>
     )
 

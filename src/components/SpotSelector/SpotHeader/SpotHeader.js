@@ -8,13 +8,15 @@ export const SpotHeader = ()=>{
     //loads add to favorite button
     
     const currentSpot = useSelector(selectCurrentSpot);
-    const spotname = currentSpot.data[0].name;
+    const spot = currentSpot.data[0];
+    const {name, state, country}= spot;
 
 
     return (
         <div className='ForeCastNameAndStatus'>
-            <h1>{spotname} 
-                <AddRemoveFavorites type={'add'} spotname={spotname} /></h1>
+            <h1>{name}
+                <AddRemoveFavorites type={'add'} spotname={name} spot={spot} /></h1>
+            <h2>{state || ''}, {country}</h2>
     </div>
     )
 }

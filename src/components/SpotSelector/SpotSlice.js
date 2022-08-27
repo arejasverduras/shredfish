@@ -33,12 +33,6 @@ const spotSlice = createSlice({
         },{
             name: 'Hook of Holland',
         },
-        {
-            name: 'Sopelana',
-        },
-        {
-            name: 'Biarritz',
-        }
     ]
     },
     reducers: {

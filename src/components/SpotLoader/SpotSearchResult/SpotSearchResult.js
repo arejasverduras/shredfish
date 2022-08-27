@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectCurrentSpot, selectSearchTerm, setCurrentSpot } from "../../SpotSelector/SpotSlice";
+import { selectCurrentSpot, selectSearchTerm, setSearchTerm, setCurrentSpot } from "../../SpotSelector/SpotSlice";
 
 
 export const SpotSearchResult = () => {

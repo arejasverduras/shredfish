@@ -2,20 +2,15 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addFavoriteSpot, removeFavoriteSpot, selectFavoriteSpots } from '../SpotSelector/SpotSlice';
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faHeartCirclePlus, faHeart as faHeartSolid, faHeartCircleMinus} from '@fortawesome/free-solid-svg-icons';
-import {faHeart} from '@fortawesome/free-regular-svg-icons';
+import { faHeart} from '@fortawesome/free-solid-svg-icons';
 
 
-export const AddRemoveFavorites = ({spotname, type})=> {
+
+export const AddRemoveFavorites = ({spotname, spot})=> {
     const dispatch = useDispatch();
     const favoriteSpots = useSelector(selectFavoriteSpots);
-    //type = add or remove
-    //render different layout button based on type
-    //triggers different logic based on type
-    //should check if spotname is in favorites
-    const isFavorite = favoriteSpots.find(spot => spot.name === spotname);
-
-
+    
+    const isFavorite = favoriteSpots.find(favSpot => favSpot.name === spot.name);
 
     //logic to add to favorites
     const handleClickRemove = (spotname) => {
@@ -23,10 +18,13 @@ export const AddRemoveFavorites = ({spotname, type})=> {
         dispatch(removeFavoriteSpot(spotname));
     }
 
-    const handleClickAdd = (spotname) => {
-        console.log(spotname);
+    const handleClickAdd = (spot) => {
+        console.log(spot.name);
         dispatch(addFavoriteSpot({
-                name: spotname})
+                name: spot.name,
+                state: spot.state,
+                country: spot.country    
+            })
                 );
     }
 
@@ -35,11 +33,11 @@ export const AddRemoveFavorites = ({spotname, type})=> {
             <>
             <button 
                 className='FavoritesButton Plus'
-                onClick={()=>{handleClickAdd(spotname)}} 
+                onClick={()=>{handleClickAdd(spot)}} 
                 value={spotname}
                 title="Add to favorites">
                 <FontAwesomeIcon 
-                    icon={faHeartSolid} 
+                    icon={faHeart} 
                     size="2x"
                     className='faHeartPlus'
                     />
@@ -56,7 +54,7 @@ export const AddRemoveFavorites = ({spotname, type})=> {
                 value={spotname}
                 title="Remove from favorites">
                   <FontAwesomeIcon 
-                    icon={faHeartSolid}
+                    icon={faHeart}
                     size="2x"
                     className="faHeartMinus"
                     />
