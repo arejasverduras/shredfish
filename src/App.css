@@ -176,7 +176,6 @@ html {
 
 .SpotSelector {
   max-width: 30%;
-
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.335);
   box-shadow: white 10px 10px;
@@ -246,10 +245,12 @@ html {
 
 @media screen and (max-width: 425px) {
   .faHeartPlus:hover {
+    color: white;
     transform: none;
   }
 
   .faHeartMinus:hover {
+    color: rgb(255, 76, 76);
     transform: none;
   }
 }
@@ -328,7 +329,6 @@ html {
   margin: 0 auto;
   /* padding: 10%; */
 }
-
 
 @media screen and (max-width: 768px) {
   .CurrentWrapper {
@@ -414,7 +414,6 @@ html {
 
 /* Current Tide */
 
-
 .CurrentWeather {
   background-color: white;
   color: black;
@@ -477,8 +476,6 @@ html {
 }
 
 /* ForeCastTable */
-
-
 
 .ForeCastTableHolder {
   max-width: 100%;
