@@ -14,8 +14,7 @@ export const SpotSelector = () => {
         title.scrollIntoView({behavior: 'smooth'});
     }
 
-    //remove from favorites
-
+    //generate favorite spotlist and remove favorite button
     const spotLinks = favoriteSpots.map((spot, index)=> 
       <div style ={{
         display:'flex',
@@ -26,9 +25,9 @@ export const SpotSelector = () => {
             className="favoriteLink" 
             onClick={()=>{handleClick(spot)}} 
         >
-            {spot.name}   
+            {spot.name}, {spot.country}   
         </li> 
-        <AddRemoveFavorites spotname={spot.name} spot={spot} />
+        <AddRemoveFavorites spot={spot} />
     </div>
     )
 

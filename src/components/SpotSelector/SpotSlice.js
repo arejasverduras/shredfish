@@ -53,7 +53,7 @@ const spotSlice = createSlice({
             state.spotName = action.payload.name;
         },
         addFavoriteSpot: (state, action) => {
-            const spotfound = state.favoriteSpots.find(spot => spot.name === action.payload.name);
+            const spotfound = state.favoriteSpots.find(spot => spot.name === action.payload.name && spot.country === action.payload.country);
             if (spotfound !== undefined) {
                 console.log('spot already in favorites')
             } else {
@@ -62,7 +62,7 @@ const spotSlice = createSlice({
         },
         removeFavoriteSpot: (state, action) => {
             state.favoriteSpots = state.favoriteSpots.filter(spot => 
-                spot.name !== action.payload)
+                spot.name !== action.payload.name);
         }
     },
     extraReducers: {

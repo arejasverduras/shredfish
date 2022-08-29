@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectCurrentSpot, selectSearchTerm, setSearchTerm, setCurrentSpot } from "../../SpotSelector/SpotSlice";
+import { selectCurrentSpot, selectSearchTerm, setCurrentSpot } from "../../SpotSelector/SpotSlice";
 
 
 export const SpotSearchResult = () => {
@@ -11,7 +11,6 @@ export const SpotSearchResult = () => {
     const handleClick = (city) =>{
         // dispatch(setSearchTerm(`${city.name}, ${city.country}`));
         dispatch(setCurrentSpot(city));
-        console.log(city);
         const title = document.getElementsByTagName('h1')[0];
         title.scrollIntoView({behavior: 'smooth'});
     }
@@ -38,7 +37,6 @@ export const SpotSearchResult = () => {
     return (
         <ul className="SpotSearchResult">
             {resultList}
-        
         </ul>
     )
     }

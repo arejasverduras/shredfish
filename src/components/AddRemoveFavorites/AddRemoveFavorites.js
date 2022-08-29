@@ -4,22 +4,18 @@ import { addFavoriteSpot, removeFavoriteSpot, selectFavoriteSpots } from '../Spo
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faHeart} from '@fortawesome/free-solid-svg-icons';
 
-
-
-export const AddRemoveFavorites = ({spotname, spot})=> {
+export const AddRemoveFavorites = ({spot})=> {
     const dispatch = useDispatch();
     const favoriteSpots = useSelector(selectFavoriteSpots);
     
-    const isFavorite = favoriteSpots.find(favSpot => favSpot.name === spot.name);
+    const isFavorite = favoriteSpots.find(favSpot => favSpot.name === spot.name && favSpot.state === spot.state);
 
     //logic to add to favorites
-    const handleClickRemove = (spotname) => {
-        console.log(spotname);
-        dispatch(removeFavoriteSpot(spotname));
+    const handleClickRemove = (spot) => {
+        dispatch(removeFavoriteSpot(spot));
     }
 
     const handleClickAdd = (spot) => {
-        console.log(spot.name);
         dispatch(addFavoriteSpot({
                 name: spot.name,
                 state: spot.state,
@@ -34,7 +30,7 @@ export const AddRemoveFavorites = ({spotname, spot})=> {
             <button 
                 className='FavoritesButton Plus'
                 onClick={()=>{handleClickAdd(spot)}} 
-                value={spotname}
+                value={spot.name}
                 title="Add to favorites">
                 <FontAwesomeIcon 
                     icon={faHeart} 
@@ -50,8 +46,8 @@ export const AddRemoveFavorites = ({spotname, spot})=> {
     return (
             <button 
                 className='FavoritesButton Minus'
-                onClick={()=>{handleClickRemove(spotname)}} 
-                value={spotname}
+                onClick={()=>{handleClickRemove(spot)}} 
+                value={spot.name}
                 title="Remove from favorites">
                   <FontAwesomeIcon 
                     icon={faHeart}
