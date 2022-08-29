@@ -1,6 +1,6 @@
 import {React} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectFavoriteSpots, setSearchTerm, setSpotInfo } from './SpotSlice';
+import { selectFavoriteSpots, setSearchTerm, setSpotInfo, setCurrentSpot } from './SpotSlice';
 import { AddRemoveFavorites } from '../AddRemoveFavorites/AddRemoveFavorites';
 
 export const SpotSelector = () => {
@@ -8,8 +8,8 @@ export const SpotSelector = () => {
     const favoriteSpots = useSelector(selectFavoriteSpots);
 
     const handleClick = (spot) => {
-        dispatch(setSpotInfo(spot));
-        dispatch(setSearchTerm(`${spot.name}, ${spot.state || ''}, ${spot.country}`));
+        dispatch(setCurrentSpot(spot));
+        // dispatch(setSearchTerm(`${spot.name}, ${spot.state || ''}, ${spot.country}`));
         const title = document.getElementsByTagName('h1')[0];
         title.scrollIntoView({behavior: 'smooth'});
     }

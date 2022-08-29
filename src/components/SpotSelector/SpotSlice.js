@@ -18,7 +18,10 @@ const spotSlice = createSlice({
     name: "spot",
     initialState: {
         searchTerm: 'Scheveningen, South Holland, Nl',
-        searchResults: '',
+        searchResults: {
+            status: 'idle',
+            data: {}
+        },
         currentSpot: {
             geoStatus: 'idle',
             data: {},
@@ -30,15 +33,21 @@ const spotSlice = createSlice({
         favoriteSpots: [{
             name: 'Scheveningen',
             state: 'South Holland',
-            country: 'NL'
+            country: 'NL',
+            lat: '52.1067449',
+            lon: '4.2736937'
         },{
             name: 'Ter Heijde',
             state: 'South Holland',
-            country: 'NL'
+            country: 'NL',
+            lat: '52.0300423',
+            lon: '4.167942'
         },{
             name: 'Hook of Holland',
             state: 'South Holland',
-            country: 'NL'
+            country: 'NL',
+            lat: '51.9771615',
+            lon: '4.1314526'
         },
     ]
     },
@@ -81,6 +90,9 @@ const spotSlice = createSlice({
         [getGeoLocation.fulfilled]: (state,action) => {
             state.currentSpot.geoStatus = 'succeeded';
             state.currentSpot.data = (action.payload);
+            //
+            state.searchResults.status = 'succeeded';
+            state.searchResults.data = (action.payload);
         },
         [getGeoLocation.rejected]: (state, action) => {
             state.currentSpot.geoStatus = 'rejected';
@@ -101,6 +113,8 @@ export const selectFavoriteSpots = state => state.spot.favoriteSpots;
 export const selectCurrentSpot = state => state.spot.currentSpot;
 export const selectTimezoneDifference = state => state.spot.currentSpot.timezoneDifference;
 export const selectSearchTerm = state => state.spot.searchTerm;
+
+export const selectSearchResults = state => state.spot.searchResults; 
 
 // export the reducer as default
 export default spotSlice.reducer;

@@ -19,7 +19,9 @@ export const AddRemoveFavorites = ({spot})=> {
         dispatch(addFavoriteSpot({
                 name: spot.name,
                 state: spot.state,
-                country: spot.country    
+                country: spot.country,
+                lat: spot.lat,
+                lon: spot.lon    
             })
                 );
     }

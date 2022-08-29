@@ -1,11 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectCurrentSpot, selectSearchTerm, setCurrentSpot } from "../../SpotSelector/SpotSlice";
+import { selectSearchTerm, setCurrentSpot } from "../../SpotSelector/SpotSlice";
+import { selectSearchResults } from "../../SpotSelector/SpotSlice";
 
 
 export const SpotSearchResult = () => {
     const dispatch = useDispatch();
-    const spotResult = useSelector(selectCurrentSpot);
+    const searchResult = useSelector(selectSearchResults);
+
     const searchTerm = useSelector(selectSearchTerm);
 
     const handleClick = (city) =>{
@@ -15,14 +17,14 @@ export const SpotSearchResult = () => {
         title.scrollIntoView({behavior: 'smooth'});
     }
 
-    if (spotResult.geoStatus !== 'succeeded' || !spotResult.data ) {
+    if (searchResult.status !== 'succeeded' || !searchResult.data ) {
         return (
             <ul>
                 {/* <p>GeoLocation not loaded: {spotResult.geoStatus}</p> */}
             </ul>
         )
         
-    } else if (spotResult.data.length <1) {
+    } else if (searchResult.data.length <1) {
         return (
             <>
                 <p>No spot found for '{searchTerm}'</p>
@@ -30,7 +32,7 @@ export const SpotSearchResult = () => {
         )
     } else {
 
-    const resultList = spotResult.data.map((city, index) => 
+    const resultList = searchResult.data.map((city, index) => 
         <li key={index} onClick={()=>{handleClick(city)}} value={city.name}>{city.name}, {city.state}, {city.country}</li>
     )
     
