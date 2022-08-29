@@ -649,10 +649,10 @@ td {
 
 @media screen and (max-width: 425px){
   .TideResult {
-    width: 100%;
+    width: 90%;
   }
 
   .TidesGraph {
-    width: 100%;
+    width: 90%;
   }
 }
