@@ -18,6 +18,7 @@ const spotSlice = createSlice({
     name: "spot",
     initialState: {
         searchTerm: 'Scheveningen, South Holland, Nl',
+        searchResults: '',
         currentSpot: {
             geoStatus: 'idle',
             data: {},

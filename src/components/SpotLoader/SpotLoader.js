@@ -1,14 +1,13 @@
 import {React, useState} from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setSearchTerm, selectSearchTerm } from "../SpotSelector/SpotSlice";
+import { useDispatch } from "react-redux";
+import { setSearchTerm} from "../SpotSelector/SpotSlice";
 
 export const SpotLoader = () => {
     // should : return an input field for a location name
     //should: set the currentSearchTerm state
     const dispatch = useDispatch();
-    const searchTerm = useSelector(selectSearchTerm);
 
-    const [term, setTerm] = useState();
+    const [term, setTerm] = useState('Scheveningen');
 
     const handleChange = (e) => {
         setTerm(e.target.value);
@@ -26,8 +25,7 @@ export const SpotLoader = () => {
                 <input 
                     onChange={handleChange} 
                     value={term}
-                    placeholder="Search spot">
-                    
+                    placeholder="Find a location">
                 </input>
                 <button type="submit">Search</button>
             </form> 

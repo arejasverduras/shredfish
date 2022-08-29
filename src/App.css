@@ -151,7 +151,9 @@ li {
 }
 
 .SpotLoader button {
-  width: 
+  display: block;
+  margin: 0 auto;
+  padding: 12px;
 }
 
 /* SpotSearchResult */

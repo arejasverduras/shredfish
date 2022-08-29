@@ -42,7 +42,7 @@ export const GetStorm = () =>{
     // gets Swell
     useEffect(()=>{
         dispatch(getSwell(arg));
-    },[currentSpot, arg])
+    },[currentSpot])
 
     // gets secondary swell
     useEffect(()=>{
