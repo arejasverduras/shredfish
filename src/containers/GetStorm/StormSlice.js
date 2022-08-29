@@ -28,13 +28,8 @@ const StormSlice = createSlice({
             
         },
         [getSwell.fulfilled]: (state, action) => {
-            if (action.payload === '402') {
-                state.stormStatus = 'API request max reached';
-                state.stormData = ('no money g')
-            } else {
             state.stormStatus = 'succeeded';
             state.stormData = (action.payload);
-            }
         },
         [getSwell.rejected]: (state, action) => {
             state.stormStatus = `Rejected: The sun rose in the east. `;

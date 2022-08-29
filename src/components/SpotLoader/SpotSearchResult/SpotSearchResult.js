@@ -15,7 +15,7 @@ export const SpotSearchResult = () => {
         title.scrollIntoView({behavior: 'smooth'});
     }
 
-    if (spotResult.geoStatus !== 'succeeded' || !spotResult.data) {
+    if (spotResult.geoStatus !== 'succeeded' || !spotResult.data ) {
         return (
             <ul>
                 {/* <p>GeoLocation not loaded: {spotResult.geoStatus}</p> */}

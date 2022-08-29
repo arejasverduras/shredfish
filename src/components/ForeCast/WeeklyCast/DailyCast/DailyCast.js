@@ -21,8 +21,6 @@ export const DailyCast = ({dayNo}) => {
     const hourStart = dayNo*24; // 0*24 = 0 // 1*24 = 24
     const hourEnd = ((dayNo+1)*24); // 0+1=1, 1*24=24, 24-1 = 23 // 1+1 = 2, 2*24=48, 48-1 = 47
 
-   
-
     return (
         <div className="DailyCast">
             <DailyCastHeader
