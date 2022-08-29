@@ -28,10 +28,16 @@ const spotSlice = createSlice({
         spotStatus: 'idle',
         favoriteSpots: [{
             name: 'Scheveningen',
+            state: 'South Holland',
+            country: 'NL'
         },{
             name: 'Ter Heijde',
+            state: 'South Holland',
+            country: 'NL'
         },{
             name: 'Hook of Holland',
+            state: 'South Holland',
+            country: 'NL'
         },
     ]
     },
@@ -47,7 +53,6 @@ const spotSlice = createSlice({
             state.spotName = action.payload.name;
         },
         addFavoriteSpot: (state, action) => {
-            // to be written
             const spotfound = state.favoriteSpots.find(spot => spot.name === action.payload.name);
             if (spotfound !== undefined) {
                 console.log('spot already in favorites')
@@ -56,21 +61,17 @@ const spotSlice = createSlice({
             }
         },
         removeFavoriteSpot: (state, action) => {
-            //to be written
             state.favoriteSpots = state.favoriteSpots.filter(spot => 
                 spot.name !== action.payload)
         }
     },
     extraReducers: {
         [getSpotInfo.pending]: (state,action) => {
-            state.spotStatus = 'loading';
-            
+            state.spotStatus = 'loading';   
         },
         [getSpotInfo.fulfilled]: (state,action) => {
             state.spotStatus = 'succeeded';
             state.spotKey = (action.payload)
-            // for analyzing of the response object
-            // console.log(state.spotKey.wave)
         },
         [getSpotInfo.rejected]: (state, action) => {
             state.spotStatus = 'Rejected';
@@ -83,8 +84,6 @@ const spotSlice = createSlice({
         [getGeoLocation.fulfilled]: (state,action) => {
             state.currentSpot.geoStatus = 'succeeded';
             state.currentSpot.data = (action.payload);
-            // for analyzing of the response object
-            // console.log(state.spotKey.wave)
         },
         [getGeoLocation.rejected]: (state, action) => {
             state.currentSpot.geoStatus = 'rejected';
