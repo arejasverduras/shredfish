@@ -146,6 +146,8 @@ li {
   border: none;
   border-radius: 5px;
   font-size: 1.5rem;
+  max-width: 90%;
+  overflow: hidden;
 }
 
 /* SpotSearchResult */
