@@ -66,8 +66,6 @@ List the ready features here:
 
 ## Setup
 Visit https://shredfish.surge.sh and give it a spin!
-![Schermafbeelding 2022-08-29 om 16 28 25]
-
 
 ## Usage
 - Type the name of a city you would like to find
