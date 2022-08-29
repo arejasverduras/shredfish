@@ -1,13 +1,17 @@
 const GeoCoding = {
     api: process.env.REACT_APP_GEO_KEY,
     async getGeoCords(arg){
-        // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
         const baseURL = 'https://api.openweathermap.org/geo/1.0/direct?q=';
         const appId = `&appid=${this.api}`;
         const params = arg;
         const limit = `&limit=5`
         const reqURL = baseURL+params+limit+appId;
         //arg = {city name},{state code},{country code}
+
+        if (!arg){
+            console.log('Geo request missing arguments');
+            return;
+        }
         
         try {
             const response = await fetch(reqURL); 

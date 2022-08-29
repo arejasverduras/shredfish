@@ -22,6 +22,11 @@ const StormGlass = {
         const headers = {
             headers : this.authorization
         }
+
+        if (!lat || !lon ||!start){
+            console.log('Swell request invalid arguments');
+            return;
+        }
         
         try {
             const response = await fetch(requestURL, headers); 
@@ -43,19 +48,19 @@ const StormGlass = {
         const {lat, lon, start} = arg;
         const location = `lat=${lat}&lng=${lon}`;
         const requestedParams = 'secondarySwellDirection,secondarySwellHeight,secondarySwellPeriod'
-        // 'waveDirection,waveHeight,wavePeriod,swellHeight,swellPeriod,swellDirection,secondarySwellDirection,secondarySwellHeight,secondarySwellPeriod
         const params = `&params=${requestedParams}`;
         const source = '&source=noaa';
-        //'Comma separeted list of the parameters you want to retrieve, Eg swellHeight,waveHeight'
-
-        // const start = 'timestart';
-        // const end = 'Timestamp in UTC for last forecast hour - UNIX format or URL encoded ISO format.'
         const requestURL = apiEndpoint+endpoint+type+location+params+source+start;
 
         const headers = {
             headers : this.authorization
         }
         
+        if (!lat || !lon ||!start){
+            console.log('SecondarySwell request invalid arguments');
+            return;
+        }
+
         try {
             const response = await fetch(requestURL, headers); 
             
@@ -88,6 +93,11 @@ const StormGlass = {
             headers : this.authorization
         }
         
+        if (!lat || !lon ||!start){
+            console.log('Wind request invalid arguments');
+            return;
+        }
+
         try {
             const response = await fetch(requestURL, headers); 
             if (response.ok) {
@@ -112,6 +122,11 @@ const StormGlass = {
 
         const headers = {
             headers : this.authorization
+        }
+
+        if (!lat || !lon ||!start){
+            console.log('Tides request invalid arguments');
+            return;
         }
         
         try {
@@ -141,6 +156,11 @@ const StormGlass = {
 
         const headers = {
             headers : this.authorization
+        }
+
+        if (!lat || !lon){
+            console.log('Tides Extremes request invalid arguments');
+            return;
         }
         
         try {
@@ -172,6 +192,11 @@ const StormGlass = {
             headers : this.authorization
         }
         
+        if (!lat || !lon || !start){
+            console.log('Astronomy request invalid arguments');
+            return;
+        }
+
         try {
             const response = await fetch(requestURL, headers); 
 
