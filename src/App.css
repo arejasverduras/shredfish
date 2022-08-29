@@ -33,9 +33,12 @@ li {
   font-size: 2rem;
 }
 
+html {
+  background: linear-gradient(0.75turn, mediumaquamarine, rgb(102, 160, 205));
+}
+
 .App {
   text-align: center;
-  background: linear-gradient(0.75turn, mediumaquamarine, rgb(102, 160, 205));
   font-family: 'Amatic SC Regular'
 }
 

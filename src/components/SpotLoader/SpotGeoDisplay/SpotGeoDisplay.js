@@ -9,14 +9,14 @@ export const SpotGeoDisplay = () => {
     
     if (currentSpot.geoStatus === 'rejected') {
         return (
-            <p>No result. Try searching again.</p>
+            <p>Search a spot or select one from My Favorites.</p>
         )
     }
     
     else if (currentSpot.geoStatus !== 'succeeded' || !currentSpot.data) {
         return (
             <>
-                <p>GeoLocation noot loaded: {currentSpot.geoStatus}</p>
+                <p>GeoLocation not loaded: {currentSpot.geoStatus}</p>
             </>
         )
         

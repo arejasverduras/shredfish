@@ -14,10 +14,15 @@ export const ForeCast = ()=>{
     const searchTerm = useSelector(selectSearchTerm);
 
 
-    if (currentSpot.geoStatus !== 'succeeded' || !currentSpot.data) {
+    if (currentSpot.geoStatus === 'rejected') {
+        return (
+            <p>Search or Select a spot.</p>
+        )
+    }
+    else if (currentSpot.geoStatus !== 'succeeded' || !currentSpot.data) {
         return (
             <>
-                <p>GeoLocation not loaded: {currentSpot.geoStatus}</p>
+                {/* <p>GeoLocation not loaded: {currentSpot.geoStatus}</p> */}
             </>
         )
         
