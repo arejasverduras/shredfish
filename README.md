@@ -42,7 +42,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ## Features
-List the ready features here:
 - Search locations directly on global scale.
 - Get current weather info for all known gps locations.
 - Get current wind info for all know gps locations
@@ -54,8 +53,6 @@ List the ready features here:
 - Forecast available in 6-hour, 3 hour and hourly intervals.
 
 - Save spots to favorites // remove
-
-
 
 ## Screenshots
 ![Home screen](https://user-images.githubusercontent.com/62893479/187225048-517b88e1-4da3-4880-9e00-3d24a6a95e32.png)
