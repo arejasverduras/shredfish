@@ -6,10 +6,17 @@ export const SpotGeoDisplay = () => {
     const currentSpot = useSelector(selectCurrentSpot);
     const searchTerm = useSelector(selectSearchTerm);
 
-    if (currentSpot.geoStatus !== 'succeeded' || !currentSpot.data) {
+    
+    if (currentSpot.geoStatus === 'rejected') {
+        return (
+            <p>No result. Try searching again.</p>
+        )
+    }
+    
+    else if (currentSpot.geoStatus !== 'succeeded' || !currentSpot.data) {
         return (
             <>
-                <p>GeoLocation not loaded: {currentSpot.geoStatus}</p>
+                <p>GeoLocation noot loaded: {currentSpot.geoStatus}</p>
             </>
         )
         

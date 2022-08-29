@@ -7,17 +7,17 @@ export const GetCoordinatesResult = () => {
     const currentSpot = useSelector(selectCurrentSpot);
     const searchTerm = useSelector(selectSearchTerm);
 
-    if (currentSpot.geoStatus !== 'succeeded' || !currentSpot.data) {
+    if (currentSpot.geoStatus !== 'succeeded'  || !currentSpot.data) {
         return (
             <>
                 <p>GeoLocation not loaded: {currentSpot.geoStatus}</p>
             </>
         )
         
-    } else if (currentSpot.data.length <1) {
+    } else if (currentSpot.data.length <1 ) {
         return (
             <>
-                <p>No spot found for '{searchTerm}'</p>
+                <p>No spot found for '{searchTerm}'. Try searching again.</p>
             </>
         )
     }

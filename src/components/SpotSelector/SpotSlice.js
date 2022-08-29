@@ -17,7 +17,7 @@ import GeoCoding from "../../features/OpenWeather/GeoCoding";
 const spotSlice = createSlice({
     name: "spot",
     initialState: {
-        searchTerm: 'Scheveningen, South Holland, Nl',
+        searchTerm: '',
         searchResults: {
             status: 'idle',
             data: {}
@@ -57,6 +57,7 @@ const spotSlice = createSlice({
         }, 
         setCurrentSpot: (state, action) => {
             state.currentSpot.data[0] = action.payload;
+            state.currentSpot.geoStatus = 'succeeded';
         }
         ,setSpotInfo: (state, action) => {
             state.spotKey = action.payload.key;
@@ -88,9 +89,6 @@ const spotSlice = createSlice({
             
         },
         [getGeoLocation.fulfilled]: (state,action) => {
-            state.currentSpot.geoStatus = 'succeeded';
-            state.currentSpot.data = (action.payload);
-            //
             state.searchResults.status = 'succeeded';
             state.searchResults.data = (action.payload);
         },
