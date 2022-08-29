@@ -61,6 +61,7 @@ List the ready features here:
 ![Home screen](https://user-images.githubusercontent.com/62893479/187225048-517b88e1-4da3-4880-9e00-3d24a6a95e32.png)
 
 
+![SpotHeader](https://user-images.githubusercontent.com/62893479/187225580-0e95db4c-b0e8-496a-b11e-c9fb9f953e7b.png)
 
 
 ## Setup
