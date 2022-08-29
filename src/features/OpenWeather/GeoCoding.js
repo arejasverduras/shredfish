@@ -36,6 +36,11 @@ const GeoCoding = {
         const reqURL = baseURL+params+appId;
         // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 
+        if (!lat ||!lon){
+            console.log('Weather request missing arguments');
+            return;
+        }
+
         try {
             const response = await fetch(reqURL); 
             if (response.ok) {
@@ -60,6 +65,11 @@ const GeoCoding = {
         const reqURL = baseURL+params+appId;
         // https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&appid={API key}
 
+        if (!lat ||!lon){
+            console.log('Weather request missing arguments');
+            return;
+        }
+        
         try {
             const response = await fetch(reqURL); 
             if (response.ok) {
