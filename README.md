@@ -1,6 +1,6 @@
 
 # ShredFish
-> Global Surf Forecasting app for daily Use. Get notified when the weather and ocean conditions are optimal for the sport of wave Surfing. Personal Portfolio Project to display abilities to work with external api's.
+> Global Surf Forecasting app for daily use. Get notified when the weather and ocean conditions are optimal for the sport of wave Surfing. Personal Portfolio Project to display abilities to work with external api's.
 > 
 > Live demo [_here_](https://shredfish.surge.sh).
 
@@ -58,19 +58,21 @@ List the ready features here:
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+![Home screen](https://user-images.githubusercontent.com/62893479/187225048-517b88e1-4da3-4880-9e00-3d24a6a95e32.png)
+
+
 
 
 ## Setup
 Visit https://shredfish.surge.sh and give it a spin!
+![Schermafbeelding 2022-08-29 om 16 28 25]
 
 
 ## Usage
 - Type the name of a city you would like to find
 - further specify your search with comma's, adding state and country:
   Salinas, Asturas, ES
-- Select the location fo choice from the result list.
+- Select the location of choice from the result list.
 
 - Save a location by clicking the heart right next to its name.
 - Switch between favorite locations by clicking its name in the 'My Favorites List'
