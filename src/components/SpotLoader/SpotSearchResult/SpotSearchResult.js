@@ -11,10 +11,7 @@ export const SpotSearchResult = () => {
     const searchTerm = useSelector(selectSearchTerm);
 
     const handleClick = (city) =>{
-        // dispatch(setSearchTerm(`${city.name}, ${city.country}`));
         dispatch(setCurrentSpot(city));
-        const title = document.getElementsByTagName('h1')[0];
-        title.scrollIntoView({behavior: 'smooth'});
     }
 
     if (searchResult.status !== 'succeeded' || !searchResult.data ) {
