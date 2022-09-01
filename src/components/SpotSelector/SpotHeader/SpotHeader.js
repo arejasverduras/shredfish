@@ -20,7 +20,12 @@ export const SpotHeader = ()=>{
         }
     }
 
-    useEffect(scrollToSpot, [currentSpot])
+    const setPageTitle = () => {
+        document.title = `ShredFish - ${name} Surf Forecast`
+    }
+
+    useEffect(scrollToSpot, [currentSpot]);
+    useEffect(setPageTitle, [name]);
 
 
     return (
