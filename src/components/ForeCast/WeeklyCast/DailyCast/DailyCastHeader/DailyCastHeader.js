@@ -6,7 +6,7 @@ import { selectCurrentSpot } from "../../../../SpotSelector/SpotSlice";
 export const DailyCastHeader = ({dayNo}) => {
     const currentSpot = useSelector(selectCurrentSpot);
 
-    const spotName = currentSpot.data.length > 0? currentSpot.data[0].name : 'Spot not found';
+    const spotName = currentSpot.data[0]? currentSpot.data[0].name : 'Spot not found';
 
     const date = new Date();
     date.setDate(date.getDate() + dayNo);

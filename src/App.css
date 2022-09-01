@@ -37,6 +37,11 @@ html {
   background: linear-gradient(0.75turn, mediumaquamarine, rgb(102, 160, 205));
 }
 
+/* Messages & notifications */
+.rejected {
+  color: hsl(64, 66%, 83%);
+}
+
 .App {
   text-align: center;
   font-family: 'Amatic SC Regular'
