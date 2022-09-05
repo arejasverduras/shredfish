@@ -1,6 +1,6 @@
 
 # ShredFish
-> Global Surf Forecasting app for daily use. Get notified when the weather and ocean conditions are optimal for the sport of wave Surfing. Personal Portfolio Project to display abilities to work with external api's.
+> Global Surf Forecasting app for daily use. Get notified when the weather and ocean conditions are optimal for the sport of wave Surfing. Personal Portfolio Project to display abilities to work with external API's.
 > 
 > Live demo [_here_](https://shredfish.surge.sh).
 
@@ -18,14 +18,14 @@
 
 
 ## General Information
-The ultimate goal of ShredFish is to get Notified when the surf forecast is .. well.. right on!
+The ultimate goal of ShredFish is to get notified when the surf forecast is .. well.. right on!
 Surfers check forecasting services on a daily basis, looking for the right conditions. Instead of having to check yourself, ShredFish notifies you when the conditions are optimal for surfing in your favorite location(s).
 
 In the first stage, ShredFish provides daily forecasting like any other services.
 
 Ultimately, the user should be able to define the preferred conditions for their favorite locations, and get notified when the forecast meets their preferences. 
 
-My personal goal is to experiment with data from external API's, and building a front-end React app with it. 
+My personal goal is to experiment with data from external API's, and building a Front-End React app with it. 
 Being a surfer myself, i'd love for ShredFish to be my go-to app for daily forecasting!
 
 ## API's used
@@ -34,7 +34,7 @@ Learning eventually that acces to these API's were being limited, I had to look 
 MSW had stopped distributing API keys. 
 Surfline allowed for access on local host only, blocking all CORS-request.
 I finally found another API that provided paid access to marine forecasting data.
-Weather data is provided by the OpenWeather api.
+Weather data is provided by the OpenWeather API.
 
 
 ## Technologies Used
@@ -45,11 +45,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Search locations directly on global scale.
 - Get current weather info for all known GPS locations.
 - Get current wind info for all know GPS locations.
-- Get current Swell info for locations that are located at sea. 
-- Get current Tide info for locations that are located at sea.
-- Get current additional info like sunrise and sunset.
+- Get current Swell info for locations that are located near the ocean. 
+- Get current Tide info for locations that are located near the ocean.
+- Get current additional info like sunrise and sunset times.
 
-- Get detailed forecast for swell, wind and tides up to 9 days.
+- Get detailed forecasts for swell, wind and tides up to 9 days.
 - Forecast available in 6-hour, 3-hour and hourly intervals.
 
 - Save spots to favorites // remove
@@ -66,37 +66,37 @@ Visit https://shredfish.surge.sh and give it a spin!
 
 ## Usage
 - Type the name of a city you would like to find.
-- Further specify your search with comma's, adding state and country:
-  Salinas, Asturas, ES
+- Further specify your search with comma's adding state and country, for example: 
+  Salinas, Asturias, ES.
 - Select the location of choice from the results list.
 
 - Save a location by clicking the heart right next to it's name.
 - Switch between favorite locations by clicking it's name in the 'My Favorites List'
 - Remove a location from your favorites by clicking the heart icon after it's name.
 
-
 ## Project Status
 Project is: _in progress_ 
 
-
 ## Room for Improvement
-The project is far from completed. In the future, i would like to create a back end where the user can actually login and save it's data.
-Now using GPS locations, a spot database can be build that provides far more detailed info about a spot, like recommended conditions, photo's, and additional information about the surrounding and accesibility.
+The project is far from completed. In the future, I would like to create a back-end where the user can actually login and save their data and preferences.
+Now using GPS locations, a spot database can be build that provides far more detailed info about a spot, like recommended conditions, photo's, and additional information about the surroundings and accesibility.
 
 Room for improvement:
 - Styling of forecast buttons and tables.
+- Minimize API calls by storing often-requested data in own database. 
+- Serve this stored data to the user first (when not to old), before making a new request to the external paid API.
 
-To do:
+To-do:
 - Load astronomy data into forecast (sunrise, sunset, dusk, dawn)
 - Load water temperature 
+- Build a back-end consisting of an API and database
+- Create user login & authentication
 - Set preferred conditions per spot
 - Hightlight preferered conditions in forecast
 - Notify user when prefered conditions are available in forecast
 
-
 ## Acknowledgements
 - This project was inspired by the Magic Seaweed forecasting app, and the Surfline forecasting app.
-
 
 ## Contact
 Created by [@arejasverduras](https://arejasportfolio.surge.sh/) - feel free to contact me!
