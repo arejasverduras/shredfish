@@ -19,21 +19,21 @@
 
 ## General Information
 The ultimate goal of ShredFish is to get Notified when the surf forecast is .. well.. right on!
-Surfers check forecasting services on a daily basis, looking for the right conditions. Instead of having to check yourself, shredfish notifies you when the conditions are optimal for surfing in your favorite location(s).
+Surfers check forecasting services on a daily basis, looking for the right conditions. Instead of having to check yourself, ShredFish notifies you when the conditions are optimal for surfing in your favorite location(s).
 
-In the first stage, shredfish provides daily forecasting like any other services.
+In the first stage, ShredFish provides daily forecasting like any other services.
 
 Ultimately, the user should be able to define the preferred conditions for their favorite locations, and get notified when the forecast meets their preferences. 
 
-My personal goal is to experiment with data from external api's, and building a front-end react app with it. 
-Being a surfer myself, i'd love for this app to be my go-to app for daily forecasting!
+My personal goal is to experiment with data from external API's, and building a front-end React app with it. 
+Being a surfer myself, i'd love for ShredFish to be my go-to app for daily forecasting!
 
 ## API's used
-I started this project seeing that Magic Seaweed and Surfline, both popular surf forecasting apps, offered free api's with access to its forecasting data. 
-Learning eventually that acces to these api's were being limited, i had to look for a different solution.
-MSW had stopped distributing api keys. 
-Surfline allowed for access on local host only, blocking all cors request.
-I finally found another api that provided paid access to marine forecasting data.
+I started this project seeing that Magic Seaweed and Surfline, both popular surf forecasting apps, offered free API's with access to its forecasting data. 
+Learning eventually that acces to these API's were being limited, I had to look for a different solution.
+MSW had stopped distributing API keys. 
+Surfline allowed for access on local host only, blocking all CORS-request.
+I finally found another API that provided paid access to marine forecasting data.
 Weather data is provided by the OpenWeather api.
 
 
@@ -43,14 +43,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Features
 - Search locations directly on global scale.
-- Get current weather info for all known gps locations.
-- Get current wind info for all know gps locations
-- Get current Swell info for locations that have sea access.
-- Get current Tide info for locations that have sea access
+- Get current weather info for all known GPS locations.
+- Get current wind info for all know GPS locations.
+- Get current Swell info for locations that are located at sea. 
+- Get current Tide info for locations that are located at sea.
 - Get current additional info like sunrise and sunset.
 
 - Get detailed forecast for swell, wind and tides up to 9 days.
-- Forecast available in 6-hour, 3 hour and hourly intervals.
+- Forecast available in 6-hour, 3-hour and hourly intervals.
 
 - Save spots to favorites // remove
 
@@ -65,14 +65,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Visit https://shredfish.surge.sh and give it a spin!
 
 ## Usage
-- Type the name of a city you would like to find
-- further specify your search with comma's, adding state and country:
+- Type the name of a city you would like to find.
+- Further specify your search with comma's, adding state and country:
   Salinas, Asturas, ES
-- Select the location of choice from the result list.
+- Select the location of choice from the results list.
 
-- Save a location by clicking the heart right next to its name.
-- Switch between favorite locations by clicking its name in the 'My Favorites List'
-- Remove a location from your favorites by clicking the heart icon after its name.
+- Save a location by clicking the heart right next to it's name.
+- Switch between favorite locations by clicking it's name in the 'My Favorites List'
+- Remove a location from your favorites by clicking the heart icon after it's name.
 
 
 ## Project Status
@@ -80,16 +80,15 @@ Project is: _in progress_
 
 
 ## Room for Improvement
-The project is far from completed. In the future, i would like to create a back end where the user can actually login and save its data.
-Now using gps locations, a spot database can be build that provides far more detailed info about a spot, like recommended conditions, photo's, and additional information about the surrounding and accesibility
+The project is far from completed. In the future, i would like to create a back end where the user can actually login and save it's data.
+Now using GPS locations, a spot database can be build that provides far more detailed info about a spot, like recommended conditions, photo's, and additional information about the surrounding and accesibility.
 
 Room for improvement:
 - Styling of forecast buttons and tables.
-- Improvement to be done 2
 
 To do:
 - Load astronomy data into forecast (sunrise, sunset, dusk, dawn)
-- load water temperature 
+- Load water temperature 
 - Set preferred conditions per spot
 - Hightlight preferered conditions in forecast
 - Notify user when prefered conditions are available in forecast
