@@ -477,7 +477,7 @@ html {
 .webcamList {
   display: flex;
   flex-wrap: wrap;
-  max-width: 100%;
+  max-width: 95%;
   justify-content: center;
   margin-top: 10px;
 }
@@ -485,14 +485,17 @@ html {
 
 .LoadWebcam {
   overflow: hidden;
+  margin-bottom: 10px;
   width: 800px;
   height: 429px;
+  box-shadow:rgba(0, 0, 0, 0.5) 5px 5px;
 }
 
 @media screen and (max-width: 500px) {
   .LoadWebcam {
   width: 1120px;
   height: 300px;
+  box-shadow: none;
   }
 }
 
