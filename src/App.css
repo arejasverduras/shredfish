@@ -338,6 +338,14 @@ html {
 @media screen and (max-width: 768px) {
   .CurrentWrapper {
     padding: 0%;
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .CurrentWrapper {
+    padding: 0%;
+    max-width: 425px;
   }
 }
 
@@ -465,19 +473,27 @@ html {
 /* Webcam */
 
 /* YouTube */
-.video-responsive {
+.LoadWebcam {
   overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
+  width: 800px;
+  height: 429px;
 }
 
-.video-responsive iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
+@media screen and (max-width: 500px) {
+  .LoadWebcam {
+  width: 1120px;
+  height: 300px;
+  }
+}
+
+.youTube {
+  /* left: 0;
+  top: 0; */
+  /* height: 100%;
+  width: 100%; */
+  /* position: absolute; */
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /* DailyCast */

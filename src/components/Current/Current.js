@@ -15,6 +15,7 @@ export const Current = () => {
             
             <div className="CurrentWrapper">
                 <CurrentOpenWeather />
+                
                 <CurrentSwell source={source} />
                 <CurrentWind source={source} />
                 <LoadWebcam />
