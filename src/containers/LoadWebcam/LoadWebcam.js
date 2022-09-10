@@ -10,35 +10,40 @@ export const LoadWebcam = () => {
 
     let embedId = null;
     let webcamType;
+    let webcamArray;
 
     if (currentSpot.data[0]){
         const {name, country, lat, lon} = currentSpot.data[0];
  
-        const foundWebcam = webcamSpots.filter((webcam) => 
+        const foundWebcams = webcamSpots.filter((webcam) => 
          name === webcam.city && country === webcam.country
         )
-        console.log(foundWebcam);
+        console.log(foundWebcams);
         
-        if (foundWebcam.length <1){
+        if (foundWebcams.length <1){
             return
         }
 
-        webcamType = foundWebcam[0].type;
-        embedId = foundWebcam[0].url;
+        webcamArray = foundWebcams.map((foundCam) =>
+        <div className="LoadWebcam">
+            <YouTube embedId={foundCam.url} />
+            </div>
+            )
+
+        webcamType = foundWebcams[0].type;
+        embedId = foundWebcams[0].url;
      }
-
-
-    const hartBeach = 'KtqXsU-e9zc';
-    // embedId = hartBeach;
 
     if (embedId === null){
         return
     } else {
+    
 
     return (
-        <div className="LoadWebcam">
-            <YouTube embedId={embedId} />
-      </div>
+        
+        <div className="webcamList">
+            {webcamArray}
+        </div>
     )
     }
 };

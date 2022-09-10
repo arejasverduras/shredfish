@@ -473,6 +473,16 @@ html {
 /* Webcam */
 
 /* YouTube */
+
+.webcamList {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
 .LoadWebcam {
   overflow: hidden;
   width: 800px;
