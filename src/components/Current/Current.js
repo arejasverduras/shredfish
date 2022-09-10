@@ -3,6 +3,7 @@ import { CurrentSwell } from "./CurrentSwell/CurrentSwell";
 import { CurrentWind} from "./CurrentWind/CurrentWind";
 import { CurrentTide } from "./CurrentTide/CurrentTide";
 import { CurrentOpenWeather } from "./CurrentOpenWeather/CurrentOpenWeather";
+import { LoadWebcam } from "../../containers/LoadWebcam/LoadWebcam";
 
 export const Current = () => {
     const source = 'noaa';
@@ -16,6 +17,7 @@ export const Current = () => {
                 <CurrentOpenWeather />
                 <CurrentSwell source={source} />
                 <CurrentWind source={source} />
+                <LoadWebcam />
                 <CurrentTide />
             </div>
             <div className="spotBasic"></div>

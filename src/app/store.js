@@ -6,6 +6,7 @@ import OpenWeatherSlice from '../containers/WeatherResult/OpenWeatherSlice';
 
 import StormSlice from '../containers/GetStorm/StormSlice';
 import AstronomySlice from '../containers/AstronomyResult/AstronomySlice';
+import WebcamSlice from '../components/Webcam/WebcamSlice';
 
 export const store = configureStore({
   reducer: {
@@ -15,5 +16,6 @@ export const store = configureStore({
     wind: WindSlice,
     astronomy: AstronomySlice,
     openweather: OpenWeatherSlice,
+    webcam: WebcamSlice
   },
 });
