@@ -49,6 +49,13 @@ const spotSlice = createSlice({
             lat: '51.9771615',
             lon: '4.1314526'
         },
+        {
+            name: 'Saint-Lunaire',
+            state: 'Brittany',
+            country: 'FR',
+            lat: '48.6354993',
+            lon: '-2.1090269'
+        },
     ]
     },
     reducers: {
