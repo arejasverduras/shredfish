@@ -14,7 +14,7 @@ export const SpotSelector = () => {
 
     //generate favorite spotlist and remove favorite button
     const spotLinks = favoriteSpots.map((spot, index)=> 
-      <div style ={{
+      <div key={index} style ={{
         display:'flex',
         justifyContent:'space-between'
       }}>

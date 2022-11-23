@@ -1,4 +1,4 @@
-import {React, useEffect} from "react";
+import {React} from "react";
 import { useSelector } from "react-redux";
 import { selectWebcamSpots } from "../../components/Webcam/WebcamSlice";
 import { selectCurrentSpot } from "../../components/SpotSelector/SpotSlice";
@@ -9,7 +9,7 @@ export const LoadWebcam = () => {
     const webcamSpots = useSelector(selectWebcamSpots);
 
     let embedId = null;
-    let webcamType;
+    // let webcamType;
     let webcamArray;
 
     if (currentSpot.data[0]){
@@ -18,19 +18,22 @@ export const LoadWebcam = () => {
         const foundWebcams = webcamSpots.filter((webcam) => 
          name === webcam.city && country === webcam.country
         )
-        console.log(foundWebcams);
         
         if (foundWebcams.length <1){
             return
         }
 
-        webcamArray = foundWebcams.map((foundCam) =>
-        <div className="LoadWebcam">
-            <YouTube embedId={foundCam.url} />
-            </div>
-            )
+        webcamArray = foundWebcams.map((foundCam, index) =>
+            index === 0? 
+            <div className="LoadWebcam1" key={index}>
+                <YouTube embedId={foundCam.url} />
+            </div> : 
+              <div className="LoadWebcam" key={index}>
+              <YouTube embedId={foundCam.url} />
+          </div>
+        )
 
-        webcamType = foundWebcams[0].type;
+        // webcamType = foundWebcams[0].type;
         embedId = foundWebcams[0].url;
      }
 
@@ -38,7 +41,6 @@ export const LoadWebcam = () => {
         return
     } else {
     
-
     return (
         
         <div className="webcamList">
