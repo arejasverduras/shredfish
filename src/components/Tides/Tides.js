@@ -7,6 +7,7 @@ export const Tides = ({hourStart, hourEnd, dayNo, timeDifference}) => {
     return (
         <div className="TideResult">
             {/* <TidesStatus /> */}
+
             <TidesGraphSG 
                 hourStart={hourStart} 
                 hourEnd={hourEnd}
@@ -17,6 +18,7 @@ export const Tides = ({hourStart, hourEnd, dayNo, timeDifference}) => {
                 dayNo={dayNo|| 0}
                 timeDifference={timeDifference}
             />
+
         </div>
     )
 }

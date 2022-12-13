@@ -41,7 +41,7 @@ export const TidesSummarySG = ({dayNo, timeDifference}) => {
 
         const tideCells = todayXs.map((x, index) => 
             <td key={index}>
-                {x.type.toUpperCase()}: {toLocalTime(x.time)}
+                <b>{x.type.toUpperCase()}</b>: {toLocalTime(x.time)}
             </td>
         )
 

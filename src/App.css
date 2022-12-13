@@ -522,13 +522,21 @@ html {
 
 /* DailyCast */
 
+.DailyCast {
+  margin: 100px auto;
+  background-color: rgba(255, 255, 255, 0.346);
+  max-width: 800px;
+  /* padding: 50px 0px; */
+  box-shadow: rgba(0, 0, 0, 0.5) 10px 10px;
+}
+
 .DailyCastHeader {
   display: flex;
-  padding: 10px 10px;
-  background-color: lightslategray;
+  padding: 20px 10px;
+  background-color: rgba(255, 255, 255, 0.566);
   justify-content: space-between;
   /* text-transform: uppercase; */
-  color:white;
+  /* color:white; */
   max-width: 800px;
   margin: 0 auto;
 }
@@ -726,4 +734,21 @@ td {
   .TidesGraph {
     width: 90%;
   }
+}
+
+.TidesSummary {
+  position: relative;
+  top: 25px;
+}
+
+.TidesSummary table {
+  border:none;
+  background-color: rgba(255, 255, 255, 0.903);
+  box-shadow: rgba(0, 0, 0, 0.5) 10px 10px;
+}
+
+.TidesSummary td {
+  padding: 10px;
+  font-family: 'Amatic SC Regular';
+  font-size: 2em;
 }
