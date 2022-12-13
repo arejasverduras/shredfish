@@ -10,11 +10,12 @@ export const AddRemoveFavorites = ({spot})=> {
     
     const isFavorite = favoriteSpots.find(favSpot => favSpot.name === spot.name && favSpot.state === spot.state);
 
-    //logic to add to favorites
+    //logic to remove from favorites
     const handleClickRemove = (spot) => {
         dispatch(removeFavoriteSpot(spot));
     }
-
+    
+    //logic to add to favorites
     const handleClickAdd = (spot) => {
         dispatch(addFavoriteSpot({
                 name: spot.name,

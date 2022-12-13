@@ -12,7 +12,7 @@ const WebcamSlice = createSlice({
                 lat: '52.1067449',
                 lon: '4.2736937',
                 type: 'YouTube',
-                url: 'KtqXsU-e9zc'
+                url: '4wtss9PfYw8'
             },
             {
                 name: 'Aloha',
