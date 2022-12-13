@@ -528,17 +528,25 @@ html {
   max-width: 800px;
   /* padding: 50px 0px; */
   box-shadow: rgba(0, 0, 0, 0.5) 10px 10px;
+  border: 3px solid rgba(255, 255, 255, 0.319);
+  border-radius: 25px;
 }
 
 .DailyCastHeader {
   display: flex;
+  flex-wrap: wrap;
   padding: 20px 10px;
-  background-color: rgba(255, 255, 255, 0.566);
+  /* background-color: rgba(255, 255, 255, 0.566); */
   justify-content: space-between;
   /* text-transform: uppercase; */
   /* color:white; */
+  font-size: 1rem;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.DailyCastHeader p {
+  font-size: 3em;
 }
 
 .DailyCast button {
