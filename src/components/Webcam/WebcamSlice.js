@@ -15,14 +15,14 @@ const WebcamSlice = createSlice({
                 url: '4wtss9PfYw8'
             },
             {
-                name: 'Aloha',
+                name: 'Aloha Noord',
                 city: 'Scheveningen',
                 state: 'South Holland',
                 country: 'NL',
                 lat: '52.1067449',
                 lon: '4.2736937',
                 type: 'YouTube',
-                url: 'rrfs742wy4c'
+                url: 'EHKOx5QJEj4'
             },
             {
                 name: 'Boulevard Hotel',
@@ -33,6 +33,16 @@ const WebcamSlice = createSlice({
                 lon: '4.2736937',
                 type: 'YouTube',
                 url: 'A5kXiKzbBFs'
+            },
+            {
+                name: 'Aloha Noord+Zuid',
+                city: 'Scheveningen',
+                state: 'South Holland',
+                country: 'NL',
+                lat: '52.1067449',
+                lon: '4.2736937',
+                type: 'YouTube',
+                url: 'rrfs742wy4c'
             }
         ]
     },
