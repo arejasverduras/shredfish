@@ -5,11 +5,6 @@ import { getHour } from "../../../features/features";
 import { SecondarySwellCells } from "./SecondarySwellCells/SecondarySwellCells";
 
 export const ForeCastTableStormGlass = ({hourStart, hourEnd, interval}) => {
-    //goal: render a table, independent of data sources
-    //idea: render data sources as different components
-            //cells for weather data (optional)
-            //cells for tide data (optional)
-            // cells for 'matches prefered conditions' (optional)
 
     const firstIndex = hourStart || 0 //hourStart;
     const lastIndex = hourEnd || 24 //hourEnd;

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectTidesExtremeStatus, selectTidesExtremeData } from '../../../containers/TidesResult/TidesResultSlice';
 import { getHour } from '../../../features/features';
 
-export const TidesSummarySG = ({dayNo}) => {
+export const TidesSummarySG = ({dayNo, timeDifference}) => {
     //props: hourStart / end ? Date
 
     const tidesStatus = useSelector(selectTidesExtremeStatus);
@@ -34,7 +34,8 @@ export const TidesSummarySG = ({dayNo}) => {
 
             const localHours = localDate.getHours();
             const localMinutes = localDate.getMinutes();
-            const localTime = `${localHours}:${localMinutes}`;
+            const minutes = localMinutes < 10? '0'+localMinutes : localMinutes;
+            const localTime = `${localHours}:${minutes}`;
             return localTime;
         }
 
