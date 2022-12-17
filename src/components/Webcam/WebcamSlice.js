@@ -43,6 +43,16 @@ const WebcamSlice = createSlice({
                 lon: '4.2736937',
                 type: 'YouTube',
                 url: 'rrfs742wy4c'
+            },
+            {
+                name: 'Carlton Beach',
+                city: 'Scheveningen',
+                state: 'South Holland',
+                country: 'NL',
+                lat: '52.1067449',
+                lon: '4.2736937',
+                type: 'YouTube',
+                url: 'DaG5JReOYEw'
             }
         ]
     },
