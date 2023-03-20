@@ -32,7 +32,7 @@ export const TidesSummarySG = ({dayNo, timeDifference}) => {
         const toLocalTime = (UTCdate) =>{
             const localDate = new Date (UTCdate);
 
-            const localHours = localDate.getHours();
+            const localHours = localDate.getHours() + timeDifference;
             const localMinutes = localDate.getMinutes();
             const minutes = localMinutes < 10? '0'+localMinutes : localMinutes;
             const localTime = `${localHours}:${minutes}`;
